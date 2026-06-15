@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0081)file:///Users/sniper/Downloads/edward_poynter_patrol_flash_cards_updated_v24.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrol Offense Flash Cards — Indiana Code</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./index_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0F141A; --bg2:#0B0F14;
@@ -176,30 +176,13 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(30p
     <span><i class="dot reference"></i>Procedural / definitional reference — not an offense</span>
   </div>
 
-  <div class="chips" id="chips"><button class="chip" data-cat="All" aria-pressed="true">All</button><button class="chip" data-cat="Foundations" aria-pressed="false">Foundations</button><button class="chip" data-cat="Search/Seizure" aria-pressed="false">Search/Seizure</button><button class="chip" data-cat="Property" aria-pressed="false">Property</button><button class="chip" data-cat="Persons" aria-pressed="false">Persons</button><button class="chip" data-cat="Threats" aria-pressed="false">Threats</button><button class="chip" data-cat="Weapons" aria-pressed="false">Weapons</button><button class="chip" data-cat="Orders" aria-pressed="false">Orders</button><button class="chip" data-cat="Domestic/Calls" aria-pressed="false">Domestic/Calls</button><button class="chip" data-cat="Alarms/Open Doors" aria-pressed="false">Alarms/Open Doors</button><button class="chip" data-cat="Patrol Tactics" aria-pressed="false">Patrol Tactics</button><button class="chip" data-cat="Driving" aria-pressed="false">Driving</button><button class="chip" data-cat="Juvenile/Civil" aria-pressed="false">Juvenile/Civil</button><button class="chip" data-cat="Public Order" aria-pressed="false">Public Order</button><button class="chip" data-cat="Nuisance/Drugs" aria-pressed="false">Nuisance/Drugs</button><button class="chip" data-cat="Traffic" aria-pressed="false">Traffic</button><button class="chip" data-cat="Alcohol/Minors" aria-pressed="false">Alcohol/Minors</button><button class="chip" data-cat="Fraud/Deception" aria-pressed="false">Fraud/Deception</button><button class="chip" data-cat="Vulnerable" aria-pressed="false">Vulnerable</button><button class="chip" data-cat="E-Bikes/Golf Carts" aria-pressed="false">E-Bikes/Golf Carts</button></div>
+  <div class="chips" id="chips"></div>
 
   <div class="stage">
     <div class="scene">
-      <div class="card auth-reference" id="card">
-    <div class="face front">
-      <div class="band"></div>
-      <div class="f-top"><span class="f-cat">Foundations</span><span class="f-num">No. F01</span></div>
-      <div class="f-offense">Arrest Authority Rule</div>
-      <div class="f-statute">IC 35-33-1-1</div>
-      <div class="badge">Procedural / definitional reference — not an offense</div>
-      <div class="f-hint">tap / space to reveal O‑C‑E‑A →</div>
-    </div>
-    <div class="face back">
-      <div class="band"></div>
-      <div class="b-head">Arrest Authority Rule</div>
-      <div class="b-statute">IC 35-33-1-1 · Foundations</div>
-      <div class="b-scroll">
-        <div class="block"><div class="lab">Core elements / culpability</div><div class="txt">An officer may arrest on a <b>warrant</b>; on <b>felony</b> probable cause; or on PC for a <b>misdemeanor committed in the officer’s presence</b>. Several offenses are carved out as statutory exceptions allowing PC arrest even when not witnessed.</div></div>
-        <div class="block"><div class="lab">Enhancements / charging flags</div><div style="margin-bottom:6px"><span class="tag">Patrol test</span><span class="txt" style="font-size:12.5px">If it’s a misdemeanor and no listed exception applies → confirm it happened in your presence before a custodial arrest.</span></div></div>
-        <div class="block arrest"><div class="lab">Arrest authority</div><div class="txt">This is the master rule every card is measured against.</div></div>
-        <div class="block"><div class="lab">Patrol caution / distinction</div><div class="caution">Statutory exceptions include: theft, battery w/ bodily injury, domestic battery, invasion of privacy (15.1 &amp; 15.3), unlawful carry (1.5), counterfeit handgun license (2-22), undisclosed transport of a dangerous device (6-1.1), IC 35-50-7 order/probation violations, interference w/ reporting DV crime, leaving the scene (9-26-1-1.1 / chapter 9-26-1), and OWI (9-30-5).</div></div>
+      <div class="card" id="card">
+        <!-- faces injected -->
       </div>
-    </div></div>
     </div>
   </div>
 
@@ -207,13 +190,13 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(30p
     <button class="btn primary" id="flip">Flip card</button>
     <div class="nav">
       <button class="btn" id="prev" aria-label="Previous">◀</button>
-      <span class="counter" id="counter"><b>1</b> / 288</span>
+      <span class="counter" id="counter"></span>
       <button class="btn" id="next" aria-label="Next">▶</button>
     </div>
     <button class="btn" id="shuffle" title="Shuffle deck">⤮</button>
   </div>
 
-  <div class="meterwrap"><div class="meter" id="meter" style="width: 0.347222%;"></div></div>
+  <div class="meterwrap"><div class="meter" id="meter"></div></div>
   <div class="foot">
     <span id="deckname">All offenses</span>
     <span><a id="reset">restart deck</a> · keys: space=flip ←/→=move</span>
@@ -1221,5 +1204,5 @@ document.addEventListener('keydown',e=>{
 });
 render();
 </script>
-
-</body></html>
+</body>
+</html>
