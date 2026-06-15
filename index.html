@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0081)file:///Users/sniper/Downloads/edward_poynter_patrol_flash_cards_updated_v24.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrol Offense Flash Cards — Indiana Code</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 :root{
   --bg:#0F141A; --bg2:#0B0F14;
@@ -176,13 +176,30 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(30p
     <span><i class="dot reference"></i>Procedural / definitional reference — not an offense</span>
   </div>
 
-  <div class="chips" id="chips"></div>
+  <div class="chips" id="chips"><button class="chip" data-cat="All" aria-pressed="true">All</button><button class="chip" data-cat="Foundations" aria-pressed="false">Foundations</button><button class="chip" data-cat="Search/Seizure" aria-pressed="false">Search/Seizure</button><button class="chip" data-cat="Property" aria-pressed="false">Property</button><button class="chip" data-cat="Persons" aria-pressed="false">Persons</button><button class="chip" data-cat="Threats" aria-pressed="false">Threats</button><button class="chip" data-cat="Weapons" aria-pressed="false">Weapons</button><button class="chip" data-cat="Orders" aria-pressed="false">Orders</button><button class="chip" data-cat="Domestic/Calls" aria-pressed="false">Domestic/Calls</button><button class="chip" data-cat="Alarms/Open Doors" aria-pressed="false">Alarms/Open Doors</button><button class="chip" data-cat="Patrol Tactics" aria-pressed="false">Patrol Tactics</button><button class="chip" data-cat="Driving" aria-pressed="false">Driving</button><button class="chip" data-cat="Juvenile/Civil" aria-pressed="false">Juvenile/Civil</button><button class="chip" data-cat="Public Order" aria-pressed="false">Public Order</button><button class="chip" data-cat="Nuisance/Drugs" aria-pressed="false">Nuisance/Drugs</button><button class="chip" data-cat="Traffic" aria-pressed="false">Traffic</button><button class="chip" data-cat="Alcohol/Minors" aria-pressed="false">Alcohol/Minors</button><button class="chip" data-cat="Fraud/Deception" aria-pressed="false">Fraud/Deception</button><button class="chip" data-cat="Vulnerable" aria-pressed="false">Vulnerable</button><button class="chip" data-cat="E-Bikes/Golf Carts" aria-pressed="false">E-Bikes/Golf Carts</button></div>
 
   <div class="stage">
     <div class="scene">
-      <div class="card" id="card">
-        <!-- faces injected -->
+      <div class="card auth-reference" id="card">
+    <div class="face front">
+      <div class="band"></div>
+      <div class="f-top"><span class="f-cat">Foundations</span><span class="f-num">No. F01</span></div>
+      <div class="f-offense">Arrest Authority Rule</div>
+      <div class="f-statute">IC 35-33-1-1</div>
+      <div class="badge">Procedural / definitional reference — not an offense</div>
+      <div class="f-hint">tap / space to reveal O‑C‑E‑A →</div>
+    </div>
+    <div class="face back">
+      <div class="band"></div>
+      <div class="b-head">Arrest Authority Rule</div>
+      <div class="b-statute">IC 35-33-1-1 · Foundations</div>
+      <div class="b-scroll">
+        <div class="block"><div class="lab">Core elements / culpability</div><div class="txt">An officer may arrest on a <b>warrant</b>; on <b>felony</b> probable cause; or on PC for a <b>misdemeanor committed in the officer’s presence</b>. Several offenses are carved out as statutory exceptions allowing PC arrest even when not witnessed.</div></div>
+        <div class="block"><div class="lab">Enhancements / charging flags</div><div style="margin-bottom:6px"><span class="tag">Patrol test</span><span class="txt" style="font-size:12.5px">If it’s a misdemeanor and no listed exception applies → confirm it happened in your presence before a custodial arrest.</span></div></div>
+        <div class="block arrest"><div class="lab">Arrest authority</div><div class="txt">This is the master rule every card is measured against.</div></div>
+        <div class="block"><div class="lab">Patrol caution / distinction</div><div class="caution">Statutory exceptions include: theft, battery w/ bodily injury, domestic battery, invasion of privacy (15.1 &amp; 15.3), unlawful carry (1.5), counterfeit handgun license (2-22), undisclosed transport of a dangerous device (6-1.1), IC 35-50-7 order/probation violations, interference w/ reporting DV crime, leaving the scene (9-26-1-1.1 / chapter 9-26-1), and OWI (9-30-5).</div></div>
       </div>
+    </div></div>
     </div>
   </div>
 
@@ -190,13 +207,13 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(30p
     <button class="btn primary" id="flip">Flip card</button>
     <div class="nav">
       <button class="btn" id="prev" aria-label="Previous">◀</button>
-      <span class="counter" id="counter"></span>
+      <span class="counter" id="counter"><b>1</b> / 288</span>
       <button class="btn" id="next" aria-label="Next">▶</button>
     </div>
     <button class="btn" id="shuffle" title="Shuffle deck">⤮</button>
   </div>
 
-  <div class="meterwrap"><div class="meter" id="meter"></div></div>
+  <div class="meterwrap"><div class="meter" id="meter" style="width: 0.347222%;"></div></div>
   <div class="foot">
     <span id="deckname">All offenses</span>
     <span><a id="reset">restart deck</a> · keys: space=flip ←/→=move</span>
@@ -388,57 +405,58 @@ const CARDS = [
 
   // ---------- THREATS / SAFETY ----------
   {cat:'Threats', num:'12', off:'Intimidation', stat:'IC 35-45-2-1', auth:A.PRES,
-   elem:'Knowingly/intentionally <b>communicates a threat</b> with a statutory purpose (force conduct, fear of retaliation for a prior lawful act, evacuation/occupancy interference, fear listed threats carried out).',
-   enh:[['Class A misd','Base'],['Level 6','Forcible-felony threat · witness intimidation · occupation/ownership-linked · prior same-victim · school/gov property used'],['Level 5','Deadly weapon drawn/used · threat vs listed officials · terrorism']],
-   arr:'Misd needs presence; felony permits PC arrest.',
-   note:'Document exact words, method, target, victim reaction, ability/opportunity, statutory purpose.'},
-  {cat:'Threats', num:'43', off:'Stalking', stat:'IC 35-45-10-5', auth:A.FEL,
-   elem:'Knowingly/intentionally engages in a <b>course of repeated/continuing harassment</b> that would make a reasonable person — AND actually makes the victim — feel terrorized, frightened, intimidated, or threatened.',
-   enh:[['Level 6','Base'],['Level 5','Threat of sexual battery/SBI/death · qualifying order + actual notice · pending stalking case + notice · tracking device'],['Level 4','Armed w/ deadly weapon · prior same-victim stalking conviction']],
-   arr:'Felony — PC arrest.',
-   note:'DISTINCTION: harassment can be a single communication; stalking needs a course of conduct PLUS reasonable-person effect AND actual victim fear.'},
+   elem:`A person commits intimidation when the person <b>communicates a threat</b> with one of the required statutory intents. Patrol proof formula: <b>communicated threat + statutory intent/purpose</b>.<br><br><b>Qualifying purposes include intent that another person:</b><br>• engage in conduct against their will<br>• be placed in fear of retaliation for a prior lawful act<br>• evacuate, or have occupancy of, a dwelling/building/structure/vehicle interfered with<br>• be placed in fear that a listed threat will be carried out, including unlawful injury, property damage, confinement/restraint, committing a crime, withholding official action/testimony/information, falsely harming credit/business reputation, or causing evacuation.`,
+   enh:[['Class A misdemeanor','Base intimidation'],['Level 6 felony','Threat to commit a forcible felony · witness/spouse/child of witness in pending criminal case · occupation/profession/employment/ownership related · prior unrelated same-victim intimidation · school/government property, electronic equipment, or system used'],['Level 5 felony','Draws or uses a deadly weapon while committing intimidation · threat against judicial officer, bailiff, prosecutor, or deputy prosecutor related to official status/duties · terrorism-related threat']],
+   arr:'Misdemeanor intimidation generally follows the presence rule. If the threat was not heard or witnessed by the officer, use caution before custodial arrest unless another exception applies. Felony intimidation permits warrantless probable-cause arrest.',
+   note:`Do not charge intimidation just because words were angry, vulgar, alarming, or disrespectful. Report structure: <b>exact words/actions + method + target + statutory intent + context + victim reaction + ability/opportunity + enhancement facts</b>. Emotional language does not defeat intimidation if the statutory threat and purpose are present. Victim fear and suspect ability are not always standalone elements, but they are strong PC facts. Example retaliation prong: “You called the police on me, so I’m going to kill you.” Example force-conduct prong: “Give me your phone or I’ll beat you.”`},
+  {cat:'Threats', num:'43', off:'Stalking', stat:'IC 35-45-10-5 / IC 35-45-10-1', auth:A.FEL,
+   elem:`Knowingly or intentionally engages in a <b>course of conduct</b> involving repeated or continuing harassment of another person that would cause a reasonable person to feel terrorized, frightened, intimidated, or threatened, and actually causes the victim to feel terrorized, frightened, intimidated, or threatened. This is a dual test: <b>objective reasonable-person effect + actual victim effect</b>.<br><br><b>Harassment / impermissible contact concepts:</b> repeated or continuing victim-directed conduct causing emotional distress, including following, pursuing, communicating, or social-media posts directed to or referring to the victim directly or indirectly.`,
+   enh:[['Level 6 felony','Base stalking'],['Level 5 felony','Explicit/implicit threat intended to place victim in reasonable fear of sexual battery, serious bodily injury, or death · qualifying protective/no-contact/workplace violence order with actual notice · pending same-victim stalking complaint with actual notice · offense committed or facilitated by tracking device'],['Level 4 felony','Act or acts committed while armed with a deadly weapon · prior unrelated stalking conviction against same victim/victims']],
+   arr:'Stalking is at least a felony; warrantless probable-cause arrest is authorized when PC exists for the course of conduct.',
+   note:`Stalking is a pattern offense. Safer report structure: <b>timeline + repeated contacts + victim-directed conduct + reasonable-person fear + actual victim fear + suspect identity + enhancement facts</b>. Avoid relying on one isolated act unless the episode contains separate repeated/continuing acts. For order-based enhancements, document cause number, order type, protected person, service/actual notice, and conduct. For tracking devices, document location, serial/identifying data, photos before removal, app screenshots/alerts, access to the vehicle/property, consent/lack of consent, and lawful basis for any digital-account search.`},
   {cat:'Threats', num:'4', off:'Harassment', stat:'IC 35-45-2-2', auth:A.PRES,
-   elem:'With intent to <b>harass/annoy/alarm</b> and <b>no intent of legitimate communication</b>, communicates by a covered method (phone, written, electronic, computer network, etc.).',
-   enh:[['Class B misd','Single level'],['Then evaluate','Threat → intimidation · repeated/continuing fear → stalking · order violated → invasion of privacy']],
-   arr:'Presence rule unless another exception/felony applies.',
-   note:'The “no legitimate communication” element does a lot of work — document it.'},
+   elem:`A person commits harassment when the person acts <b>with intent to harass, annoy, or alarm</b>, <b>with no intent of legitimate communication</b>, and communicates by a covered statutory method. Covered methods include telephone call whether or not conversation occurs, telegraph/mail/other written communication, Citizens Radio Service transmission of obscene/indecent/profane words, computer network, or other electronic communication.`,
+   enh:[['Class B misdemeanor','Single-level harassment offense'],['Escalate analysis','Threat in the communication → Intimidation · repeated/continuing conduct causing objective and actual fear → Stalking · protective/no-contact order violation → Invasion of Privacy · interference with 911/crime reporting → Interference with Reporting of a Crime']],
+   arr:'Misdemeanor presence rule applies unless another exception or felony applies. If the officer only sees prior messages after the fact, custodial arrest for harassment alone is usually weak; consider summons, warrant, prosecutor review, or a stronger mapped offense.',
+   note:`The “no legitimate communication” element does heavy work. Rude, vulgar, repetitive, or unwanted messages may still have a legitimate purpose if they concern children, property, bills, court, work, safety, or shared obligations. Document exact content, method, number/frequency, time, prior stop-contact request, relationship/context, and why there was no legitimate purpose. Do not blend IC 35-45-2-2 harassment with the stalking definition of harassment.`},
   {cat:'Threats', num:'29', off:'Pointing a Firearm', stat:'IC 35-47-4-3', auth:A.FEL,
-   elem:'Knowingly/intentionally <b>points a firearm at another person</b>.',
-   enh:[['Level 6','Firearm loaded'],['Class A misd','Firearm NOT loaded']],
-   arr:'Loaded → felony PC arrest. Unloaded → presence rule.',
-   note:'Document loaded status, direction, distance, victim perception, recovery; consider self-defense/duty exceptions.'},
+   elem:`Knowingly or intentionally <b>points a firearm at another person</b>. Confirm the object is a firearm, meaning a weapon capable of expelling, designed to expel, or readily convertible to expel a projectile by means of an explosion. BB guns, airsoft guns, and pellet guns generally do not qualify under that firearm definition, though other charges may apply.`,
+   enh:[['Level 6 felony','Pointing a loaded firearm at another person'],['Class A misdemeanor','Firearm was not loaded'],['Loaded-status proof','Document chamber/cylinder, magazine inserted or not, number of rounds, ammunition location, photos before clearing if safe/policy-compliant, who cleared the firearm, BWC, and chain of custody']],
+   arr:'Loaded firearm = felony probable-cause arrest. Unloaded firearm = Class A misdemeanor; presence rule generally applies unless another exception or offense supports custodial arrest.',
+   note:`Pointing needs geometry. Document suspect position, victim position, distance, muzzle direction, height/elevation, whether the firearm was shouldered/extended/raised/aimed, lighting, witness perspectives, and recovery. Consider statutory exceptions and justification facts: law enforcement duty, self-defense, defense of others, defense of dwelling/curtilage/occupied vehicle, lawful arrest, or preventing escape. Example: “Suspect extended his right arm, raised the handgun parallel to the ground, and pointed the muzzle directly at Victim’s chest from approximately 12 feet away.”`},
   {cat:'Threats', num:'30', off:'Criminal Recklessness', stat:'IC 35-42-2-2', auth:A.PRES,
-   elem:'Recklessly/knowingly/intentionally performs an act creating a <b>substantial risk of bodily injury</b> to another.',
-   enh:[['Class A misd','Base'],['Felony','Armed w/ deadly weapon · shooting into occupied vehicle/dwelling/building · aggressive driving SBI/death/catastrophic']],
-   arr:'Presence rule unless felony facts.',
-   note:'Reckless ≠ merely careless — articulate the specific risk created.'},
-  {cat:'Threats', num:'14', off:'Road Rage (category)', stat:'multiple IC', auth:A.PRES,
-   elem:'Map conduct to a real offense: aggressive driving, reckless driving, intimidation, battery, criminal recklessness, disorderly, pointing a firearm, criminal mischief, or leaving the scene.',
-   enh:[['Flags','Injury level · firearm/deadly weapon · vehicle as weapon · forcible-felony threat · damage · hit-and-run · school bus/worksite · priors']],
-   arr:'Depends on the actual offense — misd needs presence; felony PC; leaving-scene is an exception.',
-   note:'Never write only “road rage.” Identify the observed/reported acts and victim fear.'},
-  {cat:'Threats', num:'T-DECISION', off:'Intimidation vs Harassment vs Stalking', stat:'IC 35-45-2-1 / 35-45-2-2 / 35-45-10-5', auth:A.REF,
-   elem:'Use this decision card when a complainant reports unwanted messages, threats, repeated contact, or fear. <b>Harassment</b> focuses on communication made with intent to harass/annoy/alarm and no legitimate purpose. <b>Intimidation</b> requires a communicated threat plus statutory purpose. <b>Stalking</b> requires repeated/continuing harassment that would cause and actually causes fear.',
-   enh:[['Harassment','Annoying/alarming communication · no legitimate purpose · threat not required'],['Intimidation','Threat + purpose: force conduct, retaliation, evacuation/occupancy interference, or fear listed threat will be carried out'],['Stalking','Course of conduct · repeated/continuing · reasonable-person fear + actual victim fear']],
-   arr:'Reference / decision-tree card. Arrest authority depends on final offense: harassment usually presence rule; intimidation misdemeanor presence unless felony facts; stalking is felony PC arrest.',
-   note:'Write exact words, number/timing of contacts, prior lawful act, demand/retaliation purpose, victim fear, order status, and whether conduct is repeated enough for stalking.'},
+   elem:`Recklessly, knowingly, or intentionally performs an act that creates a <b>substantial risk of bodily injury</b> to another person. The current base offense is a <b>Class A misdemeanor</b>. Reckless means more than careless: document plain, conscious, and unjustifiable disregard of harm and why the conduct substantially deviated from acceptable conduct.`,
+   enh:[['Class A misdemeanor','Base criminal recklessness'],['Level 6 felony','Committed while armed with a deadly weapon · aggressive driving causes serious bodily injury · passenger points firearm from vehicle at another person/vehicle/dwelling/building/place while operator commits criminal recklessness'],['Level 5 felony','Shoots firearm into inhabited dwelling or building/vehicle/place where people are likely to gather · aggressive driving causes death or catastrophic injury']],
+   arr:'Class A misdemeanor generally follows the presence rule unless another exception applies. Felony criminal recklessness permits warrantless probable-cause arrest.',
+   note:`Report structure: <b>act + risk created + people exposed + distance/proximity + weapon/vehicle/object involved + mental-state facts + injury/result + enhancement facts</b>. Do not write only “driver was reckless.” Document who was exposed, how close, what evasive action occurred, and why the risk was substantial. Related analysis: direct pointing may fit Pointing a Firearm; demand/threat may fit Intimidation; shooting into occupied structure/vehicle is Level 5 criminal recklessness; vehicle-as-weapon facts may raise battery, aggravated battery, or attempted murder questions.`},
+  {cat:'Threats', num:'14', off:'Road Rage', stat:'Category / multiple IC sections', auth:A.REF,
+   elem:`There is no single Indiana offense called “road rage.” Treat it as an <b>investigative label</b> and map the conduct to actual offenses: aggressive driving, reckless driving, criminal recklessness, intimidation, pointing a firearm, battery, disorderly conduct, criminal mischief, leaving the scene, OWI, suspended driving, or weapons/prohibited-person offenses.`,
+   enh:[['Common mapping','Tailgating/brake-checking/unsafe lane changes/horn/headlight/failure-to-yield behavior → Aggressive Driving if one continuous episode and at least three listed acts with required intent'],['Threats/weapons','Threats → Intimidation · firearm pointed → Pointing a Firearm · deadly weapon facts → intimidation/criminal recklessness/weapons analysis'],['Collision/injury','Damage → Criminal Mischief/crash duties · hit-and-run → Leaving the Scene · substantial bodily-injury risk → Criminal Recklessness · injury/death → elevated traffic/person offenses']],
+   arr:'Arrest authority depends on the actual offense, not the road-rage label. Misdemeanor offenses generally require presence unless an exception applies. Felonies permit PC arrest. Leaving-the-scene and OWI have statutory PC arrest exceptions.',
+   note:`Never write only “road rage.” Document exact driving acts, threats, weapon facts, injury, damage, victim fear/reaction, video evidence, and mapped statute. Get speeds, lane positions, distances, impacts/attempted impacts, shoulder/ditch/barrier proximity, traffic/pedestrians, braking/acceleration, crash damage, victim evasive action, dashcam/BWC/business-camera evidence, and witness statements.`},
+  {cat:'Threats', num:'T-DECISION', off:'Intimidation vs Harassment vs Stalking', stat:'IC 35-45-2-1 / IC 35-45-2-2 / IC 35-45-10-5', auth:A.REF,
+   elem:`Use this decision card when a complainant reports unwanted calls, texts, DMs, emails, social-media posts, threats, repeated contact, surveillance, following, fear, contact after being told to stop, or contact despite a protective/no-contact order.<br><br><b>Decision tree:</b><br>1. True threat? → Evaluate <b>Intimidation</b>: communicated threat + statutory purpose.<br>2. Unwanted communication with no legitimate purpose, but no threat? → Evaluate <b>Harassment</b>: intent to harass/annoy/alarm + no legitimate communication + covered method.<br>3. Repeated or continuing victim-directed conduct causing objective and actual fear? → Evaluate <b>Stalking</b>: course of conduct + reasonable-person fear + actual victim fear.`,
+   enh:[['Harassment','Threat required: no · pattern required: no · base level: Class B misdemeanor · key issue: no legitimate communication purpose'],['Intimidation','Threat required: yes · pattern required: no · base level: Class A misdemeanor · key issue: statutory purpose/nexus'],['Stalking','Threat required: no, but threats can enhance · pattern required: yes · base level: Level 6 felony · key issue: repeated/continuing conduct + objective and actual fear'],['Order caution','If an order prohibits contact, verify order terms, protected person, effective status, service/actual notice, and knowing contact. A single order violation is not automatically stalking unless course-of-conduct elements are met.']],
+   arr:'Harassment only and misdemeanor intimidation usually require misdemeanor presence unless another exception applies. Felony intimidation and stalking permit PC arrest. Invasion of privacy has its own PC arrest exception when order elements are met.',
+   note:`Interview checklist: quote exact words; preserve messages/screenshots/posts; determine legitimate-purpose context; identify intimidation prong; build stalking timeline; verify orders and notice; document actual victim fear and behavior changes. Harassment wording: content + timing + frequency + lack of legitimate purpose. Intimidation wording: exact threat + statutory purpose. Stalking wording: repeated conduct + reasonable-person fear + actual victim fear.`},
 
   // ---------- WEAPONS ----------
-  {cat:'Weapons', num:'31', off:'Unlawful Carry of a Handgun', stat:'IC 35-47-2-1.5', auth:A.EXC,
-   elem:'Knowingly/intentionally <b>carries a handgun while prohibited</b> (age, felony/delinquency status, dangerous-person, DV-related prohibition, other disqualifier).',
-   enh:[['Class A misd','Base'],['Felony','School property/bus · qualifying prior handgun offense']],
-   arr:'Statutory exception — PC arrest for a 1.5 violation.',
-   note:'Indiana is permitless carry for non-prohibited persons. Carrying alone isn’t unlawful — name the disqualifier.'},
+  {cat:'Weapons', num:'31', off:'Unlawful Carrying of a Handgun', stat:'IC 35-47-2-1.5 / IC 35-47-2-1 context', auth:A.EXC,
+   elem:'Knowingly or intentionally <b>carries a handgun while legally prohibited from carrying</b> under IC 35-47-2-1.5. Indiana permitless carry applies only to persons who are not federally prohibited, not otherwise prohibited under state law, and not disqualified under Indiana handgun law. <br><br><b>Common disqualifier categories:</b><br>• under 18, unless a statutory exception applies<br>• qualifying felony conviction<br>• qualifying juvenile delinquency adjudication<br>• adjudicated dangerous person<br>• domestic violence / domestic battery / stalking-related disqualifier<br>• active IC 34-26-5 protective order<br>• fugitive from justice<br>• under indictment for a qualifying offense<br>• unlawful immigration status<br>• dishonorable discharge or renounced citizenship<br>• qualifying mental-health adjudication or involuntary commitment',
+   enh:[['Class A misdemeanor','Base offense'],['Level 5 felony','Offense committed on/in school property, within 500 feet of school property, or on a school bus'],['Level 5 felony','Prior conviction for IC 35-47-2-1.5, former IC 35-47-2-1, IC 35-47-2-22, or any felony within 15 years before the current offense']],
+   arr:'Statutory PC arrest exception. If probable cause exists for an IC 35-47-2-1.5 violation, custodial arrest is authorized under Indiana’s warrantless-arrest statute.',
+   note:'Indiana is permitless carry for non-prohibited persons. Carrying alone is not unlawful. Do not write “subject had a handgun” as the whole basis. Write: handgun + carry + identity + specific disqualifier + source of disqualifier. Example: Subject knowingly carried a handgun in his waistband; subject identified by Indiana DL; dispatch confirmed an active IC 34-26-5 protective order under cause number ____; therefore subject was prohibited from carrying under IC 35-47-2-1.5.'},
+
   {cat:'Weapons', num:'32', off:'SVF in Possession of Firearm', stat:'IC 35-47-4-5', auth:A.FEL,
-   elem:'A <b>serious violent felon</b> knowingly/intentionally <b>possesses a firearm</b>.',
-   enh:[['Level 4','Single level']],
-   arr:'Felony PC arrest.',
-   note:'Confirm BOTH possession and that the prior qualifies as a serious violent felony.'},
-  {cat:'Weapons', num:'33', off:'DV Batterer in Possession', stat:'IC 35-47-4-6', auth:A.PRES,
-   elem:'A person convicted of <b>domestic battery (35-42-2-1.3)</b> knowingly/intentionally <b>possesses a firearm</b>.',
-   enh:[['Class A misd','Single level']],
-   arr:'Presence rule unless another exception/felony applies.',
-   note:'Verify the prior is DV battery under 1.3 and check whether firearm rights were restored.'},
+   elem:'A <b>serious violent felon</b> who knowingly or intentionally <b>possesses a firearm</b> commits unlawful possession of a firearm by a serious violent felon. The offense is a <b>Level 4 felony</b>.<br><br><b>Required proof points:</b><br>1. Identity of the suspect.<br>2. Prior conviction qualifies as a statutory serious violent felony under IC 35-47-4-5.<br>3. Suspect knowingly or intentionally possessed the firearm.<br>4. Object qualifies as a firearm, not merely a weapon generally.',
+   enh:[['Level 4 felony','Single offense level for SVF knowingly/intentionally possessing a firearm'],['Firearm distinction','SVF possession applies to firearms generally, not only handguns; compare IC 35-47-2-1.5, which is handgun-specific'],['Prior-conviction verification','Confirm offense name, statute, jurisdiction, felony level/class, conviction status, and match to the current IC 35-47-4-5 list']],
+   arr:'Felony PC arrest. If probable cause exists that the person is a serious violent felon and knowingly/intentionally possessed a firearm, custodial arrest is authorized as a felony offense.',
+   note:'Do not assume “felon with gun” automatically equals SVF. Confirm possession and qualifying SVF status. Constructive possession requires facts showing capability and intent to maintain dominion/control over the firearm. Write: identity + qualifying SVF conviction + firearm + actual/constructive possession. Strong linking facts include firearm on person, under driver seat in vehicle suspect controlled, suspect admissions, firearm in suspect bedroom/bag/locked container, ammunition/holster/photos/messages, fingerprints/DNA, or sole access/control. Avoid relying only on “gun was in the car and suspect is an SVF.”'},
+  {cat:'Weapons', num:'33', off:'DV Batterer in Possession', stat:'IC 35-47-4-6 / IC 35-47-4-7', auth:A.PRES,
+   elem:'A person who has been convicted of <b>Domestic Battery under IC 35-42-2-1.3</b> and who knowingly or intentionally <b>possesses a firearm</b> commits unlawful possession of a firearm by a domestic batterer. This applies to firearms generally, not just handguns. The offense is a <b>Class A misdemeanor</b>.',
+   enh:[['Class A misdemeanor','Single-level offense under IC 35-47-4-6'],['No internal felony enhancement','IC 35-47-4-6 itself does not contain a felony enhancement'],['Handgun cross-check','If the firearm is a handgun, also evaluate IC 35-47-2-1.5 because a qualifying domestic-violence conviction may independently make handgun carry unlawful'],['Restoration defense','It is a statutory defense that firearm rights were restored under IC 35-47-4-7; check for a restoration order and do not assume expungement alone restored rights']],
+   arr:'Misdemeanor presence rule applies unless another arrest exception or felony applies. If you personally observe possession, the misdemeanor is occurring in your presence. If possession is constructive or historical, document why it is ongoing in your presence or consider warrant, summons, prosecutor consult, or another arrest basis.',
+   note:'Do not treat any “DV history” as enough. The prior must be a conviction for Domestic Battery under IC 35-42-2-1.3. A prior arrest, pending case, protective order, no-contact order, or generic battery conviction does not satisfy this specific state offense. Constructive possession requires capability and intent to maintain dominion/control. Write: identity + qualifying IC 35-42-2-1.3 conviction + firearm + actual/constructive possession + restoration check.'},
 
   // ---------- DOMESTIC / ORDERS ----------
   {cat:'Orders', num:'25.5', off:'Probation / Problem-Solving Court Order', stat:'IC 35-50-7', auth:A.EXC,
@@ -1009,6 +1027,69 @@ const CARDS = [
   {"cat": "Patrol Tactics", "num": "P37", "off": "Intoxicated Person Handling", "stat": "WPD public-intox / welfare response", "auth": "reference", "elem": "Intoxicated-person calls require officer-safety awareness, medical screening, and a decision between arrest, assistance, transport, or release based on PC, danger, injury, and circumstances.", "enh": [["Assess", "Behavior · level of intoxication · injury/medical need · ability to care for self · public place · endangerment/breach/harassment facts"], ["Tools", "SFST/PBT/DataMaster if relevant · witness/caller information · transport options · EMS when needed"], ["Disposition", "Arrest if PC and arrest authority exist; otherwise assist with reasonable transportation or safe release when appropriate"]], "arr": "Field-decision card. Arrest authority depends on public intoxication, OWI, disorderly, battery, or another specific offense.", "note": "Mere intoxication is not always criminal. Public intoxication requires the statutory public-place plus aggravating-conduct facts."},
   {"cat": "Patrol Tactics", "num": "P38", "off": "Vagrant / Homeless Assistance Contact", "stat": "WPD assistance / officer safety procedure", "auth": "reference", "elem": "Contacts with unhoused, stranded, or transient persons should combine officer safety, identification, warrant/status checks, needs assessment, and reasonable assistance when requested.", "enh": [["Initial steps", "Increase officer-safety awareness · identify person(s) · run NCIC/IDACS when appropriate"], ["Assess why", "Passing through · local homelessness · recent misfortune · vehicle problem · medical/mental-health/substance issue"], ["Assistance", "Ask what help is wanted/needed · reasonable transportation assistance · consider Washington Township Trustee or other local resources"]], "arr": "Assistance/contact procedure — not arrest authority unless a separate offense or warrant exists.", "note": "If a competent person of sound mind refuses help and no crime/safety issue exists, no further enforcement action is required."}
 
+,
+
+  // ---------- E-BIKES / GOLF CARTS ----------
+  {cat:'E-Bikes/Golf Carts', num:'EB01', off:'Westfield E-Bike Classification', stat:'IC 9-13-2-26.6 / 26.7 / 26.8 · IC 9-21-11-13.1', auth:A.REF,
+   elem:'Classify the device before deciding where it can be ridden or whether enforcement applies. A legal e-bike should have <b>fully operable pedals</b>, meet motor/speed limits, and fit Class 1, Class 2, or Class 3. The City of Westfield guide states that Westfield currently enforces applicable Indiana state e-bike law rather than a separate local e-bike ordinance.',
+   enh:[['Class 1','Pedal-assist only; motor assists only while pedaling and stops assisting at 20 mph'],['Class 2','May propel without pedaling, but assistance stops or is unable to assist at 20 mph'],['Class 3','Pedal-assist only; assistance stops at 28 mph; extra age, helmet, and location limits apply'],['Label check','Manufacturer label should show class, top assisted speed, and motor wattage']],
+   arr:'Classification / regulatory reference — not arrest authority by itself. Enforcement depends on the specific violation, rider age, location, equipment, and local/state rule involved.',
+   note:'Field question: Is it actually a bicycle, or is it an e-dirt bike / e-moto / ORV style vehicle? Check pedals, label, motor wattage, assisted speed, throttle/off-road modes, rider age, and location.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB02', off:'Allowed Areas Quick Reference', stat:'Westfield public safety guide · IC 9-21-11-13.1', auth:A.REF,
+   elem:'Use the location table as the quick patrol reference, subject to posted signs, official maps, and current ordinance. <b>Class 1 and Class 2</b> e-bikes are generally allowed on public roadways, sidewalks, city paths/trails, and parks. <b>Class 3</b> e-bikes are more restricted.',
+   enh:[['Class 1 / 2','Allowed on roadways, sidewalks, parks, and city paths/trails, including Monon Trail and Midland Trail, subject to guide speed/location rules'],['Class 3','Allowed on roadways and sidewalks; city path use limited to paths adjacent to public roadways; not allowed on named city trails'],['Golf carts','Only authorized streets/areas under Westfield ordinance and official map; not general sidewalk use'],['Prohibited devices','E-dirt bikes, e-motos, ATVs, UTVs, and ORVs are prohibited for public operation in the listed public areas']],
+   arr:'Regulatory / ordinance-reference card. Usually education, warning, citation, or tow/impound analysis rather than custodial arrest.',
+   note:'Named-trail reminder: Class 3 e-bikes are not treated like Class 1/2 on Monon, Midland Trace, Grand Junction, Natalie Wheeler, Monon Midland Loop, Grassy Branch, or Cool Creek Trail unless separately authorized.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB03', off:'Class 3 E-Bike Rules', stat:'IC 9-21-11-13.1 · Westfield guide', auth:A.REF,
+   elem:'Class 3 e-bikes require special attention because they have higher assisted speed and stricter age/location rules. Confirm the rider age, helmet use, bike classification label, and where the bike is being operated.',
+   enh:[['Under 15','Strictly prohibited from operating a Class 3 e-bike'],['Age 15 to 18','Must wear a helmet while operating a Class 3 e-bike'],['Location','Public roadways and city paths adjacent to roadways; not named multi-use trails such as Monon Trail'],['Officer/parent reminder','Class 3 is not the same as Class 1/2 for every public location']],
+   arr:'Regulatory-reference card. Enforcement may be education/warning/citation depending on risk, age, location, and repeat/intentional conduct.',
+   note:'Do not assume every e-bike on a trail is legal. The field proof points are class label, speed capability, pedal operation, age, helmet, roadway/path/trail type, and posted restrictions.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB04', off:'E-Dirt Bike / E-Moto / ORV Public Use', stat:'IC 14-16-1-20 / IC 14-16-1-23 / IC 9-18.1-14-1 · Westfield guide', auth:A.REF,
+   elem:'E-dirt bikes, e-motos, unlocked/off-road mode bikes, non-labeled bikes, and bikes without fully operable pedals should not be treated as legal public-use e-bikes. The guide states that e-dirt bike / e-moto style vehicles are not approved for public operation in Westfield public areas.',
+   enh:[['Prohibited locations','Public roads · sidewalks · trails · paths · parks · neighborhoods/public areas listed in guide'],['Classification flags','No usable pedals · high power/speed · off-road design · no e-bike label · unlocked/off-road mode'],['ORV/ATV/UTV','Do not convert golf-cart or e-bike rules into blanket permission for ORVs, ATVs, UTVs, or dirt bikes']],
+   arr:'Usually citation/warning/tow/impound analysis depending on device, location, rider age, danger created, and policy. Not a custodial arrest card by itself.',
+   note:'This is the FTO e-dirt-bike decision point: classify first, then decide education, warning/citation, parent contact, tow/impound, or juvenile paperwork based on the actual facts.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB05', off:'Westfield Golf Cart Requirements', stat:'Westfield Code Chapter 74 · permit/inspection guide', auth:A.REF,
+   elem:'Westfield allows golf carts only when the golf cart and operator meet city requirements. Golf carts are not treated the same as ATVs, UTVs, dirt bikes, e-motos, low-speed vehicles, or other off-road vehicles.',
+   enh:[['Permit / inspection','Golf cart must be inspected and permitted before operation'],['Operator','Operator must have a valid driver’s license'],['Insurance','Privately owned golf carts must have liability insurance'],['Equipment','Headlights · taillights · mirrors · brake lights · turn signals · required safety equipment']],
+   arr:'Ordinance/regulatory reference. Enforcement normally warning/citation/impound analysis depending on safety risk, permit status, operator status, equipment, and location.',
+   note:'Do not assume “golf cart” means lawful. Verify permit/inspection, licensed driver, insurance, equipment, roadway/path authorization, and official map location.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB06', off:'Golf Cart Authorized Areas / Map Check', stat:'Westfield golf cart ordinance/map', auth:A.REF,
+   elem:'Golf carts may operate only on streets, paths, parks, or other areas authorized by Westfield ordinance and the official golf cart map. Sidewalk operation is not generally authorized by the guide.',
+   enh:[['Roadways','Only streets authorized by Westfield ordinance/map'],['Sidewalks','No general sidewalk operation'],['Paths/parks','Only authorized areas shown by ordinance/map'],['Field proof','Exact location · operator license · permit/inspection · equipment · insurance · whether route is on authorized map']],
+   arr:'Ordinance/regulatory reference — normally warning/citation/impound analysis, not arrest authority by itself.',
+   note:'For calls involving golf carts, open the official Westfield golf cart map before making the final enforcement decision when location is the issue.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB07', off:'Parent Buying Guide / Vehicle Screening', stat:'Westfield parent buying guide', auth:A.REF,
+   elem:'Before a child or teenager uses a device in Westfield public areas, parents should verify that it is legal for the rider, legal for the location, and compliant with equipment, age, speed, wattage, pedal, and label requirements.',
+   enh:[['Check before buying','Class · motor wattage · top assisted speed · fully operable pedals · manufacturer label · intended riding location'],['Best fit','Class 1 or Class 2 e-bikes are generally easiest for riders, parents, and officers to identify and are usually the safer public-use purchase choice'],['Avoid for public use','E-dirt bikes · e-motos · unlocked/off-road mode bikes · non-labeled bikes · bikes without fully operable pedals'],['Safety','All riders are strongly encouraged to use recommended safety equipment']],
+   arr:'Community education / prevention card — not arrest authority.',
+   note:'Parent-contact script: “Before it is ridden in public, verify class, label, speed, pedals, rider age, helmet rule, and where the child plans to ride.”'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB08', off:'Enforcement / Compliance Decision', stat:'WPD education · citation · impound guidance', auth:A.REF,
+   elem:'The enforcement goal is safety and compliance: protect riders, families, pedestrians, motorists, and neighborhoods while helping the public understand where e-bikes and golf carts can legally operate.',
+   enh:[['Education first','Appropriate when circumstances allow and the violation can be safely corrected'],['Citation factors','Unlawful roadway/location use · unsafe operation · equipment violation · prohibited area · minor operating unlawfully'],['Impound factors','Continued operation creates safety risk · vehicle prohibited from area · operator cannot lawfully continue · repeat/serious violation'],['Consistency','Use professional, fair, and consistent enforcement; explain the specific rule violated']],
+   arr:'Enforcement-discretion card. Choose education, warning, citation, or impoundment based on violation, risk, age, repeat conduct, and policy.',
+   note:'For repeat or dangerous violations, document prior education/warnings, rider/parent statements, risk created, location, and why continued operation could not safely continue.'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB09', off:'Officer Field Checklist: E-Bike / Golf Cart Call', stat:'Westfield field checklist', auth:A.REF,
+   elem:'On an e-bike, e-moto, ORV, or golf-cart call, first identify the device and location. Then decide whether the issue is education, a citation/warning, parent notification, tow/impound, or another juvenile/civil procedure.',
+   enh:[['Device','Class label · pedals · wattage · assisted speed · throttle/off-road mode · golf-cart permit/equipment'],['Rider/operator','Age · helmet for Class 3 juvenile · driver’s license for golf cart · parent/guardian info for juveniles'],['Location','Roadway · sidewalk · city path adjacent to roadway · named trail · park · private neighborhood trail · authorized golf-cart map area'],['Disposition','Education/warning/citation/impound · parent contact · tow sheet/inventory if towed · report or CAD notes']],
+   arr:'Field-decision card — resulting authority depends on the specific violation and disposition.',
+   note:'Do not cite or tow based only on “it looks fast.” Build the classification: what is it, who is operating it, where is it being operated, and why is that location/use lawful or unlawful?'},
+
+  {cat:'E-Bikes/Golf Carts', num:'EB10', off:'Helpful Code / Ordinance Checkpoints', stat:'IC 9-21-11-13.1 · IC 14-16-1 · IC 35-46-1-8 · Westfield §93.02 / Ch.74', auth:A.REF,
+   elem:'Use this as the code-crosswalk card for e-bike/golf-cart/public-use calls. Confirm current Indiana Code, Westfield Code, posted signs, and official maps before enforcement when the rule turns on location or vehicle classification.',
+   enh:[['E-bikes','Indiana e-bike operation and class rules'],['ORV/e-dirt/unsafe operation','ORV roadway operation, unsafe ORV operation, and ORV registration issues'],['Juveniles','Contributing to delinquency may be relevant when an adult enables a child’s unlawful operation'],['Westfield local','Sidewalk/path/multi-use trail definitions; golf cart ordinance and permit/map resources']],
+   arr:'Reference/crosswalk card — not arrest authority by itself.',
+   note:'Use the guide for quick patrol orientation, then verify the exact statute/ordinance/map language if issuing a citation, impounding, or writing a formal report.'}
+
 
 ];
 
@@ -1140,5 +1221,5 @@ document.addEventListener('keydown',e=>{
 });
 render();
 </script>
-</body>
-</html>
+
+</body></html>
