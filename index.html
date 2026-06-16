@@ -1060,6 +1060,466 @@ const CARDS = [
     "note": "<b>Value drives the ordinary climb.</b> Do not rely on a guess when thresholds matter. Get repair/replacement estimate, invoice, owner statement, contractor/body-shop quote, photos/video, or facility damage report. Repair estimates and labor are commonly used in practice, but pollutant contamination expressly includes inspection/cleaning/decontamination costs.<br><br><b>Lack of consent:</b> document owner/lawful possessor, exact property, no permission, and whether suspect had ownership, lease, employment, repair, demolition, or co-owner authority. Be careful with contractor, tenant, spouse, business partner, or co-owner civil disputes.<br><br><b>Photograph damage/defacement:</b> close-ups, wide shots, size/extent, tools/paint/marker, cleanup burden, video/witnesses, tags/initials/social posts/admissions.<br><br><b>Adjacent offenses:</b> arson or controlled-substance fire/explosion; UEOMV when steering/ignition damaged during vehicle entry; residential entry/burglary plus mischief for break-in damage; cemetery mischief for burial-ground damage; foreclosure mischief if statutory facts fit; utility sabotage/service interruption if public service affected."
   },
   {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS01",
+    "off": "Core Rule / Theft Call Mindset",
+    "stat": "IC 35-43-4 workflow",
+    "auth": "reference",
+    "elem": "Theft calls are not just “something is missing.” The patrol mission is to identify the property, owner/lawful possessor, suspect control, whether control was unauthorized, intent to deprive, value/enhancement facts, and available evidence.",
+    "enh": [
+      [
+        "FTO memory hook",
+        "Theft = property of another + unauthorized control + intent to deprive."
+      ],
+      [
+        "Biggest rookie issue",
+        "Failing to determine whether the suspect’s control was actually unauthorized. That separates theft, conversion, civil dispute, borrowed property, co-owner dispute, repossession, tow, misunderstanding, and lost property."
+      ],
+      [
+        "First nine questions",
+        "What is missing? Who owned/lawfully possessed it? Who took/used/possessed/retained/controlled it? Was control unauthorized? Intent to deprive? Value? Special property category? Correct offense bucket? Evidence available?"
+      ],
+      [
+        "Evidence targets",
+        "Video, receipts, witnesses, serial numbers, VIN, plate, GPS/AirTag, pawn records, marketplace listings, suspect statements, CAD/tow/repo checks."
+      ]
+    ],
+    "arr": "Reference/workflow card — no arrest authority by itself. Arrest authority comes from the mapped offense and level.",
+    "note": "A theft report should not simply say “victim said item was stolen.” It should explain unauthorized control, permission facts, intent to deprive, value, suspect identity when known, and evidence."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS02",
+    "off": "Theft Elements / Enhancement Basics",
+    "stat": "IC 35-43-4-2",
+    "auth": "exception",
+    "elem": "A person commits theft when the person knowingly or intentionally <b>exerts unauthorized control</b> over property of another person, <b>with intent to deprive</b> the other person of any part of its value or use.",
+    "enh": [
+      [
+        "Class A misdemeanor",
+        "Ordinary property theft below $750 with no special enhancement."
+      ],
+      [
+        "Level 6 felony",
+        "Value at least $750 and less than $50,000; property is a motor vehicle; property is a motor-vehicle component part; or qualifying prior unrelated theft/conversion/robbery/burglary."
+      ],
+      [
+        "Level 5 felony",
+        "Value at least $50,000; property is a firearm; valuable metal only when statutory infrastructure/public-safety conditions are met; or other listed statutory enhancement facts."
+      ],
+      [
+        "Report proof points",
+        "Property of another · unauthorized control · intent to deprive · ownership/value · suspect identity · enhancement category."
+      ],
+      [
+        "Good wording",
+        "“Victim stated he did not lend, sell, or give the item to anyone. Victim valued the drill at $249 and provided a receipt.”"
+      ]
+    ],
+    "arr": "Theft is listed as a statutory PC-arrest exception in Indiana’s warrantless-arrest statute. Confirm current IC 35-33-1-1, offense level, probable cause, and local/prosecutor expectations before custody.",
+    "note": "Value matters. $750 is the ordinary felony threshold; firearm theft is generally Level 5; motor vehicle/component-part theft is generally felony theft. Do not treat valuable metal as an automatic felony without the statutory infrastructure/safety facts."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS03",
+    "off": "Conversion vs Theft",
+    "stat": "IC 35-43-4-3",
+    "auth": "presence",
+    "elem": "Conversion is knowingly or intentionally exerting unauthorized control over property of another person. It does <b>not</b> require the same clearly provable intent-to-deprive element as theft.",
+    "enh": [
+      [
+        "Class A misdemeanor",
+        "Base criminal conversion."
+      ],
+      [
+        "Theft distinction",
+        "Theft: took/kept/sold/disposed/used property with intent to deprive owner of value/use. Conversion: unauthorized use/control, but intent to deprive may be weak, unclear, or not provable."
+      ],
+      [
+        "Level 6 motor-vehicle conversion",
+        "Unauthorized control over another person’s motor vehicle with intent to use it to assist in committing a crime."
+      ],
+      [
+        "Level 5 motor-vehicle conversion",
+        "Unauthorized control over another person’s motor vehicle and use of that vehicle to assist in committing a felony."
+      ],
+      [
+        "Examples",
+        "Phone taken during argument and later returned; borrowed item used beyond permission; vehicle used without permission to commit another offense."
+      ]
+    ],
+    "arr": "Base conversion is a misdemeanor and generally follows the presence rule unless another exception/offense applies. Felony conversion permits felony PC arrest.",
+    "note": "Do not treat conversion like the theft PC-arrest exception unless the actual theft elements are supported. Build unauthorized-control facts and explain why intent to deprive is or is not provable."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS04",
+    "off": "Receiving / Retaining / Disposing Stolen Property",
+    "stat": "IC 35-43-4-2 receiving/retaining theory",
+    "auth": "exception",
+    "elem": "Indiana theft law also covers knowingly or intentionally <b>receiving, retaining, or disposing</b> of property of another person that has been the subject of theft.",
+    "enh": [
+      [
+        "Key distinction",
+        "The suspect may not be the original thief. The issue is whether the suspect knowingly acquired, kept, sold, traded, or disposed of stolen property."
+      ],
+      [
+        "Knowledge indicators",
+        "Unusually low purchase price, altered/removed serial, damaged ignition, mismatched plate, recently stolen return, changing story, multiple stolen items, marketplace sale/trade, no receipt/seller information, admission, confirmed stolen hit."
+      ],
+      [
+        "Possession alone caution",
+        "Possession of stolen property is important but not always enough. Document why the possessor knew or reasonably should have known it was stolen."
+      ],
+      [
+        "Possessor questions",
+        "Where did you get it? When? From whom? Price? Receipt/messages? Did you know it was stolen? Why serial removed? Why plate mismatched? Why ignition damaged?"
+      ]
+    ],
+    "arr": "Arrest authority follows theft theory/level and statutory theft exception, but PC must include knowledge or strong inference of knowledge. Felony-level property may support felony PC arrest when elements are met.",
+    "note": "Strong report formula: stolen confirmation + exact match + possession/control + suspicious acquisition facts + knowledge inference + evidence handling."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS05",
+    "off": "Auto Theft / Motor Vehicle Theft Workflow",
+    "stat": "IC 35-43-4-2 motor vehicle theft",
+    "auth": "felony",
+    "elem": "Theft of a motor vehicle is generally felony theft because the property is a motor vehicle. The patrol problem is usually not the code section; it is permission, revocation, tow/repo, co-owner, and civil-dispute analysis.",
+    "enh": [
+      [
+        "Before stolen entry",
+        "Verify not towed, repossessed, borrowed with unresolved permission, taken by co-owner, involved in a civil dispute, impounded by another agency, or misplaced."
+      ],
+      [
+        "Core questions",
+        "Owner/lawful possessor, reporting-party authority, last known location/time, last known driver, permission status, whether permission was revoked, keys/GPS/telematics, VIN/plate/make/model/color/year, suspect info."
+      ],
+      [
+        "Borrowed vehicle trap",
+        "Get agreed return date/time, revocation demand, method of demand, suspect acknowledgement, refusal/ignoring, and facts showing intent to deprive."
+      ],
+      [
+        "Entry seriousness",
+        "Stolen vehicle entry is a serious LE action. Confirm VIN/plate, vehicle identity, authority to report, and no non-theft explanation identified."
+      ]
+    ],
+    "arr": "Motor-vehicle theft is generally felony PC arrest if suspect is located and facts support unauthorized control plus intent to deprive. Confirm entry/hit procedures through IDACS/NCIC/local policy.",
+    "note": "Do not skip tow, repo, permission, revocation, co-owner, family use, or civil-dispute analysis. Document what was checked before stolen entry."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS06",
+    "off": "License Plate Theft / Plate Issues",
+    "stat": "IC 35-43-4-2 property theft · IDACS/NCIC procedure",
+    "auth": "exception",
+    "elem": "A stolen license plate is property theft and also creates officer-safety, IDACS/NCIC, and future-crime concerns because plates may be used to conceal stolen vehicles, fuel thefts, toll/camera violations, burglaries, and traffic-stop identity issues.",
+    "enh": [
+      [
+        "Initial questions",
+        "Which plate: front, rear, temporary, or both? Plate number/state/expiration? Vehicle VIN/year/make/model/color? Last seen? Location? Screws/bracket/frame damage? Video/suspicious persons? Notices from tolls/fuel/parking/cameras?"
+      ],
+      [
+        "Report must include",
+        "Plate number, state, expiration, vehicle identifiers, registered owner, timeframe, location, which plate missing, whether entered as stolen under procedure, and victim instructions."
+      ],
+      [
+        "Physical observations",
+        "Plate missing, screws absent, bracket damaged, frame missing, front/rear plate status, vehicle still in victim possession."
+      ],
+      [
+        "Future-risk note",
+        "A stolen plate may return on a stop later with the wrong vehicle. Clean data entry and clear notes protect officers."
+      ]
+    ],
+    "arr": "Arrest authority follows theft/property level and PC facts. Plate theft often begins as report/entry/evidence documentation unless suspect and authority are established.",
+    "note": "Suggested phrase: “Victim stated no one had permission to remove or possess the plate. I observed the rear plate missing and the mounting screws absent. The plate was entered as stolen according to department procedure.”"
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS07",
+    "off": "Theft Decision Tree / Unauthorized Control",
+    "stat": "IC 35-43-4-1 / IC 35-43-4-2",
+    "auth": "reference",
+    "elem": "Every theft call should move through four checkpoints: is property actually missing, was control unauthorized, is there intent to deprive, and what is the value/evidence.",
+    "enh": [
+      [
+        "Step 1 — Missing?",
+        "Stolen, lost, misplaced, borrowed, repossessed, towed, civilly withheld, or moved by someone with access? Last seen? First discovered missing? Cameras? Known suspect?"
+      ],
+      [
+        "Step 2 — Unauthorized?",
+        "Permission ever given? Permission revoked? Written agreement? Loan/rental? Business, custody, roommate, family, employment, ownership claim?"
+      ],
+      [
+        "Step 3 — Intent to deprive?",
+        "Fled, concealed, sold/pawned, refused return after demand, changed story, removed identifiers, deleted accounts/messages, used as own, traded, abandoned damaged property, no plausible claim of right."
+      ],
+      [
+        "Step 4 — Value?",
+        "Receipt, bank statement, online listing, owner estimate, serial/model number, replacement/fair-market value, business inventory record."
+      ],
+      [
+        "Step 5 — Evidence?",
+        "Video, doorbell/neighbor/business cameras, GPS/AirTag, serial numbers, pawn/marketplace, receipts, witnesses, vehicle descriptions, plates."
+      ]
+    ],
+    "arr": "Decision-framework card — no arrest authority by itself.",
+    "note": "Get exact value because $750 drives ordinary felony analysis. Get exact time window because it drives video collection and suspect opportunity."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS08",
+    "off": "Civil Dispute / Claim of Right Filter",
+    "stat": "Property of another · unauthorized control · intent",
+    "auth": "reference",
+    "elem": "A claim of right does not automatically make the matter civil, but it complicates theft analysis by raising questions about property of another, unauthorized control, and intent to deprive.",
+    "enh": [
+      [
+        "Common traps",
+        "Contractor deposit, roommate property, ex refusing belongings, employee work equipment, borrowed vehicle, rental item, customer bill dispute, family/shared property."
+      ],
+      [
+        "Theft indicators",
+        "No legitimate ownership claim, clear demand for return, admitted refusal, sale/pawn, false explanation, secret taking, locked-area taking, no permission, fake identity, disappearance, documentation."
+      ],
+      [
+        "Civil indicators",
+        "Shared/unclear ownership, verbal agreement dispute, contract-performance dispute, divorce/property division, landlord/tenant, employer/employee terms unclear, claimed collateral, borrowing terms unclear."
+      ],
+      [
+        "Claim questions",
+        "Ownership/partial ownership? Purchase contribution? Gift? Joint ownership? Title/receipt/bill of sale/registration/lease/contract/text/court order? Prior possession? Secret/force/open taking? Sold/hidden/damaged/refused?"
+      ],
+      [
+        "Report phrase",
+        "“Ownership and permission were disputed. I documented both claims, requested receipts/messages/photos/court orders, and advised against further self-help action pending review.”"
+      ]
+    ],
+    "arr": "Reference/filter card — no arrest authority by itself. If facts remain genuinely disputed, report/prosecutor review may be cleaner than on-scene arrest.",
+    "note": "Do not decide ownership based on who is louder or more convincing. Document the claim, the evidence, and the permission facts."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS09",
+    "off": "Stolen Vehicle Tow / Repo / Borrowed Trap",
+    "stat": "Auto theft pre-entry checklist",
+    "auth": "reference",
+    "elem": "Before entering a vehicle as stolen, rule out common non-theft explanations: private-property tow, apartment/HOA tow, repossession, family/co-owner movement, borrowed-vehicle misunderstanding, crash tow, impound by another agency, or parking-location mistake.",
+    "enh": [
+      [
+        "Check before entry",
+        "CAD history for plate/VIN/address/owner; local tow records; apartment towing vendor; posted signs/management; repossession indicators; family/household/co-owner use; prior permission; tracking/telematics; other-agency impound."
+      ],
+      [
+        "Apartment/business lot questions",
+        "Reserved/visitor/fire-lane/handicap/permit area? Contracted tow company? Management authorized? Signs? Expired plates/abandoned? Maintenance/snow/construction movement?"
+      ],
+      [
+        "Repo questions",
+        "Lienholder? Behind on payments? Lender notices? Finance-company GPS? Disappeared without broken glass/forced-entry indicators?"
+      ],
+      [
+        "Borrowed vehicle questions",
+        "Return date/time? Clear revocation? Demand method? Suspect acknowledged? Refusal/ignoring? Facts showing intent to deprive?"
+      ],
+      [
+        "Report phrase",
+        "“Prior to stolen entry, I checked CAD, available tow information, repossession/lienholder facts, management/tow vendor, family/co-owner use, and prior permission. No non-theft explanation was identified at the time.”"
+      ]
+    ],
+    "arr": "Pre-entry procedure card — arrest authority comes from the final auto-theft/theft facts.",
+    "note": "This is a major FTO decision point: a stolen vehicle entry affects every later officer who encounters that vehicle."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS10",
+    "off": "Recovered Stolen Property Workflow",
+    "stat": "IDACS/NCIC hit confirmation · evidence handling",
+    "auth": "reference",
+    "elem": "When possible stolen property is located, confirm the stolen status, exact match, entering agency/case, hit confirmation, possessor knowledge, release authority, and evidence-hold needs before final disposition.",
+    "enh": [
+      [
+        "Confirm",
+        "Actually stolen? Case number? Agency entering? Serial/VIN/plate match? Hit confirmation completed? Does it need to be held for evidence? Can it be released?"
+      ],
+      [
+        "Possessor interview",
+        "Where did you get it? When? Who sold/gave it? How much? Receipt/messages? Did you know stolen? Why serial removed? Why plate mismatched? Why ignition damaged?"
+      ],
+      [
+        "Evidence handling",
+        "Exact location found, who possessed it, condition, photos, serial/VIN/plate match, chain of custody, owner ID, release/book evidence, processing needs, other agency notification."
+      ],
+      [
+        "Knowledge facts",
+        "Low price, no seller information, altered serial, damaged ignition, mismatched plate, false story, multiple stolen items, recent theft, admissions."
+      ]
+    ],
+    "arr": "Recovered-property procedure — arrest authority depends on theft/receiving PC and offense level. Do not arrest only because an item is stolen; articulate possessor knowledge/control.",
+    "note": "Suggested phrase: “Dispatch confirmed the stolen hit. The possessor stated he bought the $500 item from an unknown male for $20 and could not provide seller information; the serial plate appeared scratched.”"
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS11",
+    "off": "Retail Theft / Organized Retail Theft Workflow",
+    "stat": "IC 35-43-4-2 / IC 35-43-4-2.2",
+    "auth": "exception",
+    "elem": "Retail theft requires more than loss prevention saying “they stole.” Build PC from observations: selection, concealment, tag switch/under-ring, bypassing points of sale, recovery, value, video, and suspect identity. Organized retail theft requires resale/distribution intent.",
+    "enh": [
+      [
+        "LP questions",
+        "What did suspect select? Where concealed? Passed all points of sale? Failed to scan? Switched tags/barcodes? Under-rang? Returned stolen merchandise? Used booster bags/tools? Video? Receipt/inventory proof? Wants prosecution? Property recovered? Total pre-tax value? Prior trespass?"
+      ],
+      [
+        "Basic shoplifting proof",
+        "Selection + concealment/price manipulation + bypassed payment point or other prima facie facts + no payment + value + recovery/evidence."
+      ],
+      [
+        "Organized retail theft flags",
+        "Multiple suspects, coordinated entry/exit, booster bags, large quantity same/similar items, high-value merchandise, resale indicators, prior incidents, staging vehicle, tools to defeat anti-theft, online resale accounts, multiple-store receipts."
+      ],
+      [
+        "Report phrase",
+        "“LP observed suspect select two Nike shoes valued at $129.99 each, conceal them in backpack, pass all points of sale without paying, and exit. Merchandise recovered; total pre-tax value $259.98.”"
+      ]
+    ],
+    "arr": "Theft is a statutory PC-arrest exception when PC exists. Organized retail theft is felony PC arrest when resale/distribution intent and elements are supported.",
+    "note": "Total value should be pre-tax merchandise value. Identify video, receipt/item list, LP witness, recovery, and store prosecution preference."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS12",
+    "off": "Construction Site / Tool Theft / Vehicle Break-Ins",
+    "stat": "Theft report descriptors · recovery identifiers",
+    "auth": "reference",
+    "elem": "Tool, construction-site, and theft-from-vehicle reports often fail because the report lacks the exact item, serial number, time window, location, locked/unlocked status, forced entry, and unique identifiers needed for recovery.",
+    "enh": [
+      [
+        "Tool descriptors",
+        "Brand, model, serial number, color, unique markings, company inventory number, value, purchase date, receipt, photos, GPS tags, owner-applied numbers."
+      ],
+      [
+        "Vehicle break-in questions",
+        "Locked/unlocked? Forced entry? Which door/window? Damage? Exactly what taken? Rummaged? Fingerprint/DNA realistic? Cameras? Time window? Suspicious vehicles?"
+      ],
+      [
+        "Tool priority questions",
+        "Exact tool, brand/model/serial, engraved initials, paint/stickers/tape/unique damage, tracking, photos/receipts, manufacturer registration, marketplace/pawn listings, other jobsite thefts, who had access, locked trailer/unlocked vehicle/open bed/garage/storage."
+      ],
+      [
+        "Marketplace/pawn caution",
+        "Tell victim not to arrange vigilante recovery. Preserve screenshots, usernames, URLs, messages, listed price, seller location, and contact police."
+      ],
+      [
+        "Strong descriptor example",
+        "“Milwaukee M18 Fuel 1/2 inch impact wrench, serial B72AD1938, blue paint on battery base, ‘JTC’ engraved near handle, stolen from locked job trailer.”"
+      ]
+    ],
+    "arr": "Report/evidence card — no arrest authority by itself.",
+    "note": "For tool theft, the serial number can be the difference between “unknown property missing” and a recoverable case."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS13",
+    "off": "Arrest Authority / Disposition",
+    "stat": "IC 35-33-1-1 · theft/conversion/property levels",
+    "auth": "reference",
+    "elem": "Do not arrest just because property is missing. Arrest when you can articulate property of another, unauthorized control, intent to deprive if theft, suspect identity, value/enhancement, and a lawful arrest-authority route.",
+    "enh": [
+      [
+        "Misdemeanor theft",
+        "Theft is listed as a statutory PC-arrest exception; still verify PC, identity, and department/prosecutor practice."
+      ],
+      [
+        "Conversion",
+        "Base conversion generally follows the misdemeanor presence rule unless another exception/offense applies. Felony conversion permits felony PC arrest."
+      ],
+      [
+        "Felony theft",
+        "Felony PC arrest may apply when value is $750+, property is a motor vehicle/component part, property is firearm, or other felony enhancement applies."
+      ],
+      [
+        "Firearm theft",
+        "Firearm theft is generally Level 5 felony under current theft statute. Treat as serious and document firearm identifiers and entry/evidence procedures."
+      ],
+      [
+        "Receiving stolen property",
+        "Arrest depends on stolen-property confirmation, possession/control, knowledge facts, value/enhancement, and authority."
+      ],
+      [
+        "Common dispositions",
+        "Report/prosecutor review, summons/long-form, warrant request, evidence booking, stolen entry, recovered-property return/hold, or physical arrest when authority and facts support it."
+      ]
+    ],
+    "arr": "Master authority card for this section. Confirm current statute, WPD policy, FTO/supervisor direction, and Hamilton County prosecutor preference before custody in close cases.",
+    "note": "Probable cause and arrest authority are related but not identical. Especially with misdemeanors, conversion, civil disputes, and borrowed property, slow down and identify the correct legal lane."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS14",
+    "off": "Report Writing Templates",
+    "stat": "Theft / auto theft / plate theft / recovered property",
+    "auth": "reference",
+    "elem": "Use templates to force the report to include ownership, permission, time window, identifiers, value, evidence, and disposition.",
+    "enh": [
+      [
+        "Basic theft",
+        "Dispatched to [location] for theft. Victim stated [property] was taken from [location] between [date/time]. Victim owned/lawfully possessed it and did not permit anyone to take/use/possess it. Property described as [brand/model/serial/value]. Evidence: [video/witness/receipt/GPS]."
+      ],
+      [
+        "Auto theft",
+        "Victim stated [year/make/model/color/VIN/plate] was taken from [location] between [time/date]. Victim owns/possesses vehicle and did not give permission. I confirmed no known tow/repo/family/co-owner explanation based on [checks]. Vehicle entered stolen per procedure."
+      ],
+      [
+        "Borrowed vehicle",
+        "Permission was given until [date/time] for [purpose]. Permission revoked by [text/call/in person]. Suspect acknowledged demand and [refused/failed] to return. Victim stated suspect no longer had permission."
+      ],
+      [
+        "Plate theft",
+        "Victim stated [front/rear/both] plate [state/number] was removed from [vehicle] between [time/date]. Victim gave no permission. I observed [missing plate/screws/bracket damage]. Plate entered stolen per procedure."
+      ],
+      [
+        "Recovered property",
+        "Located [property] at [location] in possession of [person]. Matched stolen entry by [agency/case] through [serial/VIN/plate]. Dispatch confirmed hit. Property [booked/released] per policy. Possessor stated [explanation]."
+      ]
+    ],
+    "arr": "Report-writing card — no arrest authority by itself.",
+    "note": "Templates must be adapted to facts. Avoid writing “stolen” as a conclusion without ownership, permission, intent, value, and evidence."
+  },
+  {
+    "cat": "Theft / Stolen Property / Auto Theft / Plate Theft",
+    "num": "TS15",
+    "off": "Rookie Mistakes / FTO Self-Test",
+    "stat": "Theft investigation checklist",
+    "auth": "reference",
+    "elem": "Theft-call mistakes usually come from incomplete ownership/permission analysis, weak identifiers, missed felony thresholds, or failure to rule out non-theft explanations.",
+    "enh": [
+      [
+        "Common rookie mistakes",
+        "Writing “stolen” without unauthorized-control facts; no intent-to-deprive facts; no exact value; firearm theft wrongly treated as Level 6; valuable metal assumed felony; no serial numbers; weak time window; borrowed vehicle entered stolen too fast; civil dispute forced into theft; claim-of-right ignored; no tow/repo check; stolen hit not confirmed."
+      ],
+      [
+        "Self-test property/permission",
+        "What property? Who owns/lawfully possesses it? Who took/controlled? Permission ever given? Revoked? How do I know unauthorized? Claim of right? Evidence supports/contradicts claim?"
+      ],
+      [
+        "Self-test intent/value",
+        "What facts show intent to deprive? Exact value? $750 threshold? Motor vehicle/component part? Firearm? Valuable metal with statutory infrastructure/safety facts?"
+      ],
+      [
+        "Self-test evidence",
+        "Video, witnesses, serial/VIN/plate/GPS/receipts? Market/pawn follow-up? CAD/tow/repo/family/co-owner checks? Stolen entry needed? Evidence booking?"
+      ],
+      [
+        "Self-test authority",
+        "Can I articulate suspect identity, PC, value/enhancement, knowledge if stolen property, and the arrest-authority lane? Report/prosecutor review instead?"
+      ]
+    ],
+    "arr": "Training checklist — no arrest authority by itself.",
+    "note": "Final memory hook: Theft = unauthorized control + intent to deprive. Conversion = unauthorized control without clearly provable deprivation intent. Receiving stolen property = possession/control plus knowledge facts. Auto theft = rule out permission, tow, repo, co-owner, and civil dispute. Plate theft = small-dollar loss, high officer-safety value."
+  },
+  {
     "cat": "Persons",
     "num": "8.5",
     "off": "Robbery",
@@ -9113,6 +9573,6 @@ document.addEventListener('keydown',e=>{
 });
 render();
 </script>
-<!-- HTS deck build: 340 cards, 24 sections, sha256 cards eb984b1a8e4b0bc0 -->
+<!-- Theft deck build: 355 cards, 25 sections, sha256 cards 66105d446ab28eed -->
 </body>
 </html>
