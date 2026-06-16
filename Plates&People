@@ -1,68 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westfield Patrol: Workflow Flashcards</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Person Check vs Plate Check — IDACS/NCIC/MyCase FTO Cheat-Sheet</title>
 <style>
-:root { --bg:#0F141A; --surface:#1A222C; --ink:#E8EDF2; --muted:#94A3B2; --presence:#5B92C4; --exception:#E6A23C; --accent:#4FB3A6; }
-body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; padding: 20px; }
-.wrap { max-width: 600px; margin: 0 auto; }
-header { margin-bottom: 20px; }
-h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; text-transform: uppercase; color: var(--accent); }
-.card { background: var(--surface); border: 1px solid #2C3845; border-radius: 16px; padding: 30px; min-height: 400px; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.3s; }
-.card:hover { border-color: var(--presence); }
-.cat { font-family: 'IBM Plex Mono'; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
-.title { font-family: 'Barlow Condensed'; font-size: 28px; margin: 10px 0; color: #fff; }
-.content { font-size: 15px; line-height: 1.6; color: #D6DEE6; }
-.reminder { margin-top: auto; padding-top: 20px; color: var(--exception); font-family: 'IBM Plex Mono'; font-size: 13px; border-top: 1px solid #2C3845; }
-.controls { display: flex; gap: 10px; margin-top: 20px; }
-button { background: var(--surface); border: 1px solid #2C3845; color: var(--ink); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-family: 'IBM Plex Mono'; }
-button:hover { background: #222C38; }
+:root{
+  --bg:#0f141a; --bg2:#0a0e13; --surface:#18212b; --surface2:#222d39;
+  --line:#2f3d4b; --ink:#edf3f8; --muted:#a1adba; --faint:#697787;
+  --blue:#6ea6d8; --teal:#55c0af; --gold:#e7ae52; --red:#e06a5f; --green:#71c287;
+  --shadow:0 22px 56px -28px rgba(0,0,0,.82);
+  --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100%;
+  background:
+    radial-gradient(900px 520px at 82% -10%, rgba(110,166,216,.16), transparent 65%),
+    radial-gradient(800px 440px at 8% 105%, rgba(231,174,82,.09), transparent 60%),
+    linear-gradient(180deg,#111820,#0f141a 45%,#0a0e13);
+  color:var(--ink);
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height:1.55;
+  padding:clamp(16px,3vw,36px);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1060px;margin:0 auto}
+.kicker{font:700 11px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+header{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;margin-bottom:20px}
+h1{font-size:clamp(36px,7vw,70px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin-top:8px}
+.sub{color:var(--muted);max-width:70ch;font-size:14px;margin-top:10px}.nameplate{border:1px solid var(--line);background:rgba(24,33,43,.75);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow);min-width:240px}.nameplate strong{display:block;font-size:15px}.nameplate span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0}.search{flex:1 1 240px;display:flex;align-items:center;gap:8px;background:rgba(24,33,43,.9);border:1px solid var(--line);border-radius:999px;padding:10px 14px}.search input{width:100%;background:transparent;border:0;outline:0;color:var(--ink);font-size:14px}.search input::placeholder{color:var(--faint)}.btn,.chip{font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:11px 13px;cursor:pointer;transition:.15s}.btn:hover,.chip:hover{border-color:var(--blue);color:var(--ink);transform:translateY(-1px)}.btn.primary,.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#06121e}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}.panel{background:linear-gradient(180deg,rgba(34,45,57,.96),rgba(24,33,43,.96));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.panel.pad{padding:20px}.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.section-title h2{font-size:18px;text-transform:uppercase;letter-spacing:.02em}.section-title small{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--faint)}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 20px}.quick .q{background:rgba(10,14,19,.5);border:1px solid var(--line);border-radius:16px;padding:13px}.q b{display:block;color:var(--ink);font-size:13px}.q span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.accentbar{height:5px;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--gold));margin-bottom:14px}.cardstage{perspective:1500px}.studycard{min-height:530px;position:relative;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1);cursor:pointer}.studycard.flipped{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface2),var(--surface));box-shadow:var(--shadow);padding:26px;overflow:hidden;display:flex;flex-direction:column}.face.back{transform:rotateY(180deg)}.band{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--blue);border-radius:var(--radius) 0 0 var(--radius)}.cat-Core-Rules .band{background:var(--gold)}.cat-Person-Check .band{background:var(--blue)}.cat-Plate-Check .band{background:var(--teal)}.cat-MyCase .band{background:var(--red)}.cat-Pocket-Version .band{background:var(--green)}.cardtop{display:flex;justify-content:space-between;gap:14px;color:var(--faint);font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.16em}.cardtitle{font-size:clamp(31px,5vw,52px);line-height:.98;letter-spacing:-.035em;text-transform:uppercase;margin:auto 0 10px}.hook{color:var(--muted);font-size:18px;max-width:25ch}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}.tag{font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;color:var(--muted);background:rgba(10,14,19,.6);border:1px solid var(--line);border-radius:8px;padding:7px 8px}.hint{position:absolute;left:26px;bottom:22px;font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--faint);letter-spacing:.08em;text-transform:uppercase}.scroll{overflow-y:auto;padding-right:8px;margin-right:-8px;min-height:0}.scroll::-webkit-scrollbar{width:8px}.scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}.quote{border-left:3px solid var(--gold);background:rgba(231,174,82,.07);padding:12px 14px;border-radius:0 12px 12px 0;color:#f2e1c3;margin:12px 0 16px;font-size:15px}.list{display:grid;gap:8px;margin-top:8px}.item{display:flex;gap:10px;align-items:flex-start;background:rgba(10,14,19,.35);border:1px solid rgba(47,61,75,.7);border-radius:12px;padding:10px 11px;color:#dce6ee;font-size:13.5px}.item:before{content:"✓";color:var(--teal);font-weight:800;margin-top:-1px}.block{margin:12px 0}.block h4{font:800 11px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:7px}.controls{display:flex;align-items:center;gap:10px;margin-top:14px}.controls .btn.primary{flex:1}.counter{font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);min-width:76px;text-align:center}.meterwrap{height:6px;background:var(--surface);border:1px solid var(--line);border-radius:99px;overflow:hidden;margin-top:13px}.meter{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));transition:.25s}.compare{overflow:auto}.compare table{width:100%;border-collapse:collapse;font-size:13px}.compare th{position:sticky;top:0;background:#111820;color:var(--ink);text-align:left}.compare th,.compare td{border-bottom:1px solid var(--line);padding:10px 9px;vertical-align:top}.compare td:first-child{color:var(--muted);width:34%}.truth{display:grid;gap:10px}.truth .row{display:grid;grid-template-columns:140px 1fr;gap:10px;border:1px solid var(--line);background:rgba(10,14,19,.35);border-radius:14px;padding:11px}.truth b{color:var(--teal)}.sourcegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.source{border:1px solid var(--line);background:rgba(10,14,19,.45);border-radius:14px;padding:12px}.source strong{display:block;font-size:13px}.source p{font-size:12px;color:var(--muted);margin-top:4px}.allcards{display:none;margin-top:20px}.print-card{break-inside:avoid;background:white;color:#111;border:1px solid #cfd6de;border-radius:12px;padding:16px;margin:0 0 12px}.print-card h3{font-size:18px;margin-bottom:4px}.print-card small{color:#445}.print-card ul{margin:10px 0 0 20px}.disclaimer{font-size:12px;color:var(--muted);margin-top:14px}.footer{margin:20px 0 0;color:var(--faint);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:880px){header{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}.studycard{min-height:560px}.sourcegrid{grid-template-columns:1fr}}
+@media(max-width:540px){body{padding:14px}.quick{grid-template-columns:1fr}.face{padding:22px}.studycard{min-height:600px}.truth .row{grid-template-columns:1fr}.controls{flex-wrap:wrap}.controls .btn.primary{flex:1 1 100%;order:-1}}
+@media(prefers-reduced-motion:reduce){.studycard{transition:none}}
+@media print{
+  body{background:white;color:#111;padding:0;font-family:Arial,sans-serif}.wrap{max-width:none}.toolbar,.chips,.grid .panel:first-child,.controls,.meterwrap,.footer{display:none!important}header{display:block;margin:0 0 10px;padding:0}.nameplate{box-shadow:none;border:1px solid #aaa;background:white}.sub,.kicker{color:#333}.grid{display:block}.panel{box-shadow:none;border:0;background:white}.panel.pad{padding:0}.quick,.compare,.truth,.sourcegrid{page-break-inside:avoid}.allcards{display:block}.disclaimer{color:#222}.source{background:white;color:#111;border:1px solid #ccc}.source p{color:#333}a{color:#111;text-decoration:underline}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-    <header>
-        <h1>Patrol Workflow</h1>
-        <p style="color: var(--muted);">IDACS/NCIC Confirmation & Decision Logic</p>
-    </header>
+<header>
+  <div>
+    <div class="kicker">Westfield, Indiana · FTO Study Page</div>
+    <h1>Person Check vs. Plate Check</h1>
+    <p class="sub">IDACS / NCIC / MyCase patrol cheat-sheet built for fast rookie learning: identify the legal purpose, separate lead from confirmation, avoid RO-driver mistakes, and document the action cleanly.</p>
+  </div>
+  <div class="nameplate">
+    <strong>Edward Poynter</strong>
+    <span>Rookie Patrol Officer · FTO Reference</span>
+    <span>Person status ≠ vehicle status ≠ court context</span>
+  </div>
+</header>
 
-    <div class="card" id="card" onclick="flip()">
-        <div id="front">
-            <div class="cat" id="cat">Person Check</div>
-            <div class="title" id="title">Step 1: Identify</div>
-            <div class="content" id="content">Ask: "Do I have enough identifiers to trust this return?" Use full name, DOB, sex/race, DLN, and physical descriptors.</div>
-            <div class="reminder" id="reminder">Rookie Reminder: Name and DOB are not automatic proof of identity.</div>
-        </div>
+<section class="quick" aria-label="Quick learning hooks">
+  <div class="q"><b>Person Check</b><span>Identity + legal status + safety.</span></div>
+  <div class="q"><b>Plate Check</b><span>Vehicle/property status + RO lead.</span></div>
+  <div class="q"><b>MyCase</b><span>Court context, not hit confirmation.</span></div>
+  <div class="q"><b>FTO Rule</b><span>Confirm before enforcement action.</span></div>
+</section>
+
+<div class="toolbar">
+  <div class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search: warrant, VIN, MyCase, PO, stolen plate…" /></div>
+  <button class="btn" id="printBtn">Print / Save PDF</button>
+  <button class="btn" id="resetBtn">Reset</button>
+</div>
+<div class="chips" id="chips"></div>
+
+<div class="grid">
+  <section>
+    <div class="cardstage">
+      <article class="studycard" id="studycard" tabindex="0" aria-label="Study card; press space to flip">
+        <!-- injected -->
+      </article>
     </div>
-
     <div class="controls">
-        <button onclick="prev()">◀ Prev</button>
-        <button onclick="next()">Next ▶</button>
+      <button class="btn primary" id="flipBtn">Flip Card</button>
+      <button class="btn" id="prevBtn" aria-label="Previous card">◀</button>
+      <div class="counter" id="counter"></div>
+      <button class="btn" id="nextBtn" aria-label="Next card">▶</button>
+      <button class="btn" id="shuffleBtn" aria-label="Shuffle filtered deck">⤮</button>
     </div>
+    <div class="meterwrap"><div class="meter" id="meter"></div></div>
+  </section>
+
+  <aside class="panel pad">
+    <div class="accentbar"></div>
+    <div class="section-title"><h2>Decision Map</h2><small>Lead vs. confirmation</small></div>
+    <div class="truth">
+      <div class="row"><b>Person hit</b><span>Confirm identity, active status, pickup/extradition, and originating-agency confirmation before action based on the hit.</span></div>
+      <div class="row"><b>Plate hit</b><span>Confirm plate/state/type, vehicle description, VIN when needed, and originating-agency hit confirmation before seizure/recovery.</span></div>
+      <div class="row"><b>RO hit</b><span>Registered owner is a lead. Identify the driver and confirm any person hit separately.</span></div>
+      <div class="row"><b>MyCase</b><span>Use for court context only. It does not replace IDACS/NCIC, POR, dispatch, court, or originating-agency confirmation.</span></div>
+    </div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+    <div class="section-title"><h2>Person vs. Plate</h2><small>fast compare</small></div>
+    <div class="compare">
+      <table>
+        <thead><tr><th>Issue</th><th>Person Check</th><th>Plate Check</th></tr></thead>
+        <tbody>
+          <tr><td>Primary question</td><td>Who is this person and what status matters?</td><td>Does this plate/vehicle return clean and match?</td></tr>
+          <tr><td>Best input</td><td>DLN/state ID, name/DOB, descriptors, photo.</td><td>Plate + state + type; VIN when needed.</td></tr>
+          <tr><td>Main risk</td><td>Wrong person or unconfirmed warrant/order.</td><td>Assuming RO is driver or stolen plate = stolen vehicle.</td></tr>
+          <tr><td>Confirmation</td><td>Warrants, PO/NCO, missing/runaway, pickup/extradition.</td><td>Stolen plate, stolen vehicle, VIN mismatch, person hits separately.</td></tr>
+          <tr><td>Report focus</td><td>Identifiers, return, confirmation, action.</td><td>Observation, mismatch/hit, confirmation, disposition.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
 </div>
 
-<script>
-const deck = [
-    { cat:"Person Check", t:"Step 1: Identify", c:"Ask: 'Do I have enough identifiers to trust this return?' Use full name, DOB, sex/race, DLN, and physical descriptors.", r:"Rookie Reminder: Name and DOB are not automatic proof of identity." },
-    { cat:"Person Check", t:"Step 4: Confirm Before Action", c:"Confirm warrant/wanted matches subject. Request IDACS/NCIC hit confirmation through dispatch. Confirm pickup/extradition limits.", r:"Rookie Reminder: A possible hit changes tactics. A confirmed hit supports enforcement action." },
-    { cat:"Plate Check", t:"Step 3: Compare", c:"Does the return match what you see? Compare: State, Type, Year/Make/Model, Color, and VIN.", r:"Rookie Reminder: The registered owner is not automatically the driver." },
-    { cat:"Plate Check", t:"Step 4: Separate Legal Issues", c:"Stolen Plate ≠ Stolen Vehicle. RO Warrant/Suspension ≠ Driver Warrant/Suspension. Confirm person leads and property leads separately.", r:"Rookie Reminder: A plate hit is a property lead. A registered-owner hit is a person lead." },
-    { cat:"MyCase", t:"Patrol Use", c:"Use MyCase for court context (docket, charges, hearings, dispositions).", r:"Rookie Reminder: MyCase is NOT a live IDACS/NCIC system. Do not use it to confirm warrants or protection orders for enforcement." }
-];
+<section class="panel pad" style="margin-top:18px" id="sources">
+  <div class="section-title"><h2>Source Anchors</h2><small>training reference only</small></div>
+  <div class="sourcegrid" id="sourcegrid"></div>
+  <p class="disclaimer">Training aid only. Follow current Indiana law, NCIC/IDACS certification rules, Westfield PD policy, Hamilton County dispatch practice, prosecutor expectations, and FTO/supervisor direction.</p>
+</section>
 
-let i = 0;
-function flip() { /* Simple logic for card transitions */ }
-function next() { i = (i + 1) % deck.length; update(); }
-function prev() { i = (i - 1 + deck.length) % deck.length; update(); }
-function update() {
-    document.getElementById('cat').innerText = deck[i].cat;
-    document.getElementById('title').innerText = deck[i].t;
-    document.getElementById('content').innerText = deck[i].c;
-    document.getElementById('reminder').innerText = deck[i].r;
+<section class="allcards" id="allcards"></section>
+<div class="footer"><span>Keys: space = flip · ←/→ = move · / = search</span><span>Built for fast field review and print/PDF export.</span></div>
+</div>
+<script>
+const CARDS = [{"cat": "Core Rules", "title": "Authorized Purpose Only", "hook": "Do not run checks out of curiosity.", "bullets": ["Run checks only for an authorized law-enforcement/criminal-justice purpose. [High]", "Do not run people, plates, vehicles, addresses, or cases for friends/family, curiosity, or without a legitimate patrol/investigative purpose.", "Be ready to explain the purpose in CAD/RMS, to an FTO, supervisor, auditor, or court."], "quote": null, "blocks": [], "tags": ["IDACS", "audit", "purpose"]}, {"cat": "Core Rules", "title": "Returns Are Leads Until Verified", "hook": "A return guides the investigation; it does not replace judgment.", "bullets": ["A database return helps guide the investigation, but it does not replace identity confirmation, lawful authority, officer judgment, or agency policy. [High]", "Common-name hits, stale data, old addresses, and aliases can create bad matches.", "Confirm the identity and the hit before enforcement action based on that hit."], "quote": null, "blocks": [], "tags": ["lead", "verify", "identity"]}, {"cat": "Core Rules", "title": "Possible Hit vs. Confirmed Hit", "hook": "Do not collapse a possible hit into enforcement action.", "bullets": ["A possible warrant, wanted-person record, stolen plate, stolen vehicle, protection order, no-contact order, missing person, or runaway hit must be confirmed through the proper IDACS/NCIC or agency-approved hit-confirmation process before enforcement action based on that hit. [High]", "Possible hit = awareness/tactics. Confirmed hit = action may be supported if all other legal requirements are met."], "quote": null, "blocks": [], "tags": ["hit confirmation", "NCIC", "originating agency"]}, {"cat": "Core Rules", "title": "MyCase Is Context", "hook": "MyCase is not live IDACS/NCIC confirmation.", "bullets": ["Use MyCase to understand public court history, case status, hearings, charges, dispositions, and docket entries. [High]", "Do not use MyCase alone to confirm an active warrant, protection order, no-contact order, or enforcement authority.", "A no-result or incomplete result does not mean the person is clear."], "quote": null, "blocks": [], "tags": ["MyCase", "court context", "not confirmation"]}, {"cat": "Core Rules", "title": "Document What Matters", "hook": "Write the identifiers, return, confirmation, and action.", "bullets": ["Document in accordance with IDACS, NCIC, Westfield PD policy, and FTO/supervisor expectations. [High]", "Record the identifiers used, the relevant return, whether the hit was confirmed, and how the return supported your action.", "Do not dump unnecessary sensitive database information into a report."], "quote": null, "blocks": [], "tags": ["report", "policy", "audit"]}, {"cat": "Person Check", "title": "Purpose", "hook": "Who is this person and what legal status matters right now?", "bullets": ["Person checks primarily identify legal status and safety considerations.", "The key patrol outputs are identity, legal status, safety alerts, lawful authority, and documentation."], "quote": "Who is this person, what legal status matters right now, what safety concerns exist, and what lawful action is supported?", "blocks": [], "tags": ["identity", "legal status"]}, {"cat": "Person Check", "title": "Step 1 — Identify", "hook": "Do I have enough identifiers to trust this return?", "bullets": ["Full name", "Date of birth", "Sex/race", "Driver’s license number or state ID number, when available", "Physical descriptors", "Address, when useful", "Photo comparison, when available", "Aliases", "Scars, marks, tattoos", "SID/FBI number or other unique identifiers, when relevant", "Name and DOB can start the query, but they do not automatically prove the return belongs to your subject."], "quote": "Do I have enough identifiers to trust this return?", "blocks": [], "tags": ["ID", "DOB", "DLN"]}, {"cat": "Person Check", "title": "Step 2 — Query", "hook": "Use the authorized path that fits the lawful contact.", "bullets": ["Run the person only through the authorized IDACS/NCIC, BMV/Nlets, local RMS/CAD, or agency-approved system path that fits the lawful contact and official criminal-justice purpose. [High]", "Common contexts: traffic stop, pedestrian stop, crash, domestic, suspicious person, warrant service, welfare check, investigative detention, arrest/booking, missing/runaway investigation, PO/NCO investigation.", "Do not think: ‘I talked to them, so I can run them.’ Think: ‘What is the lawful criminal-justice purpose for this query?’"], "quote": null, "blocks": [], "tags": ["query", "authorized purpose"]}, {"cat": "Person Check", "title": "Step 3 — Read the Return Carefully", "hook": "Do not stop at clear or hit.", "bullets": ["Possible warrant or wanted-person hit", "Whether the identifiers match your subject", "Pickup limits", "Extradition information", "Driver’s license / BMV status", "Prior suspension or disqualification remarks", "Protection order or no-contact order", "Served/not served status, when relevant", "Protected party and respondent", "Specific prohibited conduct", "Missing, runaway, or endangered-person status", "Officer-safety or caution information", "Supervision, registry, or criminal-history information, if returned and authorized", "Aliases or mismatched identifiers", "Ask: Does this return actually match my person, and has anything requiring confirmation been confirmed?"], "quote": null, "blocks": [], "tags": ["read return", "warrants", "PO", "DL"]}, {"cat": "Person Check", "title": "Step 4 — Confirm Before Action", "hook": "Possible hit changes awareness; confirmed hit supports action.", "bullets": [], "quote": null, "blocks": [{"label": "Warrant or wanted-person hit", "items": ["Confirm descriptors match your subject.", "Request IDACS/NCIC hit confirmation through dispatch or the proper agency-approved method.", "Confirm pickup limits.", "Confirm extradition limits, if applicable.", "Wait for confirmation from the originating agency before enforcement action based on the warrant/wanted hit. [High]"]}, {"label": "Protection order or no-contact order", "items": ["Confirm the respondent.", "Confirm the protected party.", "Confirm the order is active.", "Confirm service status, if service matters.", "Confirm the specific prohibited conduct.", "Check for modifications, extensions, or revocations."]}, {"label": "Missing/runaway/endangered-person hit", "items": ["Confirm the hit.", "Confirm identity.", "Follow agency procedure for recovery, notification, transport, report, or release."]}], "tags": ["confirm", "originating agency", "PO", "runaway"]}, {"cat": "Person Check", "title": "Step 5 — Decide Lawful Action", "hook": "Match action to identity, confirmation, law, and policy.", "bullets": ["Possible outcomes: no action, warning, citation, summons, custodial arrest, PO/NCO enforcement, missing/runaway recovery, tow/impound, referral/report only, supervisor or FTO consult.", "Before acting, ask: Is the person properly identified? Is the hit confirmed? Is detention still lawful? Does Indiana law support the action? Does Westfield PD policy support the action? Does my FTO/supervisor expect consultation? Can I explain this clearly?"], "quote": null, "blocks": [], "tags": ["lawful action", "FTO", "detention"]}, {"cat": "Person Check", "title": "Step 6 — Document", "hook": "Good reports connect return, confirmation, and action.", "bullets": ["Dispatch advised of a possible warrant for a subject matching the provided name, DOB, and descriptors. Dispatch later advised the warrant was confirmed through the originating agency via IDACS/NCIC hit-confirmation procedure prior to arrest.", "Dispatch advised the respondent was subject to an active no-contact order protecting the passenger. The order showed served status and prohibited contact between the respondent and protected party.", "Dispatch advised the subject’s Indiana driver’s license returned suspended. Based on the return and the traffic stop investigation, I issued a citation/arrested/towed/released the vehicle according to law and policy."], "quote": null, "blocks": [], "tags": ["report language", "confirmation"]}, {"cat": "Plate Check", "title": "Purpose", "hook": "Does the plate belong on this vehicle?", "bullets": ["Plate checks primarily identify vehicle/property status and associated investigative leads.", "Do not assume a plate return proves who is driving."], "quote": "Does this plate belong on this vehicle, is the plate or vehicle wanted/stolen, and what investigative leads are associated with it?", "blocks": [], "tags": ["plate", "vehicle", "property"]}, {"cat": "Plate Check", "title": "Step 1 — Observe", "hook": "You cannot compare what you did not first observe.", "bullets": ["Plate number", "State", "Plate type", "Vehicle make/model/color/body style", "Temporary tag or dealer plate status", "Expiration sticker or registration issue", "Plate obstruction, alteration, or improper display", "Occupants", "Location", "Driving behavior", "Visible VIN issue, if any"], "quote": null, "blocks": [], "tags": ["observe", "LOCAL"]}, {"cat": "Plate Check", "title": "Step 2 — Query", "hook": "Run plate/state/type; VIN when appropriate.", "bullets": ["Run the plate using the correct plate number, state, plate type if needed, and VIN when appropriate.", "Use a VIN check when the plate does not match the vehicle, the plate returns stolen, the vehicle returns stolen, the temporary tag is suspicious, the plate appears altered/switched/improperly displayed, or the vehicle is being recovered, seized, towed, or impounded."], "quote": null, "blocks": [], "tags": ["VIN", "registration"]}, {"cat": "Plate Check", "title": "Step 3 — Compare", "hook": "Does the return match what I am seeing?", "bullets": ["The registered owner is not automatically the driver."], "quote": null, "blocks": [{"label": "Compare return to field observation", "items": ["Plate state — is this actually the state displayed?", "Plate type — passenger, truck, trailer, motorcycle, dealer, temporary, etc.?", "Year/make/model — does the return match the observed vehicle?", "Color/body style — close match or obvious mismatch?", "Expiration/registration — valid, expired, improper, stolen, or otherwise inactive?", "VIN — does the VIN match the return, if checked?", "Registered owner — is the RO an investigative lead, and does the RO possibly match the driver?"]}], "tags": ["compare", "RO", "mismatch"]}, {"cat": "Plate Check", "title": "Step 4 — Separate the Legal Issue", "hook": "Stolen plate ≠ stolen vehicle. RO status ≠ driver status.", "bullets": ["A plate hit is a vehicle/property lead. A registered-owner hit is a person lead. Confirm each separately."], "quote": null, "blocks": [{"label": "Return vs. meaning", "items": ["Stolen plate — the plate is stolen; the vehicle may or may not be stolen.", "Stolen vehicle/VIN — the vehicle itself is stolen.", "Improper/switched plate — the plate belongs to another vehicle or is not properly assigned.", "Plate mismatch — investigate misread plate, clerical issue, recent transfer, switched plate, or stolen plate.", "Registered-owner warrant — the RO may be wanted; the driver still must be identified.", "Registered-owner suspended — the RO may be suspended; the driver may be someone else."]}], "tags": ["legal issue", "RO"]}, {"cat": "Plate Check", "title": "Step 5 — Confirm Hits", "hook": "Confirm property hits and person hits separately.", "bullets": [], "quote": null, "blocks": [{"label": "Stolen plate, stolen vehicle, or other property hit", "items": ["Confirm plate number.", "Confirm state and plate type.", "Confirm year/make/model/color.", "Confirm VIN when available or necessary.", "Confirm the hit through dispatch/originating agency using IDACS/NCIC hit-confirmation procedure.", "Confirm before seizure, recovery, arrest, tow, or other enforcement action based on the hit.", "Use appropriate stop, recovery, seizure, and tow procedures."]}, {"label": "Registered-owner warrant or suspension", "items": ["Determine whether the RO is likely the driver.", "Identify the actual driver.", "Confirm any person hit separately.", "Do not treat RO status as automatic proof of driver status."]}], "tags": ["hit confirmation", "stolen plate", "stolen vehicle"]}, {"cat": "Plate Check", "title": "Step 6 — Document", "hook": "Articulate mismatch, confirmation, and disposition.", "bullets": ["The Indiana plate returned to a blue Honda Civic, but I observed it displayed on a white Ford F-150. Based on the mismatch, I conducted a traffic stop to investigate improper plate display and possible stolen/switched plate.", "Dispatch advised the plate returned stolen. Dispatch later advised the hit was confirmed through the originating agency via IDACS/NCIC hit-confirmation procedure prior to seizure/recovery.", "The plate returned to a registered owner with a suspended license. The driver was later identified as the registered owner by Indiana driver’s license/photo comparison.", "The registered owner had an active warrant, but the driver was identified as a different person. No warrant enforcement action was taken against the driver based solely on the RO return."], "quote": null, "blocks": [], "tags": ["report language", "mismatch"]}, {"cat": "MyCase", "title": "Proper Use", "hook": "MyCase gives court context.", "bullets": ["Public case information", "Case number lookup", "Charges", "CCS/docket entries", "Hearing dates", "Dispositions", "Court context", "Bond/order background, when visible"], "quote": null, "blocks": [], "tags": ["MyCase", "court"]}, {"cat": "MyCase", "title": "Improper Use", "hook": "MyCase is not your enforcement-confirmation system.", "bullets": ["Do not use MyCase alone to confirm an active warrant.", "Do not use MyCase alone to confirm an IDACS/NCIC hit.", "Do not use MyCase alone to confirm a protection order or no-contact order for enforcement action.", "Do not decide a person is clear because nothing appears online.", "Do not replace dispatch, IDACS, NCIC, POR, court, or originating-agency confirmation."], "quote": null, "blocks": [], "tags": ["not confirmation", "public access"]}, {"cat": "MyCase", "title": "No Result Does Not Mean Clear", "hook": "Public access can be incomplete, delayed, sealed, or excluded.", "bullets": ["MyCase contents are governed by Indiana public-access rules.", "Some records, documents, or entire cases may be excluded from public access, sealed, confidential, delayed, or unavailable online.", "A no-result or incomplete MyCase result does not mean no case, no warrant, no protection order, no no-contact order, or subject is clear."], "quote": null, "blocks": [], "tags": ["excluded records", "no result"]}, {"cat": "Pocket Version", "title": "Person Check Pocket Flow", "hook": "ID → Query → Read → Confirm → Decide → Document", "bullets": ["ID: name, DOB, DLN/state ID, descriptors, photo.", "Query: authorized purpose only.", "Read: warrants, DL status, POs/NCOs, missing/runaway, safety alerts, supervision/registry info.", "Confirm: wanted hits, PO/NCO details, missing/runaway hits, pickup/extradition.", "Decide: warning, cite, arrest, enforce order, recover, tow, report, consult.", "Document: identifiers, return, confirmation, lawful action."], "quote": null, "blocks": [], "tags": ["memory hook", "person"]}, {"cat": "Pocket Version", "title": "Plate Check Pocket Flow", "hook": "Observe → Query → Compare → Separate → Confirm → Document", "bullets": ["Observe: plate, state, type, vehicle, occupants, location, VIN/temp tag issues.", "Query: plate/state/type; VIN when needed.", "Compare: does the return match the actual vehicle?", "Separate: stolen plate ≠ stolen vehicle. RO status ≠ driver status.", "Confirm: plate/VIN/vehicle hits; person hits separately.", "Document: mismatch/hit, confirmation, action, disposition."], "quote": null, "blocks": [], "tags": ["memory hook", "plate"]}, {"cat": "Pocket Version", "title": "FTO Memory Hook", "hook": "Person status. Plate/property status. MyCase context. IDACS/NCIC confirmation.", "bullets": ["Use this line before a report, after a hot return, and during FTO debriefs.", "It keeps you from confusing identity, property status, court context, and enforcement authority."], "quote": "Person checks identify legal status. Plate checks identify vehicle/property status. Registered-owner information is an investigative lead, not automatic proof of driver identity. MyCase gives court context. IDACS/NCIC hit confirmation drives enforcement action.", "blocks": [], "tags": ["FTO", "memory"]}];
+const SOURCES = [{"title": "Indiana IDACS — official system overview", "url": "https://www.in.gov/idacs/", "note": "IDACS interfaces with NCIC and Nlets."}, {"title": "240 IAC 5-1-1 — IDACS/NCIC positive wanted response confirmation", "url": "https://www.law.cornell.edu/regulations/indiana/240-IAC-5-1-1", "note": "Follow-up confirmation before enforcement action on positive wanted responses."}, {"title": "240 IAC 5-1-2 — Audit of system transactions", "url": "https://www.law.cornell.edu/regulations/indiana/240-IAC-5-1-2", "note": "Six-month audit trail for specified IDACS transactions."}, {"title": "IDACS Audit Procedures", "url": "https://www.in.gov/idacs/system-security/idacs-audit-procedures/", "note": "Audit, compliance, and misuse monitoring expectations."}, {"title": "Indiana Protection Order Registry", "url": "https://www.in.gov/courts/admin/tech/protection-order/", "note": "Links Indiana PO/NCO information with IDACS and NCIC."}, {"title": "Indiana MyCase help", "url": "https://www.in.gov/courts/help/mycase/", "note": "Public access to non-confidential Indiana court case information."}, {"title": "Indiana Rules on Access to Court Records", "url": "https://rules.incourts.gov/Content/records/default.htm", "note": "Explains public access and excluded records."}, {"title": "Rodriguez v. United States", "url": "https://supreme.justia.com/cases/federal/us/575/348/", "note": "Traffic-stop duration tied to the mission of the stop."}, {"title": "Kansas v. Glover", "url": "https://www.supremecourt.gov/opinions/19pdf/18-556_e1pf.pdf", "note": "Registered-owner license status can support reasonable suspicion when facts do not negate owner-as-driver inference."}];
+let activeCat = 'All';
+let order = CARDS.map((_,i)=>i);
+let idx = 0;
+let flipped = false;
+const cardEl = document.getElementById('studycard');
+const chipsEl = document.getElementById('chips');
+const counterEl = document.getElementById('counter');
+const meterEl = document.getElementById('meter');
+const searchEl = document.getElementById('search');
+const sourcegrid = document.getElementById('sourcegrid');
+const allcards = document.getElementById('allcards');
+function esc(s){return String(s ?? '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function slug(s){return String(s).replace(/[^a-zA-Z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function matches(c){
+  const q = searchEl.value.trim().toLowerCase();
+  const catOk = activeCat === 'All' || c.cat === activeCat;
+  const hay = JSON.stringify(c).toLowerCase();
+  return catOk && (!q || hay.includes(q));
 }
+function rebuildOrder(){
+  order = CARDS.map((_,i)=>i).filter(i => matches(CARDS[i]));
+  if(idx >= order.length) idx = 0;
+  flipped = false;
+  render();
+}
+function renderChips(){
+  const cats = ['All', ...Array.from(new Set(CARDS.map(c=>c.cat)))];
+  chipsEl.innerHTML = cats.map(cat => `<button class="chip" aria-pressed="${cat===activeCat}" data-cat="${esc(cat)}">${esc(cat)}</button>`).join('');
+  chipsEl.querySelectorAll('.chip').forEach(btn => btn.addEventListener('click', () => {activeCat = btn.dataset.cat; rebuildOrder(); renderChips();}));
+}
+function render(){
+  if(!order.length){
+    cardEl.className = 'studycard';
+    cardEl.innerHTML = `<div class="face"><div class="band"></div><div class="cardtop"><span>No matches</span><span>0/0</span></div><h2 class="cardtitle">No matching cards</h2><p class="hook">Clear search or choose another category.</p></div>`;
+    counterEl.textContent = '0 / 0'; meterEl.style.width = '0%'; return;
+  }
+  const c = CARDS[order[idx]];
+  const catClass = 'cat-' + slug(c.cat);
+  const tags = (c.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+  const bullets = (c.bullets||[]).map(b=>`<div class="item">${esc(b)}</div>`).join('');
+  const blocks = (c.blocks||[]).map(b=>`<div class="block"><h4>${esc(b.label)}</h4><div class="list">${(b.items||[]).map(it=>`<div class="item">${esc(it)}</div>`).join('')}</div></div>`).join('');
+  const quote = c.quote ? `<div class="quote">“${esc(c.quote)}”</div>` : '';
+  cardEl.className = `studycard ${flipped ? 'flipped':''} ${catClass}`;
+  cardEl.innerHTML = `
+    <div class="face front"><div class="band"></div><div class="cardtop"><span>${esc(c.cat)}</span><span>${idx+1}/${order.length}</span></div><h2 class="cardtitle">${esc(c.title)}</h2><p class="hook">${esc(c.hook)}</p><div class="tags">${tags}</div><div class="hint">Click or press Space to flip</div></div>
+    <div class="face back"><div class="band"></div><div class="cardtop"><span>${esc(c.cat)}</span><span>${idx+1}/${order.length}</span></div><h2 style="font-size:24px;text-transform:uppercase;letter-spacing:-.02em;margin:12px 0 4px">${esc(c.title)}</h2><div class="scroll">${quote}${blocks}${bullets ? `<div class="list">${bullets}</div>`:''}</div><div class="hint">Use arrows to move</div></div>`;
+  counterEl.innerHTML = `<b>${idx+1}</b> / ${order.length}`;
+  meterEl.style.width = `${((idx+1)/order.length)*100}%`;
+}
+function move(delta){ if(!order.length) return; idx = (idx + delta + order.length) % order.length; flipped = false; render(); }
+function flip(){ flipped = !flipped; render(); }
+function shuffle(){
+  for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [order[i],order[j]]=[order[j],order[i]];}
+  idx = 0; flipped = false; render();
+}
+function renderSources(){
+  sourcegrid.innerHTML = SOURCES.map(s => `<a class="source" href="${esc(s.url)}" target="_blank" rel="noopener"><strong>${esc(s.title)}</strong><p>${esc(s.note)}</p></a>`).join('');
+}
+function renderPrintCards(){
+  allcards.innerHTML = '<h2>Printable Card List</h2>' + CARDS.map(c => `<article class="print-card"><small>${esc(c.cat)}</small><h3>${esc(c.title)}</h3><p><b>${esc(c.hook)}</b></p>${c.quote?`<p><em>“${esc(c.quote)}”</em></p>`:''}${(c.blocks||[]).map(b=>`<h4>${esc(b.label)}</h4><ul>${(b.items||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`).join('')}${c.bullets?.length?`<ul>${c.bullets.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`:''}</article>`).join('');
+}
+cardEl.addEventListener('click', e => { if(!String(e.target.tagName).match(/BUTTON|A|INPUT/)) flip(); });
+cardEl.addEventListener('keydown', e => { if(e.key === ' ' || e.key === 'Enter'){e.preventDefault(); flip();} });
+document.getElementById('flipBtn').addEventListener('click', flip);
+document.getElementById('prevBtn').addEventListener('click', () => move(-1));
+document.getElementById('nextBtn').addEventListener('click', () => move(1));
+document.getElementById('shuffleBtn').addEventListener('click', shuffle);
+document.getElementById('resetBtn').addEventListener('click', () => {activeCat='All'; searchEl.value=''; idx=0; flipped=false; rebuildOrder(); renderChips();});
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+searchEl.addEventListener('input', rebuildOrder);
+document.addEventListener('keydown', e => {
+  if(e.key === '/' && document.activeElement !== searchEl){e.preventDefault(); searchEl.focus();}
+  if(document.activeElement === searchEl) return;
+  if(e.key === 'ArrowLeft') move(-1);
+  if(e.key === 'ArrowRight') move(1);
+  if(e.key === ' ') {e.preventDefault(); flip();}
+});
+renderChips(); renderSources(); renderPrintCards(); rebuildOrder();
 </script>
 </body>
 </html>
