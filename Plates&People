@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Westfield Patrol: Workflow Flashcards</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#0F141A; --surface:#1A222C; --ink:#E8EDF2; --muted:#94A3B2; --presence:#5B92C4; --exception:#E6A23C; --accent:#4FB3A6; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; padding: 20px; }
+.wrap { max-width: 600px; margin: 0 auto; }
+header { margin-bottom: 20px; }
+h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; text-transform: uppercase; color: var(--accent); }
+.card { background: var(--surface); border: 1px solid #2C3845; border-radius: 16px; padding: 30px; min-height: 400px; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.3s; }
+.card:hover { border-color: var(--presence); }
+.cat { font-family: 'IBM Plex Mono'; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
+.title { font-family: 'Barlow Condensed'; font-size: 28px; margin: 10px 0; color: #fff; }
+.content { font-size: 15px; line-height: 1.6; color: #D6DEE6; }
+.reminder { margin-top: auto; padding-top: 20px; color: var(--exception); font-family: 'IBM Plex Mono'; font-size: 13px; border-top: 1px solid #2C3845; }
+.controls { display: flex; gap: 10px; margin-top: 20px; }
+button { background: var(--surface); border: 1px solid #2C3845; color: var(--ink); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-family: 'IBM Plex Mono'; }
+button:hover { background: #222C38; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>Patrol Workflow</h1>
+        <p style="color: var(--muted);">IDACS/NCIC Confirmation & Decision Logic</p>
+    </header>
+
+    <div class="card" id="card" onclick="flip()">
+        <div id="front">
+            <div class="cat" id="cat">Person Check</div>
+            <div class="title" id="title">Step 1: Identify</div>
+            <div class="content" id="content">Ask: "Do I have enough identifiers to trust this return?" Use full name, DOB, sex/race, DLN, and physical descriptors.</div>
+            <div class="reminder" id="reminder">Rookie Reminder: Name and DOB are not automatic proof of identity.</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="prev()">◀ Prev</button>
+        <button onclick="next()">Next ▶</button>
+    </div>
+</div>
+
+<script>
+const deck = [
+    { cat:"Person Check", t:"Step 1: Identify", c:"Ask: 'Do I have enough identifiers to trust this return?' Use full name, DOB, sex/race, DLN, and physical descriptors.", r:"Rookie Reminder: Name and DOB are not automatic proof of identity." },
+    { cat:"Person Check", t:"Step 4: Confirm Before Action", c:"Confirm warrant/wanted matches subject. Request IDACS/NCIC hit confirmation through dispatch. Confirm pickup/extradition limits.", r:"Rookie Reminder: A possible hit changes tactics. A confirmed hit supports enforcement action." },
+    { cat:"Plate Check", t:"Step 3: Compare", c:"Does the return match what you see? Compare: State, Type, Year/Make/Model, Color, and VIN.", r:"Rookie Reminder: The registered owner is not automatically the driver." },
+    { cat:"Plate Check", t:"Step 4: Separate Legal Issues", c:"Stolen Plate ≠ Stolen Vehicle. RO Warrant/Suspension ≠ Driver Warrant/Suspension. Confirm person leads and property leads separately.", r:"Rookie Reminder: A plate hit is a property lead. A registered-owner hit is a person lead." },
+    { cat:"MyCase", t:"Patrol Use", c:"Use MyCase for court context (docket, charges, hearings, dispositions).", r:"Rookie Reminder: MyCase is NOT a live IDACS/NCIC system. Do not use it to confirm warrants or protection orders for enforcement." }
+];
+
+let i = 0;
+function flip() { /* Simple logic for card transitions */ }
+function next() { i = (i + 1) % deck.length; update(); }
+function prev() { i = (i - 1 + deck.length) % deck.length; update(); }
+function update() {
+    document.getElementById('cat').innerText = deck[i].cat;
+    document.getElementById('title').innerText = deck[i].t;
+    document.getElementById('content').innerText = deck[i].c;
+    document.getElementById('reminder').innerText = deck[i].r;
+}
+</script>
+</body>
+</html>
