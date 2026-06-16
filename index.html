@@ -140,6 +140,46 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(30p
   font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint)}
 .foot a{color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 
+
+/* Table of contents */
+.toc-shell{margin:4px 0 18px;position:relative}
+.toc-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.toc-toggle::after{content:"▾";font-size:13px;color:var(--muted);transition:transform .18s ease}
+.toc-shell.open .toc-toggle::after{transform:rotate(180deg)}
+.toc-panel{
+  margin-top:8px;background:linear-gradient(180deg,var(--surface2),var(--surface));
+  border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+  max-height:min(72vh,640px);overflow:auto;padding:14px
+}
+.toc-panel[hidden]{display:none}
+.toc-panel::-webkit-scrollbar{width:7px}
+.toc-panel::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.toc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.toc-title{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.toc-sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+.toc-close{padding:8px 10px;font-size:11px}
+.toc-sections{display:flex;flex-direction:column;gap:9px}
+.toc-section{border:1px solid var(--line);border-radius:12px;background:rgba(15,20,26,.36);overflow:hidden}
+.toc-section[open]{background:rgba(15,20,26,.52)}
+.toc-section summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 12px}
+.toc-section summary::-webkit-details-marker{display:none}
+.toc-section summary::before{content:"▸";font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);transition:transform .15s ease}
+.toc-section[open] summary::before{transform:rotate(90deg)}
+.toc-section-name{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-right:auto}
+.toc-count{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--faint);white-space:nowrap}
+.toc-items{padding:0 10px 10px;display:flex;flex-direction:column;gap:6px}
+.toc-start,.toc-card{
+  width:100%;border:1px solid var(--line);background:var(--bg2);color:var(--muted);
+  border-radius:9px;padding:8px 10px;cursor:pointer;text-align:left;transition:.15s;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.25
+}
+.toc-start{color:var(--ink);background:rgba(91,146,196,.10);border-color:rgba(91,146,196,.32);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.toc-card{display:grid;grid-template-columns:minmax(42px,auto) 1fr;gap:8px;align-items:start}
+.toc-card:hover,.toc-start:hover{border-color:var(--presence);color:var(--ink);background:var(--surface)}
+.toc-card[aria-current="true"]{border-color:var(--exception);color:var(--ink);background:rgba(230,162,60,.08)}
+.toc-num{color:var(--faint);white-space:nowrap}
+.toc-off{font-family:'Inter',system-ui,sans-serif;font-size:12.5px;color:inherit}
+
 @media(max-width:540px){
   .face{padding:22px 20px 64px}
   .scene,.card{min-height:500px}
@@ -177,6 +217,20 @@ h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(30p
   </div>
 
   <div class="chips" id="chips"></div>
+
+  <div class="toc-shell" id="tocShell">
+    <button class="btn toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="tocPanel">Table of contents</button>
+    <div class="toc-panel" id="tocPanel" hidden>
+      <div class="toc-head">
+        <div>
+          <div class="toc-title">Table of Contents</div>
+          <div class="toc-sub" id="tocSub"></div>
+        </div>
+        <button class="btn toc-close" id="tocClose" type="button">Close</button>
+      </div>
+      <div class="toc-sections" id="tocSections"></div>
+    </div>
+  </div>
 
   <div class="stage">
     <div class="scene">
@@ -995,8 +1049,82 @@ const chips=document.getElementById('chips');
 const counter=document.getElementById('counter');
 const meter=document.getElementById('meter');
 const deckname=document.getElementById('deckname');
+const tocShell=document.getElementById('tocShell');
+const tocToggle=document.getElementById('tocToggle');
+const tocPanel=document.getElementById('tocPanel');
+const tocClose=document.getElementById('tocClose');
+const tocSections=document.getElementById('tocSections');
+const tocSub=document.getElementById('tocSub');
 
 function authClass(a){return 'auth-'+a;}
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function openToc(){
+  tocShell.classList.add('open');
+  tocPanel.hidden=false;
+  tocToggle.setAttribute('aria-expanded','true');
+}
+function closeToc(){
+  tocShell.classList.remove('open');
+  tocPanel.hidden=true;
+  tocToggle.setAttribute('aria-expanded','false');
+}
+function toggleToc(){
+  tocPanel.hidden ? openToc() : closeToc();
+}
+function updateChips(){
+  [...chips.children].forEach(ch=>ch.setAttribute('aria-pressed', ch.dataset.cat===filter));
+}
+function setDeck(f){
+  filter=f;
+  deck = f==='All' ? [...CARDS] : CARDS.filter(c=>c.cat===f);
+  deckname.textContent = f==='All' ? 'All offenses' : f;
+  updateChips();
+}
+function currentGlobalIndex(){
+  return CARDS.indexOf(deck[idx]);
+}
+function updateTocCurrent(){
+  if(!tocSections) return;
+  const current=currentGlobalIndex();
+  tocSections.querySelectorAll('.toc-card').forEach(btn=>{
+    const isCurrent=Number(btn.dataset.index)===current;
+    btn.setAttribute('aria-current', isCurrent ? 'true' : 'false');
+  });
+}
+function jumpToCard(globalIndex){
+  const target=CARDS[globalIndex];
+  if(!target) return;
+  setDeck(target.cat);
+  idx=deck.findIndex(c=>c===target);
+  if(idx<0) idx=0;
+  render();
+  resetBackScroll();
+  closeToc();
+  document.querySelector('.stage')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function renderToc(){
+  const cats=CATS.filter(cat=>cat!=='All');
+  tocSub.textContent=`${CARDS.length} cards · ${cats.length} sections`;
+  tocSections.innerHTML=cats.map(cat=>{
+    const items=CARDS.map((card,globalIndex)=>({card,globalIndex})).filter(item=>item.card.cat===cat);
+    const cards=items.map(({card,globalIndex})=>`
+      <button class="toc-card" type="button" data-index="${globalIndex}" aria-current="false">
+        <span class="toc-num">${escapeHtml(card.num)}</span>
+        <span class="toc-off">${escapeHtml(card.off)}</span>
+      </button>`).join('');
+    return `
+      <details class="toc-section" data-cat="${escapeHtml(cat)}" open>
+        <summary><span class="toc-section-name">${escapeHtml(cat)}</span><span class="toc-count">${items.length} cards</span></summary>
+        <div class="toc-items">
+          <button class="toc-start" type="button" data-index="${items[0]?.globalIndex ?? 0}">Start ${escapeHtml(cat)}</button>
+          ${cards}
+        </div>
+      </details>`;
+  }).join('');
+  updateTocCurrent();
+}
 
 function render(){
   const c=deck[idx];
@@ -1025,6 +1153,7 @@ function render(){
     </div>`;
   counter.innerHTML=`<b>${idx+1}</b> / ${deck.length}`;
   meter.style.width=((idx+1)/deck.length*100)+'%';
+  updateTocCurrent();
 }
 
 function resetBackScroll(){
@@ -1032,9 +1161,8 @@ function resetBackScroll(){
   if(scrollBox) scrollBox.scrollTop = 0;
 }
 function applyFilter(f){
-  filter=f; deck = f==='All' ? [...CARDS] : CARDS.filter(c=>c.cat===f);
-  idx=0; deckname.textContent = f==='All' ? 'All offenses' : f;
-  [...chips.children].forEach(ch=>ch.setAttribute('aria-pressed', ch.dataset.cat===f));
+  setDeck(f);
+  idx=0;
   render();
   resetBackScroll();
 }
@@ -1044,6 +1172,14 @@ CATS.forEach(cat=>{
   b.setAttribute('aria-pressed', cat==='All');
   b.onclick=()=>applyFilter(cat);
   chips.appendChild(b);
+});
+renderToc();
+tocToggle.onclick=toggleToc;
+tocClose.onclick=closeToc;
+tocSections.addEventListener('click',e=>{
+  const btn=e.target.closest('[data-index]');
+  if(!btn) return;
+  jumpToCard(Number(btn.dataset.index));
 });
 function isTextEntryTarget(el){
   return !!(el && el.closest && el.closest('input, textarea, select, [contenteditable="true"]'));
@@ -1093,6 +1229,10 @@ document.getElementById('shuffle').onclick=()=>{
 };
 document.getElementById('reset').onclick=()=>applyFilter(filter);
 document.addEventListener('keydown',e=>{
+  if(e.code==='Escape' && !tocPanel.hidden){
+    closeToc();
+    return;
+  }
   const editingOrSelecting = isTextEntryTarget(document.activeElement) || hasSelectedText();
   if(e.code==='Space'){
     if(editingOrSelecting) return;
