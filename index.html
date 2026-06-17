@@ -9574,5 +9574,184 @@ document.addEventListener('keydown',e=>{
 render();
 </script>
 <!-- Theft deck build: 355 cards, 25 sections, sha256 cards 66105d446ab28eed -->
+
+
+<!-- ---------- FTO / UX improvement patch ---------- -->
+<style id="fto-improvement-style">
+.modebar,.study-actions{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0}
+.modebar::before,.study-actions::before{content:attr(data-label);flex-basis:100%;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1px}
+.study-actions{margin-top:10px}.study-actions .btn{border-radius:999px}.study-actions .btn[aria-pressed="true"]{font-weight:700}.study-actions .known[aria-pressed="true"]{background:#78B892;border-color:#78B892;color:#06120E}.study-actions .missed[aria-pressed="true"]{background:#D56B64;border-color:#D56B64;color:#160606}.study-actions .bookmarked[aria-pressed="true"]{background:var(--exception);border-color:var(--exception);color:#1C1000}
+.status-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.status-pill{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 8px;background:var(--bg2);text-transform:uppercase}.status-pill.priority,.status-pill.bookmarked{color:var(--exception)}.status-pill.known{color:#78B892}.status-pill.missed{color:#D56B64}
+.branch-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}.branch{font-family:'IBM Plex Mono',monospace;font-size:10.5px;border:1px solid var(--line);border-radius:999px;padding:5px 8px;color:var(--muted);background:var(--bg2)}.branch.primary{border-color:rgba(91,146,196,.45);color:var(--ink);background:rgba(91,146,196,.10)}
+.toc-flags{color:var(--exception);font-family:'IBM Plex Mono',monospace}.toc-card{grid-template-columns:minmax(42px,auto) 1fr auto}.btn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.4)}
+.report-prompt{font-size:13px;line-height:1.5;color:#D6DEE6;border-left:2px solid var(--presence);background:rgba(91,146,196,.06);padding:8px 10px 8px 12px;border-radius:0 8px 8px 0}
+.sub strong{color:var(--ink)}
+@media print{.modebar,.study-actions{display:none!important}.face.front{display:none}.face.back{transform:none!important;position:relative!important}.card{transform:none!important}.scene,.card{min-height:0!important}}
+</style>
+<script id="fto-improvement-patch">
+(function(){
+  'use strict';
+  const STORAGE_KEY = 'indiana-patrol-flashcards-v2';
+  const MODES = [
+    ['all','All'],
+    ['fto','Edward FTO Priority'],
+    ['missed','Needs Work'],
+    ['bookmarked','Bookmarked'],
+    ['known','Known']
+  ];
+  const FTO_PRIORITY_KEYS = new Set([
+    'Foundations::F01','Foundations::F02','Foundations::F05','Foundations::F05A',
+    'Search/Seizure::S01','Search/Seizure::S02','Search/Seizure::S03','Search/Seizure::S04','Search/Seizure::S05','Search/Seizure::S06','Search/Seizure::S07','Search/Seizure::S08','Search/Seizure::S10','Search/Seizure::S13','Search/Seizure::S14',
+    'Threats::12','Threats::4','Threats::43','Threats::T-DECISION',
+    'Harassment / Threats / Stalking::HTS01','Harassment / Threats / Stalking::HTS02','Harassment / Threats / Stalking::HTS04','Harassment / Threats / Stalking::HTS05','Harassment / Threats / Stalking::HTS06','Harassment / Threats / Stalking::HTS07','Harassment / Threats / Stalking::HTS08','Harassment / Threats / Stalking::HTS11','Harassment / Threats / Stalking::HTS12',
+    'Orders::25','Orders::26','Orders::24','Orders::25.5',
+    'Property::1','Property::41','Property::6','Property::42','Property::7','Property::39','Property::40',
+    'Theft / Stolen Property / Auto Theft / Plate Theft::TS01','Theft / Stolen Property / Auto Theft / Plate Theft::TS02','Theft / Stolen Property / Auto Theft / Plate Theft::TS03','Theft / Stolen Property / Auto Theft / Plate Theft::TS04','Theft / Stolen Property / Auto Theft / Plate Theft::TS05','Theft / Stolen Property / Auto Theft / Plate Theft::TS06','Theft / Stolen Property / Auto Theft / Plate Theft::TS07','Theft / Stolen Property / Auto Theft / Plate Theft::TS08','Theft / Stolen Property / Auto Theft / Plate Theft::TS09','Theft / Stolen Property / Auto Theft / Plate Theft::TS13','Theft / Stolen Property / Auto Theft / Plate Theft::TS14','Theft / Stolen Property / Auto Theft / Plate Theft::TS15',
+    'Fraud/Deception::2','Fraud/Deception::47','Fraud/Deception::51','Fraud / Scam / Identity Theft::FS01','Fraud / Scam / Identity Theft::FS02','Fraud / Scam / Identity Theft::FS03','Fraud / Scam / Identity Theft::FS06','Fraud / Scam / Identity Theft::FS07','Fraud / Scam / Identity Theft::FS08','Fraud / Scam / Identity Theft::FS09','Fraud / Scam / Identity Theft::FS12','Fraud / Scam / Identity Theft::FS13',
+    'Persons::8/11','Persons::8','Persons::27','Persons::28',
+    'Domestic/Calls::D01','Domestic/Calls::D02','Domestic/Calls::D03','Domestic/Calls::D04','Domestic/Calls::D05','Domestic/Calls::D06','Domestic/Calls::D07',
+    'Traffic::T03','Traffic::T05','Traffic::T16','Traffic::T17','Traffic::T20','Traffic::T21','Traffic::T22','Traffic::T23','Traffic::T24','Traffic::T25','Traffic::T09','Traffic::T10','Traffic::T11','Traffic::T14','Traffic::T50','Traffic::T51','Traffic::T52','Traffic::T53','Traffic::T54','Traffic::T55','Traffic::T56','Traffic::T57','Traffic::T58','Traffic::T59','Traffic::T60','Traffic::T61','Traffic::T62','Traffic::T63',
+    'Marijuana / CBD / Hemp Vehicle Stops::MJ01','Marijuana / CBD / Hemp Vehicle Stops::MJ02','Marijuana / CBD / Hemp Vehicle Stops::MJ03','Marijuana / CBD / Hemp Vehicle Stops::MJ04','Marijuana / CBD / Hemp Vehicle Stops::MJ05','Marijuana / CBD / Hemp Vehicle Stops::MJ06','Marijuana / CBD / Hemp Vehicle Stops::MJ07','Marijuana / CBD / Hemp Vehicle Stops::MJ08','Marijuana / CBD / Hemp Vehicle Stops::MJ09','Marijuana / CBD / Hemp Vehicle Stops::MJ10','Marijuana / CBD / Hemp Vehicle Stops::MJ11','Marijuana / CBD / Hemp Vehicle Stops::MJ12'
+  ]);
+
+  let studyMode = 'all';
+  let meta = loadMeta();
+  const cardKey = c => `${c.cat}::${c.num}`;
+  const isPriority = c => FTO_PRIORITY_KEYS.has(cardKey(c));
+  const getMeta = c => meta[cardKey(c)] || {known:false,missed:false,bookmarked:false};
+  function loadMeta(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}}catch{return {}}}
+  function saveMeta(){localStorage.setItem(STORAGE_KEY, JSON.stringify(meta))}
+  function setMeta(c, patch){
+    const key = cardKey(c);
+    meta[key] = {...getMeta(c), ...patch};
+    if(meta[key].known) meta[key].missed = false;
+    if(meta[key].missed) meta[key].known = false;
+    saveMeta();
+  }
+  function modeLabel(){return (MODES.find(([id])=>id===studyMode)||MODES[0])[1]}
+  function modeMatches(c){
+    const m = getMeta(c);
+    if(studyMode === 'fto') return isPriority(c);
+    if(studyMode === 'missed') return !!m.missed;
+    if(studyMode === 'bookmarked') return !!m.bookmarked;
+    if(studyMode === 'known') return !!m.known;
+    return true;
+  }
+  function escape(value){return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+  function branchItems(c){
+    const isTraffic = /Traffic|E-Bikes|Golf Carts|Driving/.test(c.cat);
+    if(c.auth === 'felony') return ['Felony PC arrest','Confirm identity/enhancement','Search authority still separate','PC affidavit / CID if needed'];
+    if(c.auth === 'exception') return ['Report-only if appropriate','Summons / PC affidavit','Statutory PC arrest exception','Evidence seizure if lawful'];
+    if(c.auth === 'presence') return isTraffic ? ['Verbal warning','Written warning','Infraction citation','Misdemeanor arrest only if authority exists'] : ['Non-enforcement if elements weak','Report / prosecutor review','Summons if supported','Arrest only if presence/authority exists'];
+    if(c.auth === 'noncriminal') return ['Non-enforcement','Education / resources','CAD notes / report if needed'];
+    return ['Mapped offense controls','Non-enforcement if no authority','Report / consult / document','Do not treat reference card as PC'];
+  }
+  function searchPrompt(c){
+    if(c.cat.includes('Search/Seizure')) return 'Apply this doctrine only when its threshold is met. Document the facts that existed before the detention, frisk, search, seizure, entry, or arrest.';
+    if(c.auth === 'felony' || c.auth === 'exception') return 'PC for an offense does not automatically answer search scope. Identify the separate doctrine: Terry frisk, consent, motor vehicle exception, SITA, inventory, plain view, warrant, or exigency.';
+    if(c.auth === 'presence') return 'For misdemeanors, separate PC from arrest authority. Prior conduct often means report/summons/warrant review unless the offense occurs in your presence or another exception applies.';
+    return 'This card is guidance/reference. Any seizure, entry, search, or arrest still requires an independent legal basis.';
+  }
+  function addBlock(label, child, className=''){
+    const block = document.createElement('div'); block.className = `block ${className}`.trim();
+    const lab = document.createElement('div'); lab.className = 'lab'; lab.textContent = label;
+    block.append(lab, child); return block;
+  }
+  function addEnhancedSections(c){
+    const scroll = document.querySelector('.b-scroll'); if(!scroll) return;
+    const branchGrid = document.createElement('div'); branchGrid.className = 'branch-grid';
+    branchItems(c).forEach((txt,i)=>{const s=document.createElement('span');s.className='branch'+(i===0?' primary':'');s.textContent=txt;branchGrid.append(s)});
+    const prompt = document.createElement('div'); prompt.className='report-prompt'; prompt.textContent = `I observed / learned [specific facts], which established ${c.off} because [facts matched the required elements]. Based on [authority/disposition], I [warned/cited/summonsed/arrested/reported/released] and documented [evidence].`;
+    const search = document.createElement('div'); search.className='txt'; search.textContent = searchPrompt(c);
+    const noteBlock = scroll.querySelector('.caution')?.closest('.block');
+    const additions = [addBlock('Disposition branch', branchGrid), addBlock('Search / seizure checkpoint', search), addBlock('Report articulation sentence', prompt)];
+    if(noteBlock){additions.forEach(n=>scroll.insertBefore(n,noteBlock));} else {additions.forEach(n=>scroll.append(n));}
+  }
+  function addStatusPills(c){
+    const front = document.querySelector('.face.front .badge'); if(!front) return;
+    const m = getMeta(c);
+    const pills = document.createElement('div'); pills.className='status-pills';
+    const items = [];
+    if(isPriority(c)) items.push(['priority','FTO Priority']);
+    if(m.known) items.push(['known','Known']);
+    if(m.missed) items.push(['missed','Needs Work']);
+    if(m.bookmarked) items.push(['bookmarked','Bookmarked']);
+    items.forEach(([cls,txt])=>{const s=document.createElement('span');s.className=`status-pill ${cls}`;s.textContent=txt;pills.append(s)});
+    if(items.length) front.after(pills);
+  }
+  function updateStudyButtons(){
+    const c = deck && deck.length ? deck[idx] : null;
+    const m = c ? getMeta(c) : {};
+    const buttons = {known:document.getElementById('knownBtn'), missed:document.getElementById('missedBtn'), bookmarked:document.getElementById('bookmarkBtn')};
+    if(!buttons.known) return;
+    buttons.known.setAttribute('aria-pressed', m.known ? 'true' : 'false');
+    buttons.missed.setAttribute('aria-pressed', m.missed ? 'true' : 'false');
+    buttons.bookmarked.setAttribute('aria-pressed', m.bookmarked ? 'true' : 'false');
+    Object.values(buttons).forEach(b=>b.disabled = !c);
+  }
+  function updateModeChips(){
+    document.querySelectorAll('[data-mode]').forEach(btn => btn.setAttribute('aria-pressed', btn.dataset.mode === studyMode ? 'true':'false'));
+  }
+
+  const originalSetDeck = setDeck;
+  setDeck = function patchedSetDeck(f){
+    filter = f;
+    const source = f === 'All' ? [...CARDS] : CARDS.filter(c => c.cat === f);
+    deck = source.filter(c => matchesSearch(c, searchTerm) && modeMatches(c));
+    if(idx >= deck.length) idx = 0;
+    deckname.textContent = `${modeLabel()} · ${f === 'All' ? 'All sections' : f}`;
+    updateChips(); updateModeChips();
+  };
+  const originalRender = render;
+  render = function patchedRender(){
+    originalRender();
+    const c = deck && deck.length ? deck[idx] : null;
+    if(c){addStatusPills(c); addEnhancedSections(c)}
+    updateStudyButtons();
+    document.getElementById('flip').disabled = !c;
+    document.getElementById('prev').disabled = !c;
+    document.getElementById('next').disabled = !c;
+    document.getElementById('shuffle').disabled = !c;
+  };
+
+  function buildModeBar(){
+    const bar = document.createElement('div'); bar.className='modebar'; bar.dataset.label='Study mode';
+    MODES.forEach(([id,label])=>{const b=document.createElement('button');b.className='chip';b.type='button';b.dataset.mode=id;b.textContent=label;b.setAttribute('aria-pressed', id === studyMode ? 'true':'false');b.addEventListener('click',()=>{studyMode=id;idx=0;setDeck(filter);render();resetBackScroll();});bar.append(b)});
+    document.querySelector('.searchbar')?.after(bar);
+  }
+  function buildStudyActions(){
+    const actions = document.createElement('div'); actions.className='study-actions'; actions.dataset.label='Study tracking';
+    actions.innerHTML = '<button class="btn known" id="knownBtn" type="button" aria-pressed="false">Known</button><button class="btn missed" id="missedBtn" type="button" aria-pressed="false">Needs work</button><button class="btn bookmarked" id="bookmarkBtn" type="button" aria-pressed="false">Bookmark</button>';
+    document.querySelector('.controls')?.after(actions);
+    actions.querySelector('#knownBtn').addEventListener('click',()=>{const c=deck[idx]; if(!c)return; setMeta(c,{known:!getMeta(c).known}); render(); if(['known','missed'].includes(studyMode)){setDeck(filter);render();}});
+    actions.querySelector('#missedBtn').addEventListener('click',()=>{const c=deck[idx]; if(!c)return; setMeta(c,{missed:!getMeta(c).missed}); render(); if(['known','missed'].includes(studyMode)){setDeck(filter);render();}});
+    actions.querySelector('#bookmarkBtn').addEventListener('click',()=>{const c=deck[idx]; if(!c)return; setMeta(c,{bookmarked:!getMeta(c).bookmarked}); render(); if(studyMode==='bookmarked'){setDeck(filter);render();}});
+  }
+  function patchToc(){
+    document.querySelectorAll('.toc-card').forEach(btn=>{
+      const c = CARDS[Number(btn.dataset.index)];
+      if(c && isPriority(c) && !btn.querySelector('.toc-flags')){
+        const star = document.createElement('span'); star.className = 'toc-flags'; star.textContent = '★'; btn.append(star);
+      }
+    });
+  }
+  const originalRenderToc = renderToc;
+  renderToc = function patchedRenderToc(){originalRenderToc(); patchToc();};
+  document.addEventListener('keydown', e=>{
+    const editing = isTextEntryTarget(document.activeElement) || hasSelectedText();
+    if(editing || !deck.length) return;
+    const key = e.key.toLowerCase();
+    if(key === 'b'){const c=deck[idx]; setMeta(c,{bookmarked:!getMeta(c).bookmarked}); render();}
+    if(key === 'k'){const c=deck[idx]; setMeta(c,{known:!getMeta(c).known}); render();}
+    if(key === 'm'){const c=deck[idx]; setMeta(c,{missed:!getMeta(c).missed}); render();}
+    if(e.code === 'Home'){idx=0; render(); resetBackScroll();}
+    if(e.code === 'End'){idx=deck.length-1; render(); resetBackScroll();}
+  });
+  document.querySelector('h1').textContent = 'Offense Flash Cards';
+  document.querySelector('.sub').innerHTML = '<strong>Improved FTO build.</strong> Search, filter, track cards, use Edward FTO Priority mode, and force each card through disposition, search/seizure, and report-articulation checks.';
+  buildModeBar(); buildStudyActions(); renderToc(); setDeck(filter); render();
+})();
+</script>
+
 </body>
 </html>
