@@ -311,37 +311,41 @@ const CARDS = [
     "arr": "This is the master arrest-authority card. Probable cause and custodial-arrest authority are related but not identical; misdemeanor + no presence + no listed exception usually means no warrantless custodial arrest.",
     "note": "Examples: LP video of theft before arrival may fit the theft exception. Victim injury from battery before arrival may fit the battery-with-bodily-injury exception. Prior harassment texts alone usually require report/summons/warrant review unless the offense occurs in your presence or another charge/exception applies. Always apply current WPD policy and supervisor/prosecutor guidance."
   },
-  {
-    "cat": "Foundations",
-    "num": "F02",
-    "off": "The O-C-E-A Method",
-    "stat": "study framework",
-    "auth": "reference",
-    "elem": "Use <b>O-C-E-A</b> to analyze every offense, investigation, and enforcement decision: <b>O</b> — offense/statute; <b>C</b> — core elements plus required culpability; <b>E</b> — enhancements/charging flags; <b>A</b> — arrest authority. Follow the sequence. Do not skip to arrest authority before identifying the offense, proving elements, and determining the offense level.",
-    "enh": [
-      [
-        "Core elements / culpability",
-        "Match facts to the statute’s exact elements and mental state. Culpability ladder: recklessly < knowingly < intentionally. Do not assume a higher culpability level unless facts support it."
+    {
+      "cat": "Foundations",
+      "num": "F02",
+      "off": "The O-C-E-A Method",
+      "stat": "study framework",
+      "auth": "reference",
+      "elem": "Use <b>O-C-E-A</b> to analyze every offense, investigation, and enforcement decision: <b>O</b> — Offense / statute; <b>C</b> — Core elements plus required culpability; <b>E</b> — Enhancements / charging flags; <b>A</b> — Arrest authority. Follow the sequence in order. Do not skip directly to arrest authority before identifying the offense, proving the elements, and determining the offense level.",
+      "enh": [
+          [
+              "Core elements / culpability",
+              "Match facts to the statute’s exact elements and required mental state. Culpability ladder: recklessly < knowingly < intentionally. Use the mental state required by the statute. Do not assume a higher culpability level unless the facts support it."
+          ],
+          [
+              "Enhancements / charging flags",
+              "Most misdemeanors and lower-level felonies may enhance based on injury level, value/loss amount, victim status, weapon involvement, location, prior convictions, protective-order/no-contact-order status, use of force, threat, vehicle, deadly weapon, or special statutory circumstances."
+          ],
+          [
+              "Highest supported level",
+              "Always identify the highest supported offense level before evaluating arrest authority."
+          ],
+          [
+              "Arrest authority last",
+              "After offense, elements, culpability, and enhancements, decide whether felony PC supports arrest authority, the misdemeanor was committed or attempted in your presence, a listed statutory exception applies, or no warrantless custodial arrest authority exists."
+          ],
+          [
+              "Disposition branch",
+              "If arrest authority is absent, consider report, summons, citation, warrant request, prosecutor review, supervisor consult, continued investigation, or release/non-enforcement if facts do not support an offense."
+          ],
+          [
+              "Search / seizure checkpoint",
+              "Any detention, entry, search, seizure, interrogation, or arrest requires its own independent legal basis and must comply with agency policy."
+          ]
       ],
-      [
-        "Enhancement flags",
-        "Check injury level, value/loss, victim status, weapon, location, priors, protective/no-contact order status, force/threat/vehicle/deadly weapon use, and special statutory circumstances."
-      ],
-      [
-        "Arrest authority last",
-        "After offense, elements, culpability, and enhancements, decide: felony PC, misdemeanor in presence, listed exception, warrant, or no warrantless custodial authority."
-      ],
-      [
-        "Disposition branch",
-        "If arrest authority is absent, consider report, summons, citation, warrant request, prosecutor review, supervisor consult, continued investigation, or release/non-enforcement if facts do not support an offense."
-      ],
-      [
-        "Report template",
-        "I observed/learned [facts], which established PC for [offense] because [facts matched elements]. Based on [authority/disposition], I [warned/cited/summonsed/arrested/reported/released] and documented [evidence]."
-      ]
-    ],
-    "arr": "O-C-E-A is a decision framework, not arrest authority. Use F01 for the arrest-authority analysis after the offense and level are mapped.",
-    "note": "Memory shortcut: Name the offense. Prove the elements. Check enhancements. Then decide arrest authority. Any detention, search, entry, seizure, interrogation, or arrest still needs its own legal basis."
+      "arr": "O-C-E-A is a decision framework, not arrest authority. Use F01 Arrest Authority Rule after the offense, elements, culpability, and offense level are mapped. Probable cause and custodial-arrest authority are not always the same thing.",
+      "note": "Report template: I observed / learned [specific facts], which established probable cause to believe [offense] occurred because [facts matched the required statutory elements]. Based on [arrest authority / citation authority / summons decision / report-only disposition], I [warned / cited / summonsed / arrested / reported / released] and documented [evidence]. Memory shortcut: Name the offense. Prove the elements. Check enhancements. Then decide arrest authority."
   },
   {
     "cat": "Foundations",
@@ -443,41 +447,49 @@ const CARDS = [
     "arr": "Detention authority only. IC 34-28-5-3 does not provide custodial arrest authority for the underlying civil violation. Refusal to Identify is a Class C misdemeanor; if refusal occurs in your presence after a lawful predicate stop, analyze arrest authority under F01 and policy.",
     "note": "Do not turn a consensual encounter or vague suspicious-person call into Refusal to Identify. Document the predicate violation, allegation given, ID option requested, exact refusal words/actions, knowing/intentional facts, task-completion point, and any independent reason for extension."
   },
-  {
-    "cat": "Foundations",
-    "num": "F05A",
-    "off": "Refusal to Identify Self",
-    "stat": "IC 34-28-5-3.5",
-    "auth": "presence",
-    "elem": "A person commits Refusal to Identify Self when, after being stopped for an infraction or ordinance violation, the person knowingly or intentionally refuses to provide either <b>name, address, and date of birth</b> or <b>driver’s license if in possession</b> to a law enforcement officer. Class C misdemeanor.",
-    "enh": [
-      [
-        "Elements",
-        "1) Person was stopped by LE. 2) Stop was for an infraction or ordinance violation. 3) Officer requested name/address/DOB or DL if possessed. 4) Person knowingly/intentionally refused. 5) Refusal occurred after the lawful predicate existed."
+    {
+      "cat": "Foundations",
+      "num": "F05A",
+      "off": "Refusal to Identify Self",
+      "stat": "IC 34-28-5-3.5",
+      "auth": "presence",
+      "elem": "A person commits <b>Refusal to Identify Self</b> when, after being stopped for an infraction or ordinance violation, the person knowingly or intentionally refuses to provide either <b>name, address, and date of birth</b> or <b>driver’s license, if in the person’s possession</b>, to a law enforcement officer. This is a <b>Class C misdemeanor</b>.",
+      "enh": [
+          [
+              "Elements",
+              "1) Person was stopped by law enforcement. 2) Stop was for an infraction or ordinance violation. 3) Officer requested name/address/DOB or driver’s license if possessed. 4) Person knowingly or intentionally refused. 5) Refusal occurred after the lawful infraction/ordinance predicate existed."
+          ],
+          [
+              "Predicate stop required",
+              "The stop must be based on an infraction or ordinance violation: traffic infraction, pedestrian infraction, parking infraction, local ordinance violation, or other civil infraction/ordinance basis. A purely consensual encounter does not satisfy the statute."
+          ],
+          [
+              "Terry distinction",
+              "A generalized suspicious-person encounter or criminal-investigatory Terry stop does not automatically satisfy IC 34-28-5-3.5 unless there is also an infraction/ordinance predicate. No lawful infraction/ordinance predicate = no IC 34-28-5-3.5 offense."
+          ],
+          [
+              "Related detention statute",
+              "Under IC 34-28-5-3, an officer who believes in good faith that a person committed an infraction or ordinance violation may detain only long enough to inform the person of the allegation, obtain either name/address/DOB or driver’s license if in possession, and allow execution of a notice to appear."
+          ],
+          [
+              "Either / or compliance",
+              "The person can comply by giving name, address, and date of birth, or a driver’s license if in possession. Do not imply every person must provide all four items. Do not imply every pedestrian must physically produce an ID card."
+          ],
+          [
+              "Driver distinction",
+              "Traffic-driver stops may involve separate Title 9 license-possession, display, registration, or driver duties. Keep that analysis separate from Refusal to Identify Self under IC 34-28-5-3.5."
+          ],
+          [
+              "False information caution",
+              "False information, another person’s identity, false documents, or misleading information may require a separate offense analysis. Do not force all false-ID conduct into IC 34-28-5-3.5."
+          ],
+          [
+              "No bootstrap",
+              "Do not convert a weak, unlawful, or purely consensual encounter into a Refusal to Identify charge. The request must stay tied to the lawful infraction/ordinance stop and the identification information required by statute."
+          ]
       ],
-      [
-        "Predicate required",
-        "Traffic infraction, pedestrian infraction, parking infraction, local ordinance violation, or other civil infraction/ordinance basis. Pure consensual encounter does not satisfy the statute."
-      ],
-      [
-        "Terry distinction",
-        "A criminal-investigatory Terry stop does not automatically satisfy IC 34-28-5-3.5 unless there is also an infraction/ordinance predicate."
-      ],
-      [
-        "Driver distinction",
-        "Drivers may have separate Title 9 license/display/registration duties. Keep that analysis separate from refusal under IC 34-28-5-3.5."
-      ],
-      [
-        "False info caution",
-        "False name, use of another person’s identity, false documents, or misleading information may require a separate offense analysis; do not force all false-ID conduct into refusal."
-      ],
-      [
-        "Field wording",
-        "“I stopped you for [infraction/ordinance]. Indiana law requires you to provide either your name, address, and date of birth, or your driver’s license if you have it.”"
-      ]
-    ],
-    "arr": "Class C misdemeanor. In normal patrol use, refusal occurs in the officer’s presence after a lawful infraction/ordinance stop, so the misdemeanor-presence rule may support arrest authority. If predicate or presence is weak, use summons/report/prosecutor/warrant review.",
-    "note": "Avoid saying “You have to give me ID no matter what,” “You have to show a physical ID card,” or “You have to identify because I asked.” No lawful infraction/ordinance predicate = no IC 34-28-5-3.5 charge."
+      "arr": "Class C misdemeanor. In normal patrol use, the refusal occurs in the officer’s presence after a lawful infraction/ordinance stop, so the misdemeanor-presence rule may support arrest authority under F01 / IC 35-33-1-1. If the refusal did not occur in your presence, or the predicate stop is weak, use report, summons, prosecutor review, or warrant review instead of assuming custodial arrest authority.",
+      "note": "Field wording: “I stopped you for [infraction / ordinance violation]. Indiana law requires you to provide either your name, address, and date of birth, or your driver’s license if you have it.” Avoid: “You have to give me ID no matter what,” “You have to show me a physical ID card,” “You have to identify because I asked,” or “You’re refusing because you won’t answer unrelated questions.” Report template: I stopped [person] for [specific infraction/ordinance violation] based on [specific facts], informed them of the allegation, requested the required identifying information, documented the knowing/intentional refusal by [words/actions], and applied F01 arrest authority/disposition."
   },
   {
     "cat": "Foundations",
@@ -703,37 +715,49 @@ const CARDS = [
     "arr": "Reference only. This card creates no PC, RS, arrest authority, search authority, offense elements, charging level, or enhancement facts. The mapped offense or legal doctrine controls.",
     "note": "Use legacy citations to understand older material; do not copy outdated citations into a new report without checking the current code."
   },
-  {
-    "cat": "Foundations",
-    "num": "F12",
-    "off": "FTO Performance Benchmarks",
-    "stat": "FTO DOR categories",
-    "auth": "reference",
-    "elem": "FTO evaluation focuses on applying knowledge safely and independently: officer safety, investigation/interrogation skill, vehicle and pedestrian stops, self-initiated activity, policy knowledge, criminal/vehicle code knowledge, patrol procedures, arrest procedures, and crash investigation.",
-    "enh": [
-      [
-        "Unacceptable patterns",
-        "No search/pat search · poor handcuffing · seated contacts · failure to log/call off · loses control · fails to recognize violations or suspicious activity."
+    {
+      "cat": "Foundations",
+      "num": "F12",
+      "off": "FTO Performance Benchmarks",
+      "stat": "FTO DOR categories",
+      "auth": "reference",
+      "elem": "FTO evaluation focuses on whether the officer can apply knowledge, policy, tactics, and patrol judgment safely, lawfully, and independently. This card is a performance benchmark reference — not a criminal offense, probable-cause basis, arrest-authority rule, search-authority rule, or substitute for statute, case law, policy, FTO instruction, or supervisor direction.",
+      "enh": [
+          [
+              "Core FTO evaluation areas",
+              "Officer safety · investigation/interviewing · vehicle stops · pedestrian contacts · self-initiated activity · criminal law · vehicle code · policy · patrol procedures · arrest procedures · search/seizure awareness · crash investigation · report writing · radio use/call handling · scene control · decision-making/disposition."
+          ],
+          [
+              "Unacceptable performance patterns",
+              "Failing to search/pat down when legally justified, tactically necessary, and policy-supported; confusing Terry frisk, custodial search, inventory, and pre-transport search; poor handcuffing; seated/poorly positioned contacts; losing sight of hands; failing to maintain position of advantage; failing to log/call out/call off; losing control of a scene; failing to recognize violations, safety hazards, mapped offenses, or arrest-authority limits; extending detentions without independent legal basis; poor report articulation; failing to explain disposition."
+          ],
+          [
+              "Acceptable performance patterns",
+              "Uses position of advantage; maintains visual contact and hand awareness; gives clear commands; obtains necessary information; identifies the legal issue; applies criminal/traffic/ordinance elements correctly; knows when to warn, cite, summons, arrest, report, or release; documents facts, not conclusions; explains enforcement or non-enforcement; uses radio properly; requests backup when appropriate; follows policy and supervisor direction; completes reports accurately and on time."
+          ],
+          [
+              "Superior performance patterns",
+              "Foresees danger before it develops; uses cover, concealment, distance, lighting, and positioning effectively; controls major/chaotic scenes; prioritizes under stress; builds high-quality cases; applies law to unusual or ambiguous facts; recognizes enhancement issues; preserves evidence early; anticipates victim/witness/suspect/officer-safety needs; coordinates resources; explains decisions clearly to FTO, supervisor, prosecutor, or court; shows independent patrol judgment without unnecessary prompting."
+          ],
+          [
+              "O-C-E-A self-check",
+              "O — What was the mapped offense, violation, ordinance, civil issue, or policy issue? C — What facts supported/defeated the elements, and did I document facts instead of conclusions? E — Were there injury, weapon, victim-status, prior-history, DV, protective-order, vehicle, location, value, officer-safety, or scene-control issues? A — What authority supported detention, search, arrest, citation, summons, report, or release, and did I stay within scope?"
+          ],
+          [
+              "Disposition branch",
+              "After each call ask: Did I recognize the issue? Apply correct law/policy/procedure? Control the scene safely? Communicate clearly? Gather necessary facts? Make a lawful disposition? Document the facts and explain the decision? What would I do differently next time?"
+          ],
+          [
+              "FTO debrief template",
+              "On this call, I identified [offense / issue / policy concern]. The key facts were [specific facts]. I handled officer safety by [positioning / cover / backup / hand control / communication]. I applied [law / policy / procedure] by [specific action]. I chose [warning / citation / summons / arrest / report / release / referral] because [legal and factual basis]. I documented [evidence / statements / BWC / photos / disposition]. Next time, I should [keep doing / improve / correct specific item]."
+          ],
+          [
+              "Policy / training note",
+              "WPD/FTO materials may provide specific expectations for DOR scoring, radio procedures, traffic-stop scripts, search and handcuffing procedures, prisoner transport, pursuit policy, crash response, report timelines, domestic-violence response, risk-assessment forms, and supervisor notification. Follow current WPD policy, FTO instruction, and supervisor direction."
+          ]
       ],
-      [
-        "Acceptable patterns",
-        "Uses position of advantage · obtains necessary information · maintains visual contact · applies code elements · documents and explains disposition."
-      ],
-      [
-        "Superior patterns",
-        "Foresees danger · uses cover/concealment · builds quality cases · applies law to unusual facts · controls major scenes."
-      ],
-      [
-        "Self-check after calls",
-        "Did I recognize the issue, apply law/policy, control the scene safely, document fully, and explain my decision?"
-      ],
-      [
-        "FTO habit",
-        "Convert every call into O-C-E-A: offense, elements, enhancements, arrest/disposition authority, then report articulation."
-      ]
-    ],
-    "arr": "Training benchmark card — not arrest authority.",
-    "note": "Use this as a post-call self-audit and briefing-prep card during FTO. Current WPD policy and FTO expectations control."
+      "arr": "Training benchmark card only. It creates no arrest authority. For arrest authority, use F01, the mapped offense card, the confirmed warrant card, agency policy, and supervisor/prosecutor guidance. FTO performance is judged partly by whether the officer correctly applies arrest authority, not by this card itself.",
+      "note": "Memory shortcut: Safety. Issue recognition. Law/policy application. Scene control. Facts gathered. Disposition explained. Report completed. Correction applied next call. This is a performance mirror — use it after calls to check whether you recognized the issue, applied the correct law/policy, controlled the scene safely, gathered facts, made a lawful disposition, documented clearly, explained your decision without guessing, and corrected weak performance on the next call."
   },
   {
     "cat": "Search/Seizure",
