@@ -6839,65 +6839,89 @@ const CARDS = [
     "cat": "Search/Seizure",
     "num": "S11",
     "off": "WPD Tow / Inventory Checklist",
-    "stat": "WPD tow policy · Vehicle Impound Report",
+    "stat": "Current WPD Tow / Impound / Inventory Policy · Vehicle Impound Report · S10",
     "auth": "reference",
-    "elem": "For a WPD tow/impound inventory, activate BWC, secure the scene, advise communications, complete the Vehicle Impound Report, and document a complete non-investigatory inventory. If roadside conditions are unsafe, the vehicle may be moved to a safer temporary location before inventory; document why.",
+    "elem": "Tow / custody predicate first, then policy inventory, then contraband, then arrest authority — kept strictly separate. The tow/impound/lawful vehicle-custody reason must exist <b>before</b> the inventory begins; the inventory is then conducted as an administrative caretaking function under current WPD policy to account for property, protect the owner's property, protect WPD from false claims, and identify hazards. It is not an investigative search for evidence and is not a shortcut around probable cause. Evidence found during inventory does not retroactively justify the tow/impound decision.",
     "enh": [
       [
-        "Tow documentation",
-        "Dispatch tow/VIN/plate/location/reason/Hold status · approved wrecker/owner request if permitted · appropriate tow-sheet copies"
+        "Predicate first",
+        "Document the lawful tow/impound/custody reason before listing anything found inside: driver-arrest unattended vehicle, theft/vandalism exposure, no qualified driver, traffic/safety hazard, abandoned/stolen vehicle, registration issue, evidence hold, crash removal, private-property tow, or other policy-supported basis. Do not write that inventory results justified the tow."
+      ],
+      [
+        "Pre-inventory checklist",
+        "Activate BWC · secure scene · confirm predicate · determine Hold/No Hold · advise communications with plate/VIN/description/location/reason/Hold status · use approved wrecker unless owner-requested tow is permitted · note condition, access, and whether occupants removed property first."
+      ],
+      [
+        "Unsafe roadside relocation",
+        "If roadside conditions (traffic, weather, crash hazard, poor lighting) make inventory unsafe, the vehicle may be moved to a safer location before inventory if policy allows; document the safety reason, who maintained control, and that the inventory stayed administrative, not investigative."
       ],
       [
         "Inventory scope",
-        "Passenger compartment · truck bed · trunk · consoles · glove box · attached trailers · attached/unattached containers · property the arrestee asks to leave in vehicle"
+        "Per current policy: passenger compartment, truck bed, trunk, consoles, glove box, door/seatback pockets, cargo area, attached trailers, attached/unattached containers, property the arrestee asks to leave in vehicle. Inventory consistently — do not selectively search only where contraband might be."
       ],
       [
-        "Locked/sealed areas",
-        "Seek owner/driver permission/assistance when reasonable; make reasonable attempts if not opened; if still inaccessible, document description and location on tow slip instead of forcing destructive entry"
+        "Closed/locked/sealed containers",
+        "Policy-controlled: seek owner/driver permission or assistance when reasonable; make reasonable non-destructive attempts only if policy permits; do not force destructive entry solely for inventory; if still inaccessible, document description/location on the tow slip/Vehicle Impound Report instead."
       ],
       [
-        "Search-warrant pause",
-        "If evidence-processing/search-warrant need arises, stop the interior/container inventory and preserve the vehicle until proper authority is obtained"
+        "High-value items / safekeeping",
+        "Cash, jewelry, precious metals, firearms, prescription medications, electronics, documents, tools, biohazards, and sharps require policy-based handling: description, location, quantity, photos if appropriate, and whether released, left, booked for safekeeping, or booked as evidence with property-room entry and chain of custody."
       ],
       [
-        "Narrative",
-        "Comments should begin Hold or No Hold; include full inventory narrative; photographic inventory only with supervisor approval and notation"
+        "Search-warrant / evidence pause",
+        "If inventory reveals evidence of a crime, pause — do not silently convert the administrative inventory into an investigative search. Secure the vehicle and obtain a search warrant, S04 motor-vehicle-exception PC, consent, or other proper authority before expanding beyond inventory scope."
+      ],
+      [
+        "Hold / No Hold narrative",
+        "Vehicle Impound Report narrative should begin \"Hold\" or \"No Hold,\" then the tow reason and full inventory narrative (areas inventoried, property/valuables/hazards/evidence found, closed/locked items, final disposition). Photographic inventory only with supervisor approval if policy requires it."
       ]
     ],
-    "arr": "Administrative checklist — not arrest authority.",
-    "note": "FTO report test: the tow reason, policy-based inventory scope, locked-container handling, and Hold/No Hold documentation must make the inventory look caretaking, not pretextual."
+    "arr": "Administrative checklist — not arrest authority. If contraband is found during a lawful policy inventory, identify the offense, analyze possession/constructive possession, determine offense level, apply F01/IC 35-33-1-1, and document arrest, summons, report, prosecutor review, or release separately from the inventory.",
+    "note": "FTO report test: the report must explain why the vehicle was being towed/impounded <b>before</b> the inventory began, what policy required, what areas were inventoried, how closed/locked/sealed items were handled, Hold/No Hold status, property/hazards documented, forms completed, and what separate authority supported any criminal enforcement. If the report starts with what contraband was found before explaining the tow reason, rewrite it. Memory shortcut: tow/custody reason first → BWC → comms (plate/VIN/location/reason/Hold) → approved tow process → inventory per policy → closed/locked item handled per policy → evidence issue pauses inventory for separate authority → Vehicle Impound Report complete → contraband is a separate offense + F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S12",
     "off": "Inventory Special Items / Property Room",
-    "stat": "WPD property room · tow policy",
+    "stat": "Current WPD Property Room Policy · WPD Tow / Inventory Policy · Vehicle Impound Report · S10/S10A",
     "auth": "reference",
-    "elem": "Some items found during a tow inventory require special handling and should not simply remain with the vehicle at the tow yard. Document, collect, book, or release them according to policy and ownership/safety facts.",
+    "elem": "Some items found during a lawful tow/impound/vehicle-custody inventory require special handling and should not simply remain with the vehicle at the tow yard: document, collect, book, release, or leave the item per current WPD policy, ownership facts, safety concerns, and evidence status. This is a property-handling/liability-control card, not a search doctrine and not arrest authority — apply it only after S10/S10A establish a lawful tow/inventory predicate.",
     "enh": [
       [
-        "High-value / sensitive",
-        "Prescription medications · firearms · money $25+ · precious metals/jewelry generally must be documented and booked or released to owner/driver if ownership is confirmed and release is noted"
+        "High-value / sensitive property",
+        "Cash, jewelry, precious metals, electronics, tools, documents, prescription medications, firearms, and ammunition: document description, location found, owner/claimant if known, condition, and whether released, left, booked for safekeeping, or booked as evidence with property-room entry and Vehicle Impound Report notation. Use current policy value thresholds — do not rely on memory."
       ],
       [
-        "Firearms",
-        "Make safe; visually and physically check; remove ammunition/magazines; complete required case/property documentation"
+        "Firearms / weapons",
+        "If trained and policy permits: make safe, visually/physically check condition, remove magazine/ammunition, do not manipulate beyond training. Document type, make/model, serial number, location, loaded/unloaded status, who handled it, and property/evidence disposition; request armorer/supervisor help if unfamiliar or unsafe."
+      ],
+      [
+        "Prescription medications",
+        "Document medication name if visible, container/label info, owner/patient name, location found, and disposition (released, booked for safekeeping/evidence, destroyed, or left per policy). Do not guess identity, open containers beyond what policy/safety/evidence requires, or leave medications unsecured unless policy allows."
+      ],
+      [
+        "Money / currency",
+        "Document amount, location, owner/claimant, denominations if required, count method, and witness/second officer if prudent. Do not rely on an unconfirmed dollar threshold; large amounts suggesting criminal activity should go through supervisor/prosecutor/evidence guidance before treating as evidence."
       ],
       [
         "Animals",
-        "Pets may be released to approved family/friends with owner permission when appropriate; if no alternative exists, coordinate humane-society/animal-control handling"
+        "Do not leave pets in a towed vehicle. Document species/condition/location, owner permission, release recipient and contact info, or animal-control/humane-society coordination if no safe alternative exists; request specialized resources for exotic/aggressive/injured animals."
       ],
       [
-        "Hazardous materials",
-        "Document type/amount/location; decide safe-site/removal needs; notify wrecker and property room when hazardous materials remain or are removed"
+        "Hazardous materials / biohazards / sharps",
+        "Document type, amount, location, condition, exposure risk, and packaging; notify supervisor, wrecker, property room, fire department, or hazmat resource as needed. Do not transport unsafe materials without policy authority; do not handle/transport suspected explosives unless specifically trained and directed — secure the area and request specialized resources instead."
+      ],
+      [
+        "Contraband / evidence",
+        "Document location found, preserve, photograph if appropriate, maintain chain of custody, and book as evidence. Evidence found during inventory does not retroactively justify the tow/impound decision. If evidence-processing expands beyond policy inventory, pause and use S10A's search-warrant/evidence-processing pause."
       ],
       [
         "Field release",
-        "If property is released at scene, identify the recipient, confirm ownership/authority, and note exactly what was released"
+        "Document the exact item released, recipient name/identifying info, recipient's authority/ownership basis, owner permission if applicable, time/location, condition, and signature/acknowledgment if policy requires. Do not field-release evidence, contraband, hazardous items, firearms, medications, or disputed property unless policy and facts allow it."
       ]
     ],
-    "arr": "Property-handling checklist — not arrest authority. If contraband is found during a lawful inventory, evaluate the separate offense and arrest authority.",
-    "note": "This card is separated from the general tow checklist so mobile review stays usable. High-value items, weapons, animals, and hazards are liability issues, not just inventory details."
+    "arr": "Property-handling checklist — not arrest authority. Property handling is separate from criminal enforcement. If contraband is found during a lawful inventory, identify the mapped offense, determine possession/constructive possession, determine offense level, apply F01/IC 35-33-1-1, and document separate arrest authority — do not arrest solely because special property handling occurred.",
+    "note": "High-value property, weapons, medications, animals, hazards, and evidence are liability issues, not just inventory details. The report must show what the item was, where found, why it required special handling, who received it or where it was booked, whether the action was caretaking/safekeeping/evidence-related, whether ownership/release authority was confirmed, and whether notifications occurred. FTO field rule: do one of four lawful things — document, release, book, or notify — then explain exactly what happened. Memory shortcut: special item? value/gun/meds/animal/hazard/evidence? Policy controls. Identify owner/authority. Release, book, leave under policy, or notify. Document location + condition + recipient/disposition. Contraband is a separate offense + F01."
   },
   {
     "cat": "Alarms/Open Doors",
@@ -6951,145 +6975,237 @@ const CARDS = [
     "cat": "Search/Seizure",
     "num": "S13",
     "off": "Consent Search",
-    "stat": "4A · Ind. Art. 1 §11 · WPD consent procedure",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · Schneckloth · Jimeno · Matlock · Rodriguez (Illinois) · Randolph · Fernandez · Pirtle v. State · Current WPD Consent Procedure",
     "auth": "reference",
-    "elem": "A person may waive search rights by giving <b>voluntary, exceptionally clear consent</b>. Consent must not be mere submission to authority, duress, coercion, or silent compliance with an officer’s direction.",
+    "elem": "A person may waive Fourth Amendment and Indiana Article 1, §11 search protections by giving <b>voluntary, clear consent</b>. Consent is invalid if it is only submission to authority, silent compliance, duress, coercion, threat, force, deception that overbears free choice, or compliance after an officer falsely implies there is no choice. Consent search authority comes from voluntary permission — it is not probable cause, a warrant, SITA, inventory, or the motor vehicle exception.",
     "enh": [
       [
-        "Voluntariness",
-        "Clear words/actions · no coercion · BWC on · consent form when appropriate, especially if in custody"
+        "Request wording / scope",
+        "Ask clearly and specifically: \"May I search [specific place/item] for [specific object/purpose]?\" Separate entry consent from search consent, and person consent from vehicle consent. The scope is what a reasonable officer would understand from the words/circumstances — do not exceed it; clarify before searching farther. Consent to enter a home is not consent to search it."
       ],
       [
-        "Scope",
-        "Search only the areas and items covered by the exact words/meaning of consent; vehicle consent may cover the vehicle/closed containers but not another present person’s private property without authority"
+        "Third-party / apparent authority",
+        "A third party may consent with actual common authority (mutual use, joint access, or control) — e.g., co-occupant, spouse/roommate over shared areas, vehicle owner/operator. Apparent authority may validate consent when officers reasonably but mistakenly believe authority exists. A physically-present co-occupant's clear objection can defeat another occupant's consent as to shared premises; do not remove someone just to avoid their objection."
       ],
       [
-        "Authority",
-        "Owner/possessor/operator or third party with joint access/common authority; apparent authority may suffice if reasonable"
+        "Passenger / third-party property",
+        "A driver/owner does not automatically have authority over every item in the vehicle. If a passenger is present and asserts ownership/privacy over a purse, backpack, locked box, or phone, driver consent may not be enough — clarify or obtain separate consent/warrant/other doctrine."
+      ],
+      [
+        "Digital devices",
+        "Consent to search a vehicle, bag, or room does not automatically authorize a full phone/tablet/cloud-account search. Document the device, exact consent words, scope of data, and timeframe; when digital scope is unclear, stop and seek a warrant or supervisor/prosecutor guidance."
+      ],
+      [
+        "In-custody consent — Pirtle",
+        "If a person is in custody and police ask for consent to search a home or vehicle, Indiana requires advising the person of the right to consult with counsel before deciding whether to consent (Pirtle). Miranda alone is not enough. Obtain an explicit waiver, use the current WPD consent-to-search form, and record on BWC. If the person wants counsel first, stop the consent request unless consultation occurs or another lawful basis exists."
+      ],
+      [
+        "Withdrawal / limitation",
+        "Consent can be limited or withdrawn at any time. If limited, stay within the limitation. If withdrawn, stop searching immediately, do not argue or keep searching, and preserve lawfully found evidence — withdrawal does not erase what was already lawfully observed. Consider a warrant if PC already exists."
+      ],
+      [
+        "Don't substitute for stronger doctrine",
+        "Do not ask for consent unnecessarily when clear independent PC already supports a vehicle search under S04. If a stronger doctrine applies (search warrant, S04, S05, S10/S10A inventory, searchable status, exigency, plain view), identify it clearly and don't let consent muddy the report. Do not use consent to cover a weak or unlawful stop, and do not rely on consent that follows an unlawful stop, prolonged detention, or coercive conduct."
       ]
     ],
-    "arr": "Search authority only — not arrest authority. Consent may be withdrawn at any time; stop when withdrawn unless another exception/warrant applies.",
-    "note": "If the person is in custody and consent is requested, WPD material directs informing the person of the right to consult with an attorney and completing a consent-to-search form."
+    "arr": "This card does not create arrest authority. Consent is search authority only. If evidence/contraband is found, identify the mapped offense, analyze possession/constructive possession, determine offense level, and apply F01/IC 35-33-1-1 separately.",
+    "note": "Avoid writing \"Subject consented\" with no exact words, \"He let me\" without scope, or \"I asked while he was in custody\" without Pirtle. Write the exact request, exact response, custody status, Pirtle advisement/waiver if required, authority to consent, scope, BWC/form, limitations, withdrawal, and what was found. Memory shortcut: ask clearly, get clear consent, no coercion, confirm authority and scope, BWC/form, custody triggers Pirtle, limit or withdrawal means stop, clarify third-party property, searchable status uses a separate doctrine, and contraband found is a separate offense + F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S14",
     "off": "Open View / Plain View / Open Smell",
-    "stat": "Warrant exceptions · open observations",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · Horton · Hicks · Caballes · Rodriguez · Akins/Ocampo v. State",
     "auth": "reference",
-    "elem": "Open view/non-search observation occurs when an officer is in a lawful place and observes evidence without conducting a search. Plain view occurs during a lawful search or lawful presence. The incriminating nature must be immediately apparent before seizure.",
+    "elem": "<b>Open view</b> means an officer sees something from a lawful vantage point without conducting a search. <b>Plain view</b> means an officer is lawfully present, has lawful access, and seizes an item whose incriminating nature is immediately apparent. <b>Open smell/sound</b> means an officer lawfully detects odor, sound, or statements from a lawful position. These may support RS, PC, a warrant, or another doctrine — they do not automatically authorize entry, search, or seizure, and they are not arrest authority by themselves.",
     "enh": [
       [
-        "Open view",
-        "Officer lawfully present · item observed without prying/searching · recognize contraband/stolen/evidence subject to seizure"
+        "Lawful vantage point first",
+        "The officer must be where lawfully allowed to be: public sidewalk/street, lawful stop position, lawful knock-and-talk path, lawfully entered premises. Unlawful vantage points include unlawful entry, curtilage trespass, unlawfully prolonging a stop, and physically manipulating property to expose contents."
       ],
       [
-        "Plain view",
-        "Lawful search/access · immediately apparent evidence · lawful right of access to seize"
+        "Immediately apparent = probable cause",
+        "Not a hunch, curiosity, or \"could be evidence.\" Do not move, manipulate, open, or squeeze an item just to investigate (Hicks) — if PC arises only after moving the object, plain view is weak. Inadvertence is not a required federal element, but lawful access and immediately-apparent PC still are."
       ],
       [
-        "Open smell/sound",
-        "Odor, overheard statements, or K-9 sniff may support PC when the officer is lawfully positioned; articulate all corroborating facts"
+        "Lawful access to seize",
+        "Plain view does not eliminate the lawful-access requirement. Seeing a gun or stolen item inside a residence from outside does not automatically allow entry — a warrant or another entry exception (exigency, emergency aid, consent) is still required before crossing the threshold."
+      ],
+      [
+        "Open smell — marijuana/hemp caution",
+        "Cannabis odor remains relevant evidence; hemp legalization may explain some odors but does not automatically eliminate RS/PC. Build totality: raw vs. burnt odor, strength/source, training/experience, visible material, packaging, admissions, hemp/CBD claim, K9 alert, quantity. Use S08 for hemp vs. marijuana handling and S04 for the vehicle search."
+      ],
+      [
+        "K9 open-air sniff",
+        "A lawful exterior K9 sniff is treated differently from an interior search, but the sniff must occur from a lawful position and not unlawfully prolong the stop (Rodriguez). Do not facilitate, direct, or intend K9 entry into the vehicle before PC exists — document the sniff path, handler actions, and alert, and whether PC existed before any entry."
+      ],
+      [
+        "Open fields / curtilage / knock-and-talk",
+        "Curtilage around a home is strongly protected even though open fields are not. During a lawful knock-and-talk, officers may approach by the normal access route and observe from that path, but may not wander the curtilage, look through windows from non-public areas, or bring a K9 to sniff the home without a warrant or exception."
+      ],
+      [
+        "Vehicle open view/smell lane",
+        "During a lawful stop, open view/smell may create PC for S04. Do not ask for consent unnecessarily when independent PC already supports the vehicle search — document the stop basis, lawful position, odor/item details, and why PC existed before the search."
       ]
     ],
-    "arr": "Observation/search-exception reference — not arrest authority. Arrest or further search still needs the applicable PC, warrant, consent, vehicle exception, or other doctrine.",
-    "note": "If an item is seen inside a residence from outside, a warrant or another entry exception may still be required before entering to seize it."
+    "arr": "Open view/plain view/open smell may help create PC, but PC is not always arrest authority. If evidence suggests an offense, identify the mapped offense, determine felony vs. misdemeanor and presence, and apply F01/IC 35-33-1-1 separately from the search authority.",
+    "note": "Avoid \"Plain view search,\" \"I saw it, so I entered the house,\" \"I moved it to see the serial number,\" or \"K9 entered the car during open-air sniff\" without explaining instinctive vs. facilitated entry. Write the lawful vantage point, what was seen/smelled/heard, no manipulation, why incriminating nature was immediately apparent, lawful access to seize, and the separate doctrine used for entry/search/arrest. Memory shortcut: lawful place + observation without search = open view; lawful presence + access + immediately apparent PC = plain view seizure; lawful smell/sound may support RS/PC; a home threshold needs its own entry doctrine; vehicle PC uses S04; no K9 facilitation before PC; no manipulation; contraband found maps to an offense + F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S15",
     "off": "Search Warrant Basics",
-    "stat": "Search warrant procedure · IC 35-33-5",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · IC 35-33-5 · Gates · Franks · Summers · Riley",
     "auth": "reference",
-    "elem": "The default rule is that a search/seizure should be supported by a warrant unless a recognized exception applies. A judge issues a warrant based on sworn testimony or affidavit establishing PC and particularly describing the place/person/thing to be searched and the items sought.",
+    "elem": "The default rule is that a search/seizure should be supported by a warrant unless a recognized exception applies. A judge issues a warrant on PC supported by oath/affirmation/affidavit, particularly describing the place/person/vehicle/device/account/container/thing to be searched, the items sought, the offense, the PC facts, the <b>nexus</b> between the evidence and the place, and the <b>freshness</b> showing the evidence is likely still there. A search warrant is search authority — it is not automatically arrest authority.",
     "enh": [
       [
-        "Who helps",
-        "Officer may contact supervisor/detective and on-call prosecutor; an officer can obtain a warrant directly from a judge when appropriate"
+        "Indiana statutory anchors",
+        "PC + oath + particularity → execute within 10 days unless a statutory exception applies → return without unnecessary delay listing date/time served and items seized."
       ],
       [
-        "Affidavit content",
-        "Place description · offense · items sought · facts establishing PC · why items are likely located there"
+        "PC + particularity + nexus",
+        "Answer three questions: what crime/evidence are we investigating, where exactly do we want to search, and why is there PC the evidence is there now? Connect the item sought to the place searched with specific facts — not conclusions like \"I believe evidence is inside.\""
       ],
       [
-        "Service window",
-        "Search warrants must be served within the statutory time window; service should occur at the safest and most productive time"
+        "Nexus / freshness",
+        "Nexus facts: suspect lives there, controlled buy occurred there, contraband observed there, device/account used in the offense. Freshness factors: how recently seen, durability of evidence, ongoing conduct, digital persistence. If freshness fades, a warrant is safer than a warrantless exception."
+      ],
+      [
+        "Hearsay / Franks truthfulness",
+        "A warrant may rely on hearsay if reliability is shown (source basis, corroboration, firsthand observation) — document why, not just \"a reliable source said.\" The affidavit must be truthful and complete; do not knowingly/recklessly include false statements or omit material facts that undermine PC."
+      ],
+      [
+        "Who helps / oral-electronic procedure",
+        "Contact supervisor, detective, on-call prosecutor, or obtain the warrant directly from a judge. IC 35-33-5-8 may allow sworn testimony via an approved recorded/electronic process instead of a physical affidavit — follow current local procedure and supervisor/prosecutor guidance; do not improvise."
+      ],
+      [
+        "Scope / persons present",
+        "Search only where the listed items could reasonably be located (size and location control). A premises warrant does not automatically authorize a physical search of every person present (Ybarra) — occupants may be detained for safety/orderly execution, but searching a person needs separate authority (named in warrant, arrest PC, SITA, Terry, consent, searchable status)."
+      ],
+      [
+        "Digital devices",
+        "A warrant to seize a phone is not unlimited authority to search all data. Build a case-specific nexus for the device/account/data sought, and follow Indiana's separate restriction on compelling passcodes/biometric access without proper warrant procedure."
       ]
     ],
-    "arr": "Warrant procedure — not arrest authority by itself.",
-    "note": "Write PC facts, not conclusions. If the investigation pauses long enough or mobility/exigency fades, a warrant may be safer than relying on an exception."
+    "arr": "This card does not create arrest authority by itself. If evidence found during the warrant supports an arrest, identify the mapped offense, determine PC and felony/misdemeanor, and apply F01/IC 35-33-1-1 — do not arrest solely because a search warrant was executed.",
+    "note": "Write PC facts, not conclusions. Avoid \"I had PC\" without facts, \"the warrant covered everything,\" or \"the house warrant let me search everyone.\" Document PC, nexus, freshness, particular place/item, warrant terms, execution date/time, scope, occupant-detention basis, separate person-search basis, items seized, the completed return, and separate arrest authority. Memory shortcut: crime → evidence → place/person/vehicle/device/account/container/thing → PC facts → nexus → freshness → particularity → judge → execute within 10 days unless exception → search only where the item could be → people present are not automatically searchable → return is date/time + items seized → book evidence → arrest needs separate F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S16",
     "off": "Search Warrant Service / Return",
-    "stat": "Knock-and-announce · search-warrant execution",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · IC 35-33-5-4 / -7 · Ross · Summers · Bailey · Ybarra · S15",
     "auth": "reference",
-    "elem": "When serving a search warrant, officers generally knock and announce authority and purpose before entry unless a specific safety/destruction-of-evidence exception applies. Force used to enter must be reasonable.",
+    "elem": "When executing a search warrant, officers must follow the warrant's terms, Indiana Code, and current WPD policy. Officers generally knock and announce authority and purpose before entry unless a specific safety, futility, or evidence-destruction exception applies; any force used must be reasonable. The warrant controls the scope, and the return and evidence handling complete the service process.",
     "enh": [
       [
-        "Scope",
-        "Search only places where the listed object could reasonably be found; closets, drawers, containers, vehicles, and locked areas depend on the warrant/object sought"
+        "Pre-service checklist",
+        "Confirm the warrant is signed/valid, the execution deadline, correct address/target, particular place/items, special service terms (nighttime/no-knock), and whether facts have changed since issuance. If anything is expired, wrong, or unclear, stop and consult supervisor/prosecutor/judge."
       ],
       [
-        "Persons present",
-        "Occupants may be detained for orderly completion/officer safety, but a premises warrant does not automatically authorize searching every person present"
+        "Service window",
+        "Indiana search warrants generally must be executed within 10 days unless an exception applies and returned without unnecessary delay. \"Any day or time\" is not a command to serve at the riskiest time — plan the safest, most productive service."
       ],
       [
-        "Return",
-        "List seized items, record execution date/time, return the warrant to the issuing judge/court, and secure seized property"
+        "Knock-and-announce / forced entry",
+        "Announce police authority and purpose (\"Police department. Search warrant. Open the door.\") before entry. If not admitted, reasonable forced entry may be used — document announcement, wait time, non-admission, entry point, and damage. Bypassing knock-and-announce requires specific facts (imminent safety threat, evidence destruction, futility), not generic labels like \"drug case, so no knock.\""
+      ],
+      [
+        "Scope / containers / vehicles",
+        "Search only where the listed object could reasonably be found — object size and warrant language control. A premises warrant may or may not cover vehicles on site depending on warrant language, ownership, and connection to the offense; confirm before searching a vehicle."
+      ],
+      [
+        "Persons present — detention vs. search",
+        "A premises warrant may permit reasonable detention of occupants in the immediate vicinity for safety/orderly execution (Summers), but detention authority weakens the farther a person is from the immediate vicinity (Bailey). A premises warrant does not automatically authorize searching every person present (Ybarra) — identify separate authority (named in warrant, arrest PC, SITA, Terry, consent, searchable status) before searching a person."
+      ],
+      [
+        "Protective sweep / plain view",
+        "A safety sweep is limited to places a person could hide — not drawers, small containers, or phones. Plain view may allow seizing unlisted evidence only with lawful presence, lawful access, and immediately-apparent PC, with no unlawful expansion beyond warrant scope. Use S14."
+      ],
+      [
+        "Return requirement",
+        "Complete the return without unnecessary delay: date and time served, items seized, executing officer, issuing court, and any required inventory/property-disposition information. A clean warrant service can still become a documentation problem if the return is missing, late, or inconsistent with the evidence log."
       ]
     ],
-    "arr": "Warrant-service procedure — arrest authority requires a separate warrant, PC offense, or other lawful basis.",
-    "note": "Wrongful property damage or injury can create liability. Maintain BWC, scene control, property accountability, and clear documentation."
+    "arr": "This card does not create arrest authority. Warrant-service procedure is not arrest authority by itself. Arrest during or after service requires a separate arrest warrant, PC for a mapped offense plus F01/IC 35-33-1-1, or other lawful arrest basis — document it separately from the search-warrant authority.",
+    "note": "Avoid \"Served warrant\" without date/time, \"Warrant allowed search of everything,\" \"No-knock because drugs,\" or \"Arrested due to warrant service.\" Write warrant validity, service date/time, announcement, entry method, force/damage reason, scope, occupant-detention basis, separate person-search basis, items found, evidence handling, the return (date/time + seized list), and separate arrest authority. Memory shortcut: signed? valid? within 10 days? scope read? BWC. Knock/announce unless exception. Reasonable force only. Search where the item could be. Detain occupants reasonably. Search persons only with separate authority. Return = date/time + seized items. Book evidence. Arrest needs separate F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S17",
     "off": "Protective Sweep / Emergency Search",
-    "stat": "Maryland v. Buie · emergency exceptions",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · Maryland v. Buie · Brigham City · Michigan v. Fisher · Caniglia v. Strom · Kentucky v. King · Lange v. California · S06/S09/S14/S16",
     "auth": "reference",
-    "elem": "A protective sweep is a limited search for people when officers lawfully enter and have facts supporting a safety concern. Emergency searches are limited entries/searches to prevent injury, destruction of felony evidence, escape of a felon, or address an immediate health/life danger.",
+    "elem": "A <b>protective sweep</b> is a quick, limited search for people who may pose a danger when officers are lawfully inside or entering a protected area — places a person could hide, nothing more. An <b>emergency/exigent entry</b> is a limited warrantless entry based on immediate need: rendering aid, preventing serious injury, an imminent threat, imminent destruction of significant evidence, escape of a serious offender, or hot pursuit. Neither doctrine is a general evidence search or arrest authority; stop when the safety risk or emergency ends and get consent, a warrant, or another lawful basis before continuing.",
     "enh": [
       [
-        "Protective sweep",
-        "Limited to places a person could hide · based on safety facts · ends when safety risk is cleared"
+        "Buie sweep scope",
+        "During an in-home arrest, officers may check closets and spaces immediately adjoining the arrest from which an attack could be launched; a broader sweep needs specific articulable facts (movement, voices, witness/suspect statements someone else is inside, weapons, violent offense). Limited to places a person could hide — not drawers, jewelry boxes, purses, phones, or small containers. Stop once persons/areas are cleared; further evidence search needs a separate doctrine."
       ],
       [
-        "Hot/fresh pursuit",
-        "Felony suspect pursuit/sighting facts · command/signal when required · secure perimeter and obtain warrant if no felony/exigency"
+        "Emergency aid",
+        "Requires objective facts that someone inside is seriously injured or imminently threatened with serious injury (screaming, gunshots, visible blood, overdose, credible suicide-risk facts) — not a generic welfare concern, no-answer-at-door, or \"community caretaking\" label (Caniglia bars that as a standalone basis). Scope is limited to locating/aiding the person and securing immediate threats; stop when the emergency ends. Use S09 for the full welfare-entry card."
       ],
       [
-        "Stop and frisk reminder",
-        "A stop and frisk needs RS of criminal activity plus separate RS the person is armed and dangerous"
+        "Exigent evidence destruction",
+        "High-risk, especially for a home. Requires PC for the offense/evidence plus specific facts the evidence is being or imminently will be destroyed (flushing sounds, shredding, statements, remote-wipe risk) — not a generic \"they might destroy evidence.\" Officers may not create the exigency through unlawful or threatened-unlawful conduct and then rely on it. Misdemeanor-level evidence rarely justifies forced home entry."
+      ],
+      [
+        "Hot / fresh pursuit",
+        "May support warrantless entry, but it is not automatic for every offense. Felony hot pursuit is stronger; misdemeanor pursuit requires case-specific exigency, not a categorical home-entry rule (Lange). Document offense level, PC, continuous pursuit, commands/signals, and why warrant delay was unsafe. If pursuit ends or exigency fades, secure the perimeter and seek a warrant."
+      ],
+      [
+        "Doctrine separation",
+        "Do not blur protective sweep (people, safety facts, places a person could hide), Terry frisk (person, weapons, separate armed-and-dangerous RS — use S06), plain view (immediately apparent evidence during lawful presence — use S14), and search warrant (full scope — use S16). A traffic stop does not authorize a frisk; a frisk does not authorize a sweep; a sweep does not authorize a full person search."
+      ],
+      [
+        "Plain view during sweep",
+        "If evidence is observed during a lawful sweep or emergency entry, apply plain-view elements (lawful presence, lawful access, immediately apparent PC, no unlawful expansion) before seizing it. Do not move, open, or manipulate items to create PC."
       ]
     ],
-    "arr": "Limited search/entry authority — not a general evidence search and not arrest authority by itself.",
-    "note": "Tie the scope to the reason for entry. Once the emergency or safety issue ends, stop and obtain consent, warrant, or another lawful basis."
+    "arr": "This card does not create arrest authority. If evidence, contraband, or a suspect is found, identify the mapped offense, establish PC, determine felony/misdemeanor, and apply F01/IC 35-33-1-1 — do not arrest solely because a protective sweep or emergency entry occurred.",
+    "note": "Avoid \"Swept for officer safety\" with no facts, \"Consent to enter allowed us to sweep,\" \"Community caretaking entry,\" or \"Misdemeanor pursuit allowed entry.\" Write the lawful entry basis, specific safety/emergency facts, scope tied to people/aid/exigency, areas checked and why, when the safety/emergency ended, and the separate doctrine for plain view, warrant, consent, or arrest. Memory shortcut: lawful entry first; protective sweep is for people only, person-sized places only, with safety facts; emergency aid means serious injury or imminent serious injury; exigency must be immediate, specific, and serious; hot pursuit is stronger for felonies and not automatic for misdemeanors; stop when the risk ends; further search needs a warrant, consent, or separate doctrine; arrest needs separate F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S18",
     "off": "SITA Practical Scope / Evidence Targets",
-    "stat": "Search incident to arrest · WPD operational detail",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · Robinson · Chimel · Gant · Riley · S05",
     "auth": "reference",
-    "elem": "Search incident to arrest is conducted substantially contemporaneously with a lawful arrest and is confined to the arrestee and the immediate area that was legally searchable at the time. It may address weapons, escape items, instruments, fruits, and evidence of the offense.",
+    "elem": "Search incident to a lawful custodial arrest (SITA) must be substantially contemporaneous with the arrest and is limited to the arrestee, items immediately associated with the arrestee, and the immediate-control area that was legally searchable at the time. It is justified by officer safety, preventing escape, and preventing destruction of evidence. SITA is search authority tied to arrest — it is not independent arrest authority, inventory, consent, Terry frisk, or a motor-vehicle-exception search.",
     "enh": [
       [
-        "Evidence targets",
-        "Weapons · instruments of crime · fruits of crime · notes with victim info · wallets/items on person · clothing particles · shoes matching prints"
+        "Timing rule",
+        "PC/warrant → arrest authority → custodial arrest → SITA → transport/booking, in that order. Do not write \"I could have arrested, so I searched\" — a citation, summons, or warning alone does not authorize SITA. If no custodial arrest occurs, use another lawful doctrine or do not search."
       ],
       [
-        "Where",
-        "Pockets, wallet, items on person, and bags/containers in the immediate area when lawful; vehicle SITA remains subject to Gant limits"
+        "Person SITA — not a Terry frisk",
+        "A lawful custodial arrest permits a <b>full search</b> of the arrestee's person (pockets, waistband, socks, shoes, wallet, items immediately associated) — more than a pat-down. If they are under lawful custodial arrest and going in your car, complete a thorough search before transport, not just a frisk; use S06 only for a detained, non-arrested person."
+      ],
+      [
+        "Practical evidence targets",
+        "Weapons, knives, sharps, drugs/paraphernalia, stolen property, cash tied to the offense, IDs/false IDs, notes with victim info, keys, escape tools, clothing/shoe trace evidence (mud, glass, blood, gunshot residue, fibers) — search thoroughly but follow current policy for sensitive-area, cross-sex, and juvenile searches."
+      ],
+      [
+        "Bags / immediate-control area",
+        "Ask whether the item was on the person, immediately associated, or within immediate control (reach) at the time of arrest — not just nearby. Once the arrestee is secured and cannot access the area, the immediate-control justification weakens and a separate doctrine is needed."
+      ],
+      [
+        "Vehicle SITA — Gant limits",
+        "After arresting a recent occupant, the passenger compartment may be searched only if (1) the arrestee is unsecured and within reaching distance, or (2) it is reasonable to believe the vehicle contains evidence of the offense of arrest. Do not write \"driver arrested, so I searched the car incident to arrest\" — name the Gant prong, or use S04/inventory/consent/warrant instead."
+      ],
+      [
+        "Digital devices — Riley",
+        "A phone may be physically seized during SITA, but its digital contents generally may not be searched without a warrant, valid specific consent, or exigency. Secure the device (airplane mode/Faraday bag per policy) and do not call a content review \"SITA.\""
       ],
       [
         "Documentation",
-        "BWC on · PC for arrest existed before search · timing/location · items found · chain of custody"
+        "BWC on; PC and arrest authority established before the search; timing and location of search relative to arrest; what was searched and why it was on the person/immediately associated/within immediate control; Gant prong if a vehicle; chain of custody for items found."
       ]
     ],
-    "arr": "Search authority tied to a lawful arrest — not independent arrest authority.",
-    "note": "Do not merge SITA with inventory, consent, Terry frisk, or vehicle PC search. Name the doctrine and the facts that made it lawful."
+    "arr": "This card does not create arrest authority. SITA is tied to a lawful custodial arrest that must already exist (arrest warrant or PC plus F01/IC 35-33-1-1). If new contraband is found during SITA, identify the new mapped offense, analyze possession/constructive possession, determine felony/misdemeanor, and document the evidence handling separately.",
+    "note": "Avoid \"I patted him down incident to arrest,\" \"I had PC, so I searched\" with no custodial arrest, \"Driver arrested, so I searched the whole car,\" or \"Searched phone incident to arrest.\" Write PC and arrest authority before the search, the custodial arrest, timing, what was searched and why it qualifies, the Gant prong if a vehicle, Riley compliance if a phone, BWC, evidence handling, and separate arrest/charging authority for new evidence. Memory shortcut: custodial arrest first; PC + F01 before search; person search is full, not Terry; immediate-control area only; bags depend on whether they're on the person/associated/accessible; vehicle follows Gant; phone contents need a warrant, consent, or exigency; citation alone means no SITA; evidence found means chain of custody + mapped offense + F01."
   },
   {
     "cat": "Patrol Tactics",
