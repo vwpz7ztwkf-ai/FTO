@@ -9852,7 +9852,7 @@ render();
 
   function buildModeBar(){
     const bar = document.createElement('div'); bar.className='modebar'; bar.dataset.label='Study mode';
-    MODES.forEach(([id,label])=>{const b=document.createElement('button');b.className='chip';b.type='button';b.dataset.mode=id;b.textContent=label;b.setAttribute('aria-pressed', id === studyMode ? 'true':'false');b.addEventListener('click',()=>{studyMode=id;idx=0;setDeck(filter);render();resetBackScroll();});bar.append(b)});
+    MODES.forEach(([id,label])=>{const b=document.createElement('button');b.className='chip';b.type='button';b.dataset.mode=id;b.textContent=label;b.setAttribute('aria-pressed', id === studyMode ? 'true':'false');b.addEventListener('click',()=>{studyMode=id;idx=0;setDeck(filter);render();resetBackScroll();updateTocSub();});bar.append(b)});
     document.querySelector('.searchbar')?.after(bar);
   }
   function buildStudyActions(){
@@ -9871,8 +9871,27 @@ render();
       }
     });
   }
+  function updateTocSub(){
+    if(!tocSub) return;
+    const cats = CATS.filter(cat=>cat!=='All');
+    if(studyMode === 'all'){
+      tocSub.textContent = `${CARDS.length} cards · ${cats.length} sections`;
+    } else {
+      const matching = CARDS.filter(modeMatches).length;
+      tocSub.textContent = `${matching} of ${CARDS.length} cards match ${modeLabel()} · the TOC lists everything, but tapping a card switches study mode to All so it stays reachable`;
+    }
+  }
   const originalRenderToc = renderToc;
-  renderToc = function patchedRenderToc(){originalRenderToc(); patchToc();};
+  renderToc = function patchedRenderToc(){originalRenderToc(); patchToc(); updateTocSub();};
+  const originalJumpToCard = jumpToCard;
+  jumpToCard = function patchedJumpToCard(globalIndex){
+    if(studyMode !== 'all'){
+      studyMode = 'all';
+      updateModeChips();
+      updateTocSub();
+    }
+    originalJumpToCard(globalIndex);
+  };
   document.addEventListener('keydown', e=>{
     const editing = isTextEntryTarget(document.activeElement) || hasSelectedText();
     if(editing || !deck.length) return;
