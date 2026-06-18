@@ -763,233 +763,326 @@ const CARDS = [
     "cat": "Search/Seizure",
     "num": "S01",
     "off": "Miranda / Custodial Interrogation",
-    "stat": "Miranda v. Arizona · Innis · Berkemer · IC 35-33-5-16 · IC 31-32-5-1",
+    "stat": "Miranda v. Arizona · Innis · Berkemer · IC 35-33-5-16 · IC 31-32-5-1 · IC 31-30.5-1-1 et seq. · Ind. Evid. Rule 617",
     "auth": "reference",
-    "elem": "Miranda warnings are required before <b>custodial interrogation</b>. The trigger is <b>custody + interrogation</b>: custody means formal arrest or restraint comparable to formal arrest, and interrogation means express questioning or police words/actions reasonably likely to elicit an incriminating response. A person being seized or not free to leave during a Terry stop or ordinary traffic stop is not automatically in Miranda custody.",
+    "elem": "Miranda warnings are required before <b>custodial interrogation</b>. The trigger is <b>custody + interrogation</b>: custody means formal arrest or restraint comparable to formal arrest, and interrogation means express questioning or police words/actions officers should know are reasonably likely to elicit an incriminating response. A person being seized, stopped, or not free to leave during an ordinary traffic stop or brief Terry detention is not automatically in Miranda custody. Miranda controls statement admissibility only — it does not create PC, RS, arrest authority, search authority, or entry authority, and it does not cure an otherwise illegal arrest/search/entry.",
     "enh": [
       [
-        "Custody indicators",
-        "Formal arrest · handcuffed and told under arrest · secured in cage car beyond brief safety detention · transported to station/interview room · prolonged restraint · multiple officers/weapons/commands · told not free to leave · questioning after arrest."
+        "Custody factors",
+        "Totality-based: formal arrest, told under arrest, arrest-like restraint, handcuffs plus prolonged detention, cage-car confinement beyond brief safety detention, stationhouse questioning, transport away from the scene, questioning after arrest. Multiple officers/weapons/commands/handcuffs are not automatic custody by themselves — document the facts, not just the label."
       ],
       [
-        "Interrogation indicators",
-        "Crime-specific questions, evidence confrontation, or comments/actions officers should know are reasonably likely to produce incriminating answers. Examples: “Why did you hit her?” “Where is the gun?” “How much meth did you sell?”"
+        "Usually not custody alone",
+        "Consensual conversation, ordinary traffic-stop questioning before arrest-like restraint, brief Terry detention, temporary safety handcuffing, brief patrol-vehicle placement for safety/weather, routine crash/traffic questions, neutral booking/identity questions, volunteered statements. Any of these can still become custodial if restraint turns arrest-like."
       ],
       [
-        "Not usually Miranda triggers",
-        "Consensual conversation · ordinary traffic-stop questioning before custody · brief Terry detention · volunteered statements · routine booking identifiers · neutral safety/transport logistics. Field sobriety instructions/observations usually require separate analysis."
+        "Interrogation vs. volunteered statements",
+        "Interrogation includes express crime-specific questions, evidence confrontation, or words/actions officers should know are reasonably likely to elicit an incriminating response (\"Why did you hit her?\" \"Where is the gun?\"). Spontaneous/volunteered statements are not interrogation — document that nothing prompted the statement, and do not ask crime-specific follow-ups on an in-custody person until Miranda is given and waived."
       ],
       [
-        "Warnings / waiver",
-        "Read warnings before custodial crime-specific questioning. Document exact warnings, suspect understanding, knowing/voluntary/intelligent waiver, no threats/promises, time/location, condition, language issues, officers present, and invocation of silence/counsel."
+        "Public-safety exception",
+        "Narrow, immediate safety questions (e.g., \"Where is the gun?\") may be asked without Miranda when reasonably necessary to address an imminent threat. Keep the question narrow and safety-driven; once the emergency is controlled, Miranda applies before further custodial crime-specific questioning."
       ],
       [
-        "Indiana third-party rule",
-        "Under IC 35-33-5-16, officers may not direct, encourage, or knowingly permit a civilian to question someone a reasonable officer would believe is in custody when the questioning is reasonably likely to elicit an incriminating response."
+        "Indiana third-party rule — IC 35-33-5-16",
+        "Officers may not direct, encourage, or knowingly permit a civilian (victim, family, informant) to question a person a reasonable officer would believe is in custody when the questioning is reasonably likely to elicit an incriminating response; a statement obtained in violation is inadmissible in a criminal, child-welfare, or juvenile proceeding."
       ],
       [
-        "Juveniles",
-        "Use Indiana juvenile waiver rules: custodial parent/guardian/custodian/GAL or counsel pathway, no adverse interest, meaningful private consultation, and child knowingly/voluntarily joins waiver. Record juvenile custodial interrogations whenever feasible; avoid deceptive juvenile tactics restricted by Indiana law."
+        "Juvenile waiver — IC 31-32-5-1",
+        "A child's rights may be waived only by: counsel if the child knowingly/voluntarily joins; or the custodial parent/guardian/custodian/GAL if they have no adverse interest, meaningful consultation occurs, and the child knowingly/voluntarily joins; or the child alone only in narrow statutory circumstances (e.g., emancipation). Indiana also restricts knowing use of materially false statements about evidence, penalties, or leniency in juvenile custodial interrogation."
       ],
       [
-        "Rule 617 / recording",
-        "For felony custodial interrogation at a place of detention, remember Indiana Evidence Rule 617 recording requirements and any juvenile/school recording rules."
+        "Evidence Rule 617 / recording",
+        "For a felony prosecution, a custodial-interrogation statement made at a place of detention generally must be electronically recorded, preserved, and available at trial unless an exception applies; juvenile custodial interrogation at a place of detention is not admissible in a juvenile proceeding unless it complies with Rule 617, with additional juvenile recording protections at school/non-detention locations."
       ],
       [
-        "Volunteered statements",
-        "Spontaneous statements are not interrogation. Do not ask follow-up crime-specific questions until Miranda warnings are given and waived if the person is in custody."
+        "OWI / booking caution",
+        "Roadside OWI questioning and SFST instructions are generally not automatically Miranda custody, and implied-consent advisement is not Miranda. Routine booking identifiers (name/DOB/address) are usually not interrogation, but a booking question designed to elicit incriminating facts (\"Do you live at the house where we found the drugs?\") can become interrogation."
       ]
     ],
-    "arr": "Miranda is not an arrest-authority rule. Lawful arrest depends on warrant, felony PC, misdemeanor presence, or statutory exception. Failure to Mirandize does not invalidate the arrest by itself; it generally affects admissibility of statements obtained through unwarned custodial interrogation.",
-    "note": "Patrol-safe rule: if the person is handcuffed, secured in a patrol car, transported, or functionally under arrest, Mirandize before asking crime-specific questions. Miranda protects statements, not the arrest itself. Miranda compliance does not cure an illegal arrest/search, and a lawful arrest does not make unwarned custodial interrogation admissible. Sample wording: “Without any question or prompting, Suspect stated, ‘I threw the gun in the creek.’ I did not ask follow-up questions until Miranda was given and waived.”"
+    "arr": "Miranda is not an arrest-authority rule. Lawful arrest depends on warrant, felony PC, misdemeanor presence, or statutory exception under F01/IC 35-33-1-1. Failure to Mirandize does not invalidate the arrest by itself; it generally affects admissibility of statements obtained through unwarned custodial interrogation. A lawful arrest does not make unwarned custodial interrogation admissible.",
+    "note": "Avoid \"I forgot Miranda, so the arrest is bad,\" \"I arrested him, so I can ask anything,\" or \"Miranda fixes an illegal search or arrest.\" Document the lawful stop/detention/arrest basis first, then whether custody and interrogation both existed, warnings given, understanding, waiver validity, invocation, public-safety exception if used, and recording compliance. Sample wording: \"Without any question or prompting, Suspect stated, 'I threw the gun in the creek.' I did not ask follow-up questions until Miranda was given and waived.\" Memory shortcut: lawful stop/detention/arrest basis first → custody? → interrogation? → adult or juvenile? → warnings given and understood? → waiver valid? → invocation means stop → public safety only if immediate and narrow → recording required? → volunteered or prompted? → Miranda affects statements, not arrest authority."
   },
   {
     "cat": "Search/Seizure",
     "num": "S02",
     "off": "Reasonable Suspicion / Terry Stop",
-    "stat": "Terry v. Ohio · Fourth Amendment · Indiana Article 1, §11 · Rodriguez",
+    "stat": "Terry v. Ohio · Fourth Amendment · Indiana Article 1, §11 · Rodriguez v. United States · Minnesota v. Dickerson",
     "auth": "reference",
-    "elem": "A Terry stop is a temporary investigative detention based on <b>specific, articulable facts</b> plus rational inferences that criminal activity has occurred, is occurring, or is about to occur. Reasonable suspicion is more than a hunch and less than probable cause, and is evaluated under the totality of circumstances.",
+    "elem": "A Terry stop is a temporary investigative detention based on <b>specific, articulable facts</b> plus rational inferences that criminal activity has occurred, is occurring, or is about to occur. Reasonable suspicion is more than a hunch and less than probable cause, judged from facts known to the officer <b>before</b> the stop, and evaluated under the totality of circumstances. A Terry stop allows temporary detention to confirm or dispel suspicion only — it does not automatically allow arrest, search, transport, phone seizure, vehicle search, or prolonged detention.",
     "enh": [
       [
-        "RS sources",
-        "Observed conduct · reliable victim/witness information · law-enforcement/dispatch information · time/location · matching description · proximity/timing · evasive conduct · traffic/ordinance/infraction violation."
+        "RS sources / collective knowledge",
+        "Officer-observed conduct, reliable victim/witness information, dispatch/BOLO/ALPR information, recent-crime proximity in time/location, matching description, evasive conduct/flight, or an observed traffic/ordinance/infraction violation. When relying on relayed information, document who relayed it, what was relayed, source reliability, and how the stopped person/vehicle matched — not just \"dispatched to suspicious person\" or \"BOLO match.\""
       ],
       [
-        "Scope / duration",
-        "Detain only as long as reasonably necessary to confirm or dispel suspicion. Tasks must stay tied to the mission unless independent RS/PC develops. Rodriguez limits prolonging a completed traffic stop for unrelated investigation, such as a dog sniff, without independent RS."
+        "Weak vs. stronger facts",
+        "Weak alone: \"high-crime area\" only, mere nervousness, vague \"furtive movement,\" refusal to answer consensual questions, mere presence, prior history alone. Stronger: recent matching crime, specific description match, close time/location proximity, observed violation, flight/concealment tied to police presence, specific weapon-handling, victim/witness pointing out the suspect. Write what happened, not just \"suspicious.\""
       ],
       [
-        "Stop vs frisk",
-        "Stop requires RS that criminal activity is afoot. Frisk requires separate RS that the person is armed and presently dangerous. A frisk is a limited outer-clothing pat-down for weapons, not a general evidence search."
+        "Stop vs. frisk — separate RS",
+        "A stop requires RS that criminal activity is afoot. A frisk requires <b>separate</b> RS that the person is armed and presently dangerous — articulate weapon report, visible bulge, repeated waistband reaches, ignored hand commands, matching armed-suspect description, or threats involving a weapon. Plain feel during a lawful frisk allows seizure only if contraband nature is immediately apparent through lawful touch, with no manipulation, squeezing, or sliding."
       ],
       [
-        "Indiana Article 1, §11",
-        "Indiana separately asks whether police conduct was reasonable under totality of circumstances: degree of concern/suspicion, degree of intrusion, and law-enforcement needs."
-      ],
-      [
-        "Higher intrusion factors",
-        "Guns drawn · handcuffs · prone positioning · vehicle blocks · cage-car placement · long detention · transport. These may be justified in high-risk stops, but document why they were necessary."
+        "Rodriguez / traffic-mission rule",
+        "A traffic stop's tolerable duration is tied to its mission: violation, safety precautions, license/registration/insurance/warrant checks, and citation/warning. Once those tasks are completed or reasonably should be, do not extend the stop for unrelated investigation (including a dog sniff) without independent RS or PC that arose before the prolonging."
       ],
       [
         "Doctrines to separate",
-        "Consensual encounter = no detention; IC 34-28-5-3 = civil infraction/ordinance detention; Terry stop = criminal RS detention; Terry frisk = weapons safety pat-down; arrest = PC plus arrest authority."
+        "Consensual encounter (no seizure, no RS needed) vs. IC 34-28-5-3 civil infraction/ordinance detention (limited to informing of allegation, obtaining ID, allowing notice to appear — not general Terry authority) vs. Terry stop (criminal RS detention) vs. Terry frisk (separate armed-and-dangerous RS) vs. arrest (PC plus F01 authority). A passenger-control order under a traffic stop does not itself authorize a passenger frisk, search, or Refusal-to-Identify charge."
       ],
       [
-        "Weak vs stronger facts",
-        "High-crime area, nervousness, or “furtive movement” alone can be weak. Strengthen by articulating recent crime, exact movement, location/time, description match, flight/concealment, weapon report, or observed violation. Write the facts that existed before the stop."
+        "Higher-intrusion tactics",
+        "Guns drawn, handcuffs, prone positioning, vehicle blocking, cage-car placement, long detention, or transport away from the scene can be consistent with a Terry detention when justified by specific officer-safety facts (weapon report, violent felony suspect, flight risk, multiple suspects, poor lighting), but the more intrusive the tactic, the more clearly the report must explain why it was reasonable, temporary, and not a custodial arrest."
+      ],
+      [
+        "Indiana Article 1, §11",
+        "Indiana separately asks whether police conduct was reasonable under the totality of circumstances: degree of concern/suspicion/knowledge that a violation occurred, degree of intrusion, and the extent of law-enforcement needs — document this even when federal Terry analysis is satisfied."
       ]
     ],
-    "arr": "Temporary detention authority only, not custodial arrest. If RS ripens into PC, use the arrest-authority card to decide warrant, felony PC, misdemeanor presence, or statutory exception.",
-    "note": "Avoid conclusions like “suspicious person.” Write facts: time, location, closed business/recent crimes, conduct observed, description match, direction of travel, proximity, evasive acts, and safety facts. Frisk wording should explain armed/presently-dangerous facts, such as waistband reaches, weapon report, matching robbery suspect, ignored hand commands, or visible bulge/weapon."
+    "arr": "This card creates temporary detention authority only, not custodial arrest authority. If RS ripens into PC, identify the mapped offense, determine offense level, and apply F01/IC 35-33-1-1 to confirm warrant, felony PC, misdemeanor presence, or a listed statutory exception.",
+    "note": "Avoid conclusions like \"suspicious person,\" \"furtive movement,\" \"high-crime area,\" or \"I conducted a Terry search.\" Write the time, location, recent crimes, dispatch/witness details, description match, exact movement, direction of travel, proximity, evasive acts, and safety facts that existed <b>before</b> the stop. If you frisk, articulate the armed-and-dangerous facts separately from the stop facts; if you extend a traffic stop, articulate the independent RS separately from the original violation. Memory shortcut: RS before stop; stop needs specific facts plus rational inferences; frisk needs separate armed-and-dangerous facts; plain feel is immediately-apparent only with no manipulation; scope is to confirm or dispel; duration is no longer than necessary; traffic stops add no unrelated time without independent RS/PC; Indiana asks suspicion/intrusion/need; arrest needs PC plus F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S03",
     "off": "Consensual Encounter vs Detention vs Arrest",
-    "stat": "Fourth Amendment / Ind. Art. 1 §11 framework",
+    "stat": "Fourth Amendment · Indiana Article 1, §11 · Terry v. Ohio · Bostick · Hodari D. · IC 34-28-5-3 · IC 35-33-1-1",
     "auth": "reference",
-    "elem": "A <b>consensual encounter</b> requires no RS because a reasonable person would feel free to decline or leave. A <b>detention</b> is a seizure and needs RS or statutory infraction/ordinance detention authority. An <b>arrest</b> requires warrant, felony PC, misdemeanor presence, or statutory exception.",
+    "elem": "Police-citizen contacts fall into three field categories: a <b>consensual encounter</b> (no seizure, no RS/PC required, person free to decline/leave); a <b>detention/seizure</b> (not free to leave, requires RS, an observed violation, IC 34-28-5-3 infraction/ordinance authority, warrant, emergency authority, PC, or another lawful basis); and an <b>arrest</b> (custodial seizure requiring PC plus arrest authority under F01/IC 35-33-1-1). Classify the encounter at the moment police authority changed — facts learned after a detention or arrest do not retroactively justify the earlier seizure."
+    ,
     "enh": [
       [
-        "Consensual indicators",
-        "No commands · no blocked path · no retained ID longer than needed · cooperative tone · person free to end contact"
+        "Consensual encounter test",
+        "Would a reasonable person feel free to decline requests, refuse consent, ignore questions, walk away, or end the contact? If yes, it's consensual: conversational tone, no commands, no blocked path/vehicle boxing, no weapon display, no retained ID beyond a brief voluntary check. A refusal to answer or to consent does not by itself create RS."
       ],
       [
-        "Detention indicators",
-        "Emergency lights as stop signal · commands · physical positioning/blocking · retained documents · told to stay"
+        "Detention/seizure indicators",
+        "Emergency lights as a stop signal, commands instead of requests (\"stop,\" \"stay here,\" \"don't leave\"), blocking a path or boxing a vehicle, physical touching/restraint, retaining ID/documents longer than necessary, multiple officers surrounding the person, or weapon display. No single factor controls — the question is whether the totality would make a reasonable person believe they were not free to leave."
       ],
       [
-        "Arrest indicators",
-        "Handcuffs as arrest/restraint · transport · jail processing · formal arrest language · prolonged restraint"
+        "Community-caretaking caution",
+        "Do not use \"community caretaking\" as a generic detention/entry/search label — identify the specific lawful basis (consent, emergency aid, exigency, mental-health authority, court order, abandoned-vehicle/inventory authority). A welfare check does not automatically authorize detention, entry, search, or forced medical action."
+      ],
+      [
+        "Handcuff caution",
+        "Handcuffs are high-intrusion but do not automatically convert a detention into an arrest when objectively justified by specific safety/flight-risk facts and used temporarily. Document why handcuffs were necessary, how long they were used, and whether the detention remained temporary — not just \"I handcuffed him for officer safety.\""
+      ],
+      [
+        "Transition points",
+        "Most suppression problems happen at transitions: consensual → detention (needs a lawful basis before restricting movement), detention → frisk (separate armed-and-dangerous facts, use S06), detention → arrest (PC plus F01), detention → release (when suspicion is dispelled), detention → prolonged detention (mission still pending or independent RS/PC, use S02/Rodriguez)."
+      ],
+      [
+        "Encounter-level decision ladder",
+        "1) Voluntary contact — free to leave/decline? 2) Seizure — did conduct restrict movement or did the person submit to a show of authority? 3) Detention basis — Terry RS, traffic/infraction/ordinance violation, IC 34-28-5-3, warrant, emergency? 4) Scope/duration tied to the mission? 5) Arrest — custodial restraint, PC, F01 authority?"
+      ],
+      [
+        "Common applications",
+        "E-bike kids, suspicious vehicles, panhandling, pool/trespass complaints, and welfare checks often begin consensual — the moment you order someone to stop, block movement, retain ID, or restrict departure, identify the specific lawful detention basis (traffic/ordinance/infraction violation, Terry RS, property-owner trespass facts, or emergency aid)."
       ]
     ],
-    "arr": "Framework card — use it to decide what legal threshold you needed at each moment.",
-    "note": "Poynter field use: e-bike kids, suspicious vehicles, panhandling, pool complaints, and welfare checks often begin consensual. The moment you restrict movement, you need a lawful detention basis."
+    "arr": "This is a classification framework, not arrest authority. For arrest authority use F01/IC 35-33-1-1: warrant, felony PC, misdemeanor committed/attempted in the officer's presence, or a listed statutory exception. PC alone does not always answer the arrest-authority question for misdemeanors.",
+    "note": "Avoid \"I made contact,\" \"I detained him consensually,\" \"I arrested him for suspicious activity,\" or \"he was not free to leave, but it was consensual.\" Write the encounter level (consensual/detention/Terry stop/infraction-ordinance detention/traffic stop/arrest) and the legal basis for that level. A consensual encounter does not automatically authorize detention; a detention does not automatically authorize frisk or arrest. Memory shortcut: can they leave? If yes, consensual; if no, seizure. What basis — RS/infraction/ordinance/warrant/emergency/PC? What scope and duration? Handcuffs or high intrusion need a temporary-and-necessary explanation. Did it become arrest? PC plus F01 before custody."
   },
   {
     "cat": "Search/Seizure",
     "num": "S04",
     "off": "Motor Vehicle Exception",
-    "stat": "Carroll doctrine · automobile exception",
+    "stat": "Carroll doctrine · United States v. Ross · Acevedo · Labron · Collins v. Virginia · Indiana Article 1, §11",
     "auth": "reference",
-    "elem": "If officers have <b>probable cause</b> to believe a readily mobile vehicle contains contraband or evidence, the vehicle may be searched without a warrant in the places where the object of the PC could reasonably be found.",
+    "elem": "If officers have <b>probable cause</b> to believe a readily mobile (or operationally capable) vehicle contains contraband or evidence, the vehicle may be searched without a warrant in any area where the object of that PC could reasonably be found. PC must exist <b>before</b> the search — facts discovered during the search do not retroactively justify it. This is search authority only; it is not an offense, arrest authority, consent, inventory, SITA, or Terry frisk.",
     "enh": [
       [
-        "PC examples",
-        "Plain view/smell · admissions · K9 alert · reliable LE/witness information · visible contraband · matching evidence tied to crime"
+        "PC sources",
+        "Plain view contraband, plain smell consistent with training/context, admissions, reliable witness/LEO information, K9 alert, visible evidence tied to a crime, surveillance/ALPR information. Write the facts that created PC before the search — not just \"I searched under the motor vehicle exception.\""
       ],
       [
-        "Scope",
-        "Search only where the suspected evidence/contraband could be located; containers may be searched if PC extends there"
+        "Scope tied to the object of PC",
+        "Search only where the suspected evidence could reasonably be found: PC for a stolen rifle allows larger compartments; PC for a small bag of narcotics allows small containers; PC for open alcohol does not automatically justify opening every unrelated small container. Containers (including passenger-associated ones) may be searched if the object could reasonably be inside them — ownership alone does not control scope, but a person's body/clothing/pockets needs separate authority (people are not containers)."
       ],
       [
-        "Not the same as",
-        "Search incident to arrest · inventory · consent · Terry frisk"
+        "Lawful access / curtilage caution",
+        "The exception does not itself authorize entering a home, garage, or curtilage to reach a vehicle. If the vehicle is on or near a residence, confirm lawful access by consent, warrant, exigency, emergency aid, or another doctrine before relying on S04 to search it."
+      ],
+      [
+        "K9 alert / entry caution",
+        "A reliable K9 alert may support PC depending on training/certification/deployment. Do not facilitate, direct, or intend K9 entry into the vehicle before PC exists — a free-air exterior sniff is different from the dog entering. Document door/window position before deployment, handler conduct, and whether PC existed before any entry."
+      ],
+      [
+        "Marijuana / hemp caution",
+        "Do not rely on a bare \"odor of marijuana\" phrase. Document raw vs. burnt odor, strength/source, training and experience, visible residue/paraphernalia, packaging, admissions, impairment indicators, and any hemp/CBD claim or label — a hemp claim does not automatically defeat PC, but should be documented and weighed in the totality. Use S08 for the full hemp-vs-marijuana card."
+      ],
+      [
+        "Digital devices",
+        "The exception does not authorize searching the contents of a phone or other digital device found in the vehicle — that requires a warrant, consent, exigency, or another specific doctrine, even though the device itself may be lawfully seized."
+      ],
+      [
+        "Don't conflate doctrines",
+        "Do not write \"the driver was arrested, so I searched the vehicle\" (that's SITA/Gant, use S05) or \"I inventoried it because I wanted to look inside\" (that's S10, administrative only). If consent is also requested when PC already independently supports the search, document both separately and do not let consent confuse which doctrine actually authorized the search."
       ]
     ],
-    "arr": "Search authority — not arrest authority. Any arrest still needs a separate offense and arrest-authority basis.",
-    "note": "For marijuana/hemp stops: articulate why you had PC for marijuana, contraband, or another offense despite possible hemp labeling. Preserve packaging, odor, appearance, admissions, and lab/field-test route."
+    "arr": "This card creates search authority only — not arrest authority. If evidence found during the search creates PC for an offense, identify the mapped offense, determine offense level, and apply F01/IC 35-33-1-1 separately.",
+    "note": "Avoid \"I searched under Carroll,\" \"I smelled marijuana, so I searched everything,\" or \"the dog entered the car, then I had PC.\" Write what created PC before the search, the object you were looking for, why the vehicle was readily mobile/operationally capable, why you had lawful access, why that object could be in the searched area, and whether any person search had separate authority. Memory shortcut: vehicle? lawful access? readily mobile? PC before search for what object? where could it fit? search only there. People and phones need separate authority. No home/curtilage entry from the auto exception alone. K9 entry needs no facilitation before PC. Arrest authority is separate under F01."
   },
   {
     "cat": "Search/Seizure",
     "num": "S05",
     "off": "Search Incident to Arrest / Transport Search",
-    "stat": "United States v. Robinson · Arizona v. Gant",
+    "stat": "United States v. Robinson · Chimel · Arizona v. Gant · Riley v. California · Knowles v. Iowa · Illinois v. Lafayette",
     "auth": "reference",
-    "elem": "A lawful <b>custodial arrest</b> permits a full search of the arrestee’s person and immediately associated containers for weapons, evidence, fruits/instruments of the crime, escape items, and officer safety. A vehicle search incident to arrest is limited under Gant: arrestee within reaching distance of the passenger compartment or reasonable belief the vehicle contains evidence of the offense of arrest.",
+    "elem": "A lawful <b>custodial arrest</b> permits search incident to arrest (SITA): a full search of the arrestee's person and items immediately associated with the person — broader than a Terry frisk — to address officer safety, prevent destruction of evidence, and locate contraband, fruits/instruments of crime, and escape items. SITA is search authority following the arrest; it does not create the arrest, which must already be lawful under F01/IC 35-33-1-1.",
     "enh": [
       [
-        "Person search",
-        "Full search after lawful custodial arrest — beyond a Terry pat-down"
+        "Three search types — keep separate",
+        "Person SITA (lawful custodial arrest → full search of person/immediately associated items); Vehicle SITA (lawful arrest + Gant condition → passenger compartment only); Pre-transport/prisoner-safety search (custody/transport safety + policy → thorough check before the patrol vehicle, regardless of which SITA theory applies)."
       ],
       [
-        "Evidence examples",
-        "Notes/address books · clothing for embedded particles · shoes for prints · wallets/items on person · bags in immediate area when lawful"
+        "Person search — not a Terry frisk",
+        "Full search after a lawful custodial arrest: waistband, pockets, socks, shoes, hat, gloves, wallet, small containers on person. You do not need separate armed-and-dangerous RS once the arrest is lawful — this is broader than S06."
       ],
       [
-        "Transport safety",
-        "Search before placing anyone in a patrol vehicle; check waistband, pockets, shoes, containers, belongings, and prisoner compartment per policy"
+        "Citation/summons caution — Knowles",
+        "A citation, summons, or warning is not a custodial arrest. \"I could have arrested him\" does not authorize a full SITA — if only cited/released, use independent search authority (consent, Terry frisk, vehicle PC, inventory, warrant) instead."
       ],
       [
-        "Limits",
-        "Cell-phone digital contents generally need a warrant; vehicle SIA is narrower than the automobile exception"
+        "Vehicle SITA — Gant",
+        "After arresting a recent occupant, the passenger compartment may be searched incident to arrest only if (1) the arrestee is unsecured and within reaching distance, or (2) it is reasonable to believe the vehicle contains evidence of the offense of arrest (e.g., OWI, drug, firearm, theft-from-vehicle offenses). If neither applies, use S04, consent, inventory, or warrant instead — do not write \"I arrested the driver, so I searched the car.\""
+      ],
+      [
+        "Container caution",
+        "Items on the person or immediately associated may be searched; bags/containers separated and secured away from the arrestee need a separate doctrine (inventory, warrant, consent, S04) — SITA is not a general scene search."
+      ],
+      [
+        "Prisoner transport search",
+        "Before placing anyone in a patrol vehicle under lawful custodial arrest, conduct a <b>complete</b> search, not just a weapons pat-down: waistband, pockets, socks, shoes, hat, clothing folds, and any property going into the vehicle. Check the prisoner compartment before and after transport, and do not assume another officer already searched the arrestee."
+      ],
+      [
+        "Digital devices — Riley",
+        "A phone may be physically seized for safety/evidence preservation, but its digital contents (texts, photos, call logs, apps, location data) generally may not be searched without a warrant, consent, or exigency — do not call a content review \"SITA.\""
+      ],
+      [
+        "Non-arrest transport",
+        "For courtesy rides, witness/victim transport, or juvenile/mental-health transport that is not a custodial arrest, identify a separate basis for any search (consent, policy, specific safety facts) — do not label it search incident to arrest."
       ]
     ],
-    "arr": "Search authority following a lawful custodial arrest. It does not create the arrest; the arrest must already be lawful.",
-    "note": "Poynter correction point: once the person is in custody for transport, do a complete search, not just a weapons pat-down. Activate BWC and document that the person/property was searched before transport."
+    "arr": "This card creates search authority only after a lawful custodial arrest — it does not create arrest authority. Confirm mapped offense, PC, and F01/IC 35-33-1-1 arrest authority before relying on SITA; if arrest authority is missing, SITA is missing.",
+    "note": "Poynter correction point: if they are going in your car, they get searched completely first — once the person is lawfully in custody for transport, do a complete search, not just a weapons pat-down. Activate BWC, check the prisoner compartment before and after, and document that the person/property was searched before transport. Avoid \"I patted him down incident to arrest,\" \"I arrested him after I found drugs in the search\" (no PC before the search), or \"I searched the car because the driver was arrested\" without naming the Gant prong. Memory shortcut: custodial arrest? PC + F01 authority? Person SITA is a full search, not Terry. Citation only means no full SITA. Transport needs a complete search before the cage car, checked before and after. Vehicle needs Gant or another doctrine. Phone contents need a warrant, consent, or exigency. Non-arrest transport needs separate authority."
   },
   {
     "cat": "Search/Seizure",
     "num": "S06",
     "off": "Pat-Down / Terry Frisk Standard",
-    "stat": "Terry frisk · armed-and-dangerous RS",
+    "stat": "Terry v. Ohio · Minnesota v. Dickerson · Michigan v. Long · Arizona v. Johnson",
     "auth": "reference",
-    "elem": "After a lawful stop, an officer may conduct a limited <b>outer-clothing pat-down for weapons</b> only when the officer has reasonable suspicion the person is armed and presently dangerous.",
+    "elem": "After a lawful stop, an officer may conduct a limited <b>outer-clothing pat-down for weapons</b> only when the officer has <b>separate</b> reasonable suspicion the person is armed and presently dangerous. The stop and the frisk are separate legal acts — a lawful stop does not automatically justify a frisk, and the facts must be person-specific (not justified merely by presence, association, or being a passenger).",
     "enh": [
       [
-        "Purpose",
-        "Officer safety / weapons only"
+        "Person-specific armed-and-dangerous facts",
+        "Visible weapon/bulge, weapon report, armed-robbery/shooting-suspect match, repeated waistband/pocket reaching, ignoring commands to keep hands visible, threats involving a weapon, known weapon history plus current danger facts, or a high-risk warrant plus current safety facts. Mere nervousness, high-crime area, refusal to answer, passenger status, or \"officer safety\" alone is usually not enough."
       ],
       [
-        "Facts to articulate",
-        "Weapon bulge · violent offense · firearm report · furtive waistband reach · credible tip · high-risk warrant · known weapon history plus current context"
+        "Scope — outer clothing, weapons only",
+        "Pat areas where a weapon could reasonably be located (waistband, pockets, jacket, ankles if facts support it). A frisk does not authorize emptying pockets, opening containers, searching wallets/phones, or searching bags as evidence containers — that needs another doctrine."
       ],
       [
-        "Not enough alone",
-        "Mere consent encounter · mere nervousness · mere presence in a high-crime area · desire to search for drugs"
+        "Plain feel",
+        "Seizure is allowed only if the object's identity is immediately apparent through lawful touch during the weapons pat-down, with no additional manipulation, squeezing, or sliding. If you had to manipulate the item to figure out what it was, plain feel is weak."
+      ],
+      [
+        "Bags / containers",
+        "A frisk targets weapons accessible to the person — bags/backpacks need their own analysis: is it immediately accessible, do specific facts suggest a weapon inside, can it be safely separated instead of searched? Do not search a bag for evidence under the label \"Terry frisk.\""
+      ],
+      [
+        "Vehicle protective search — Michigan v. Long",
+        "During a lawful vehicle stop, a limited protective search of the passenger compartment is allowed only with RS the person is dangerous and may gain immediate control of a weapon in the vehicle — limited to weapon-access areas (under seats, console, door pockets), not the trunk or evidence-only locations. This is not a shortcut for a motor-vehicle-exception evidence search — use S04 if PC supports that instead."
+      ],
+      [
+        "Traffic-stop passengers",
+        "Driver and passengers are seized for the duration of a lawful stop, but a frisk of either still requires separate person-specific armed-and-dangerous facts — do not frisk a passenger merely because they're nervous, won't answer, or are associated with the driver."
+      ],
+      [
+        "Keep four doctrines separate",
+        "Consent pat-down/search (voluntary, scope as consented), Terry frisk (separate armed-and-dangerous RS, weapons-only outer clothing), search incident to arrest (full search after lawful custodial arrest — use S05), and probable-cause vehicle search (object-of-PC scope — use S04). Once a person is under lawful custodial arrest and going to jail, do a complete S05 search, not just a Terry frisk."
       ]
     ],
-    "arr": "Limited weapons frisk authority — not a full evidentiary search and not arrest authority.",
-    "note": "Distinguish four separate things in reports: consent pat-down/search, Terry frisk, search incident to arrest, and probable-cause vehicle search."
+    "arr": "This card creates limited weapons-frisk authority only — not a full evidentiary search and not arrest authority. If the frisk reveals evidence creating PC (via weapon feel, plain feel, consent, or another doctrine), apply F01 separately for arrest authority.",
+    "note": "Avoid \"I frisked him because he was nervous,\" \"high-crime area, so I frisked him,\" or \"I frisked him for drugs.\" Write the lawful stop basis, the separate armed-and-dangerous facts, the exact movement/bulge/report, the outer-clothing scope, and whether plain feel or another doctrine developed. Memory shortcut: lawful stop first; frisk requires separate person-specific armed-and-dangerous facts; outer clothing and weapons only; plain feel only if immediately apparent with no manipulation; vehicle sweep limited to weapon-access areas; consent/Terry/SITA/vehicle-PC are all separate doctrines; arrest uses F01 plus S05."
   },
   {
     "cat": "Search/Seizure",
     "num": "S07",
     "off": "Collective Knowledge / LEO Tip Basis for Stop",
-    "stat": "United States v. Hensley · collective knowledge doctrine",
+    "stat": "United States v. Hensley · Collective Knowledge Doctrine · Florida v. J.L. · Navarette v. California",
     "auth": "reference",
-    "elem": "An officer may act on another officer’s or agency’s stop/request/BOLO when the originating officer or agency had the facts needed for RS or PC. The acting officer does not need to personally know every fact at the moment of the stop, but the State must be able to show the source information was lawful.",
+    "elem": "An officer may rely on information, direction, or a request from another officer, agency, dispatcher, BOLO, warrant hit, or law-enforcement bulletin when the originating officer/agency had facts satisfying the legal threshold required for the action. The acting officer does not need to personally know every underlying fact at the moment of the stop, frisk, arrest, or search — but the State must later show the source information was lawful and sufficient. Collective knowledge transfers lawful information; it does not cure bad source facts.",
     "enh": [
       [
-        "Document",
-        "Who gave the information · agency/unit · exact request · suspect/vehicle description · offense/RS/PC basis if known"
+        "Threshold must match the action",
+        "A stop needs originating facts supporting RS/observed violation/warrant; a frisk needs person-specific armed-and-dangerous facts; an arrest needs PC plus F01 arrest authority; a vehicle search needs the doctrine actually used (S04/consent/inventory/warrant). Collective knowledge does not lower the threshold — it only identifies whose knowledge counts."
       ],
       [
-        "LE tip vs anonymous tip",
-        "A law-enforcement source is generally more reliable, but the underlying basis still matters"
+        "Vertical vs. horizontal",
+        "Vertical: one officer/agency with RS/PC directs another to act (e.g., detective requests patrol stop a vehicle). Horizontal: multiple officers working the same investigation combine pieces of information into RS/PC. Document which officer knew which facts and how information was shared."
       ],
       [
-        "Limits",
-        "Bad source facts cannot be cured by repeating the request through another officer"
+        "Source reliability tiers",
+        "Law-enforcement source: generally more reliable, but still document the officer/agency, what they saw/knew, and the basis. Known victim/witness/citizen: often reliable, especially firsthand and identifiable. Anonymous tip: needs stronger reliability analysis (specific detail, predictive information, emergency facts, caller traceability, corroboration) — a bare anonymous tip usually does not justify a stop or frisk by itself, including a bare anonymous firearm report without corroboration."
+      ],
+      [
+        "Chain-of-constitutionality rule",
+        "Bad source facts cannot be cured by repeating the request through dispatch, having another officer make the stop, labeling it a BOLO, or adding conclusory \"use caution\" language. If the originating facts do not establish RS/PC, the later stop/arrest/search is vulnerable."
+      ],
+      [
+        "Dispatch / BOLO / ALPR documentation",
+        "Document time received, source agency/officer, exact dispatch language if possible, description, plate, direction of travel, and how your observed person/vehicle matched before action — not just \"I was dispatched to a suspicious vehicle.\" For database/ALPR/warrant hits, confirm currency and match per policy before high-intrusion action."
+      ],
+      [
+        "K9 / marijuana-hemp collective-knowledge caution",
+        "Do not rely on a K9 entry into a vehicle as the first source of PC if entry was facilitated before PC existed (use S04). For marijuana/hemp BOLOs, document both the relayed LEO information (what they personally saw/smelled) and your own independent observations — a hemp/CBD claim does not automatically defeat the totality."
       ]
     ],
-    "arr": "Doctrine for relying on other officers’ knowledge — it supports a stop/arrest/search only if the originating facts meet the required legal threshold.",
-    "note": "For a marijuana/hemp or vehicle BOLO stop, write both your observations and the LE information you relied on."
+    "arr": "This card does not create arrest authority by itself — it only explains when officers may rely on knowledge held by other law-enforcement personnel. For arrest, confirm the mapped offense, PC, and F01/IC 35-33-1-1 arrest-authority path, including whether the originating facts actually supported that threshold.",
+    "note": "Avoid \"Stopped per BOLO\" with no facts, \"Dispatch said suspicious person,\" or \"bad source facts became good because dispatch aired it.\" Write who gave the information, what they said and knew, what threshold was needed, why the source was reliable, what you personally observed, how the person/vehicle matched, and what doctrine justified the action. Memory shortcut: who knew what, when did they know it, what threshold did the action need, did source facts meet RS/PC, what was relayed, did your subject/vehicle match, and bad source facts are never cured by rebroadcast — document source + relay + match + your own observations."
   },
   {
     "cat": "Search/Seizure",
     "num": "S08",
     "off": "Hemp vs Marijuana Patrol Handling",
-    "stat": "IC 35-48-4-11 · IC 35-48-1-19 · IC 15-15-13-6",
+    "stat": "IC 35-48-4-11 · IC 35-48-1-19 · IC 15-15-13-6 · IC 35-48-4-10.1",
     "auth": "presence",
-    "elem": "Indiana still criminalizes possession of <b>marijuana, hash oil, hashish, or salvia</b>. Hemp/low-THC hemp products create a patrol proof issue because some lawful hemp products can look or smell like marijuana, and marijuana definitions exclude certain lawful hemp-related material.",
+    "elem": "Indiana still criminalizes possession of <b>marijuana, hash oil, hashish, or salvia</b>; hemp is defined by reference to Cannabis sativa L. material with delta-9 THC at or below 0.3% dry-weight, and Indiana's marijuana definition excludes certain hemp-related material. A hemp/CBD claim does not freeze the investigation — there are four separate questions to answer: (1) RS to detain, (2) PC to search, (3) PC for an offense, and (4) arrest authority. Document the claim, preserve the evidence, and continue the totality analysis.",
     "enh": [
       [
-        "Key facts",
-        "Packaging/label · loose plant material · odor · admissions · quantity · paraphernalia · price/source · smokable hemp facts · field/lab testing"
+        "Four separate questions",
+        "RS to detain (odor, observed smoking, tip, violation, paraphernalia); PC to search — use S04 for the vehicle, or another doctrine (consent/warrant/inventory) for a person/home/bag, this card is not search authority by itself; PC for an offense (possession, paraphernalia, dealing, dealing in smokable hemp, OWI, common nuisance); arrest authority — apply F01/IC 35-33-1-1 separately, since search authority and arrest authority are separate."
       ],
       [
-        "Possible charges",
-        "Possession of marijuana (35-48-4-11) · dealing in smokable hemp (35-48-4-10.1) · paraphernalia · OWI/drug impairment if applicable"
+        "Build the totality",
+        "Odor (raw vs. burnt, strength, source/location), training/experience, packaging/label, loose plant material vs. burnt residue, paraphernalia, quantity, price/source, admissions/denials, impairment indicators, K9 alert if lawfully obtained, and the field-test/lab-test route. Hemp legalization may reduce the strength of odor/appearance evidence, but it does not automatically eliminate RS or PC."
       ],
       [
-        "PC caution",
-        "Hemp label does not automatically defeat PC; marijuana odor/appearance alone may need stronger articulation after hemp legalization"
+        "Report wording caution",
+        "Avoid \"It was marijuana\" unless confirmed by reliable testing or a legally sufficient admission. Use \"suspected marijuana,\" \"green plant material consistent with marijuana,\" or \"a substance I recognized through training and experience as suspected marijuana\" — write facts, not lab certainty."
+      ],
+      [
+        "Smokable hemp caution",
+        "Do not assume every hemp-labeled product is lawful — IC 35-48-4-10.1 separately criminalizes certain smokable-hemp possession/manufacture/delivery conduct, subject to statutory exceptions. Document product form, packaging, quantity, source, and seller/delivery facts; consider supervisor/prosecutor review for unusual facts."
+      ],
+      [
+        "Vehicle search lane",
+        "Do not skip the search doctrine — use S04 and ask what facts created PC, what the object of PC was, and where it could reasonably be found. Do not ask for consent unnecessarily when independent PC already clearly exists; if K9 is used, document deployment timing and whether PC existed before any vehicle entry."
+      ],
+      [
+        "OWI / dealing lanes",
+        "A hemp/CBD claim does not resolve a separate OWI/drug-impairment investigation (driving behavior, eyes, SFSTs, chemical test) — analyze impairment separately. Dealing indicators (quantity inconsistent with personal use, scales, baggies, cash, ledger, messages) require their own facts; do not call simple possession \"dealing\" without them."
+      ],
+      [
+        "Evidence / non-enforcement",
+        "Preserve packaging/label/substance with photos and chain of custody so the lab/prosecutor can resolve the proof issue; do not destroy or discard suspected contraband without policy authority. If proof, search authority, or arrest authority is weak, consider summons, report, lab submission, or prosecutor review instead of forcing a custodial arrest."
       ]
     ],
-    "arr": "Misdemeanor marijuana → presence rule unless another exception/felony applies. Vehicle search authority must come from PC and the vehicle exception, consent, inventory, or another valid doctrine.",
-    "note": "Do not overpromise “it is marijuana” from sight/smell alone. Report observations, statements, testing limits, evidence handling, and why a reasonable officer believed the item was contraband."
+    "arr": "Misdemeanor marijuana/paraphernalia generally follows the presence rule under F01/IC 35-33-1-1 unless a felony, OWI, or another statutory exception applies. Search authority and arrest authority are separate — a lawful vehicle search does not mean custodial arrest is the correct disposition.",
+    "note": "Avoid \"It was marijuana\" without testing/basis, \"He said hemp, so no PC,\" \"Odor alone ended the analysis,\" or \"K9 confirmed marijuana\" if the K9 cannot distinguish hemp from marijuana. Write what you smelled, saw, and were told; what was packaged, loose, burnt, or smoked; what impairment indicators existed; what doctrine supported detention/search/seizure/arrest; and what testing limits and disposition applied. Memory shortcut: cannabis-like item — describe, do not overstate; document any hemp claim; separate RS, search PC, offense PC, and arrest authority; build the totality (odor, source, packaging, statements, impairment, paraphernalia, quantity, K9, LEO tip, testing); vehicle search uses S04; OWI is a separate impairment lane; misdemeanor arrest needs F01 presence/authority; preserve substance + packaging + BWC."
   },
   {
     "cat": "Property",
@@ -6787,53 +6880,85 @@ const CARDS = [
     "cat": "Search/Seizure",
     "num": "S09",
     "off": "Emergency Aid / Welfare Entry",
-    "stat": "Brigham City · Michigan v. Fisher · Caniglia · Ind. Art. 1 §11",
+    "stat": "Brigham City v. Stuart · Michigan v. Fisher · Case v. Montana · Caniglia v. Strom · Indiana Article 1, §11",
     "auth": "reference",
-    "elem": "Officers may enter a constitutionally protected area without a warrant under the emergency-aid exception when specific, articulable facts create an objectively reasonable basis to believe someone inside needs immediate aid or is seriously injured or imminently threatened with serious injury.",
+    "elem": "Officers may enter a constitutionally protected area without a warrant under the emergency-aid exception when specific, articulable facts create an <b>objectively reasonable</b> basis to believe someone inside needs immediate aid, is seriously injured, or is imminently threatened with serious injury. This is an objective standard, not the officer's subjective intent, and it is not criminal PC, general welfare-check authority, or general search authority. The report must show what was known <b>before</b> entry — facts discovered after entry do not retroactively justify it.",
     "enh": [
       [
-        "Not enough",
-        "A vague welfare concern, mere non-answer, or “community caretaking” label alone does not automatically justify warrantless entry"
+        "Community-caretaking caution — Caniglia",
+        "Do not use \"community caretaking\" as a generic home-entry label; it does not create broad authority to enter or search during a welfare check. Identify the specific doctrine: consent, emergency aid, exigency, warrant, court order, mental-health authority, or protective sweep/plain view after lawful entry."
       ],
       [
-        "Stronger facts",
-        "Open-line 911 with distress sounds · overdose/cardiac arrest facts · suicidal subject with immediate risk · screams/fighting/injury signs · visible incapacitation · blood/smoke/fire/medical emergency"
+        "Usually not enough alone",
+        "A vague \"check welfare\" call, mere non-answer at the door, family hasn't heard from the person without emergency facts, prior mental-health history alone, refusal to allow entry, lights off, or a vehicle in the driveway. These may become stronger combined with immediate danger, distress sounds, or visible emergency indicators — document the totality."
       ],
       [
-        "Scope",
-        "Entry/search must stay tied to the emergency: locate/render aid, secure immediate hazards, then stop or obtain proper authority"
+        "Stronger emergency-aid facts",
+        "Open-line 911 with distress sounds, screaming/fighting/cries for help, visible blood/smoke/fire/gas, person down/unconscious, overdose/cardiac/diabetic/seizure facts, a credible recent suicidal threat plus inability to confirm safety, or a vulnerable person heard in distress. The stronger the entry intrusion, the more clearly the emergency facts should be documented."
+      ],
+      [
+        "Refused entry / unsecured door",
+        "A refusal to allow entry does not automatically defeat emergency aid if specific facts objectively justify it, but refusal alone does not create authority either. An unlocked/open door is a factor, not automatic entry authority — ask what emergency facts existed, whether safety could be confirmed by phone/another occupant/EMS, and whether delay was unsafe before entering."
+      ],
+      [
+        "Scope / stop point",
+        "Entry/search is limited to where a person needing aid or an immediate hazard could reasonably be — not drawers, phones, small containers, or general evidence search. Stop searching once the emergency is resolved or no longer objectively reasonable; further action needs consent, a warrant, or another lawful basis."
+      ],
+      [
+        "Plain view / protective sweep distinction",
+        "Plain view during lawful emergency-aid presence requires lawful access and immediately apparent incriminating nature, with no moving/opening objects to look for evidence (use S14). A protective sweep is a separate doctrine focused on officer safety from a person who may pose danger, not on locating/helping an injured person — do not use emergency aid as a general protective sweep."
+      ],
+      [
+        "Domestic / mental-health / medical context",
+        "Domestic disturbance facts (screaming, visible injury, victim unable to answer, weapon threat) and suicidal-subject facts (exact threat, method, weapon access, inability to confirm safety) can support entry when current and specific — prior mental-health history alone is usually not enough. Document the medical facts, source, attempts to contact, and why delay was unsafe for overdose/cardiac/seizure calls."
       ]
     ],
-    "arr": "Procedural / constitutional exception — not an offense and not general search authority.",
-    "note": "For reports: document what you knew before entry, why delay/warrant/consent was unsafe, who entered, where you looked, aid rendered, and when the emergency ended."
+    "arr": "This card does not create arrest authority. If officers lawfully inside under emergency aid observe criminal evidence or develop PC, identify the mapped offense, apply plain view/warrant/consent/protective sweep as appropriate, and apply F01/IC 35-33-1-1 for arrest authority — document the transition from aid entry to criminal investigation separately.",
+    "note": "Avoid \"I entered for a welfare check,\" \"community caretaking allowed entry,\" \"no one answered, so I went in,\" or \"once inside, I searched the house.\" Write what you knew before entry, the source of information, the immediate-aid/serious-injury/imminent-threat facts, why delay was unsafe, where you looked and why it matched the emergency, aid rendered, and when the emergency ended. Memory shortcut: a welfare check alone is not enough; community caretaking is not home-entry authority; need specific facts before entry; immediate aid/serious injury/imminent serious injury; explain why delay was unsafe; enter only where the person/hazard could be; stop when the emergency ends; further search/seizure/arrest needs separate authority."
   },
   {
     "cat": "Search/Seizure",
     "num": "S10",
     "off": "Inventory / Tow Search",
-    "stat": "Community caretaking · department policy · Stokes",
+    "stat": "South Dakota v. Opperman · Colorado v. Bertine · Florida v. Wells · Stokes v. State · Community Caretaking · Current Department Policy",
     "auth": "reference",
-    "elem": "An inventory search is an <b>administrative community-caretaking</b> procedure after a lawful impound/tow. It safeguards and accounts for property, protects officers/agency from false claims, and identifies hazards. It is <b>not</b> an investigative search for evidence or a shortcut around probable cause.",
+    "elem": "An inventory search is an <b>administrative</b> search conducted after a lawful decision to impound, tow, or take lawful custody of a vehicle. Its purposes are to account for property, protect the owner's property, protect officers/the agency from false claims, and identify hazards — it is <b>not</b> an investigative search for evidence, not a shortcut around PC, not SITA, not the motor vehicle exception, and not consent. Contraband found during inventory cannot become the reason the vehicle was supposedly towed; the tow/impound decision must be justified <b>before</b> the inventory begins.",
     "enh": [
       [
-        "Three-part test",
-        "Legitimate lawful reason to impound/tow · applicable standardized inventory policy · officer strictly follows that policy"
+        "Three-part field test",
+        "1) Why is the vehicle being impounded/towed/taken into custody? 2) What policy authorizes the inventory? 3) Did I follow that policy consistently and administratively? If the real answer to #1 is \"because I want to search for contraband,\" do not call it an inventory — use the correct doctrine or get a warrant."
       ],
       [
-        "Tow predicates",
-        "Driver arrest leaving vehicle exposed/unattended or with unqualified driver · traffic/safety hazard · abandoned vehicle · improper registration/stolen/evidentiary/forfeiture hold"
+        "Common tow predicates",
+        "Driver custodial arrest leaving the vehicle unattended, no qualified driver available, traffic/safety hazard, theft/vandalism/damage exposure, abandoned/stolen vehicle, improper registration requiring tow under law/policy, evidentiary or forfeiture hold, crash-related removal, or blocking roadway/fire lane/business access. Verify current Indiana law, ordinance, and WPD policy for each predicate."
       ],
       [
-        "Do not tow when",
-        "Arrest at driver’s own residence, or proper private/apartment parking with no hazard and no property-owner objection; secure vehicle and keys per policy"
+        "When tow/inventory is weak",
+        "Vehicle is legally parked, safely off the roadway, at the driver's residence, or in a proper apartment/private lot with no hazard and no owner objection, and a qualified owner/licensed driver is present and able to take custody. Do not force a tow just to create inventory authority — if the vehicle can lawfully and safely remain, follow policy and secure keys instead."
       ],
       [
-        "Pretext caution",
-        "Inventory cannot be conducted solely to find contraband; changing scene circumstances do not automatically make a valid policy-based inventory pretextual"
+        "Administrative purpose / pretext caution",
+        "Red flags: tow decided only after contraband suspicion, no legitimate predicate, vehicle could safely remain, inventory performed selectively (only likely-contraband locations), forms not completed, or the report focuses only on evidence rather than inventory purpose. If you have PC, use S04; if you have consent, document consent; if you have an arrest, use S05 within Gant — do not disguise one doctrine as another."
+      ],
+      [
+        "Changing circumstances — Stokes",
+        "A later change (owner arrives, vehicle is released, tow no longer occurs) does not automatically invalidate an inventory if the initial decision was legitimate when made, based on facts known before inventory, followed standardized policy, and was not a selective evidence hunt. Document what changed and the final disposition."
+      ],
+      [
+        "Private property / residence caution",
+        "Inventory is often vulnerable when the vehicle is legally parked at a residence or apartment/business lot. Ask whether it's lawfully parked, creates a hazard, whether the owner/authorized driver is available, and whether the property owner/manager objects before towing from private property merely to search."
+      ],
+      [
+        "Scope / closed containers",
+        "Inventory scope comes from standardized policy, not field improvisation — passenger compartment, trunk, consoles, glove box, attached/unattached containers as policy allows. Closed/locked containers are high-liability: follow policy on whether to seek owner access, make reasonable non-destructive attempts, or simply list the container as inaccessible rather than forcing entry."
+      ],
+      [
+        "Evidence found during inventory",
+        "If contraband is found, stop and identify the lawful basis for seizure, photograph, preserve, and maintain chain of custody, then determine PC for an offense and apply F01 separately. If the discovery creates PC for a broader investigative search, stop and identify the new doctrine (S04, warrant, consent) before expanding beyond inventory scope — discovery of evidence does not retroactively justify an unlawful tow or inventory."
       ]
     ],
-    "arr": "Search/inventory procedure — not arrest authority. If contraband is found during a lawful inventory, evaluate the separate offense and arrest authority.",
-    "note": "For reports, lead with the lawful reason for tow/impound before listing what was found. Distinguish PC vehicle search/K9 search from administrative inventory. The tow decision should be explainable before the inventory begins; do not let the discovery of contraband become the reason the vehicle was supposedly towed."
+    "arr": "This card does not create arrest authority. Inventory is an administrative procedure. If contraband is found during a lawful inventory, identify the mapped offense, determine offense level, analyze possession/constructive possession, and apply F01/IC 35-33-1-1 separately — search authority and arrest authority remain separate.",
+    "note": "Avoid \"I searched the car before towing it,\" \"I inventoried it because I wanted to check for drugs,\" \"driver arrested, so vehicle automatically towed,\" or \"I found contraband, so the vehicle was towed.\" Lead the report with the lawful tow predicate, vehicle location/condition, why leaving it was not reasonable, policy basis, inventory scope, forms completed, property/hazards/evidence found, and final vehicle disposition. Memory shortcut: tow predicate first; can the vehicle lawfully/safely stay; does policy authorize the inventory; follow policy strictly; administrative purpose is property/claims/hazards, not a PC search, SITA, or consent; contraband found is a separate offense + F01; changed circumstances need both the initial basis and the final disposition documented."
   },
   {
     "cat": "Search/Seizure",
